@@ -9,8 +9,8 @@ specifiers:
   '@dnd-kit/modifiers': ^6.0.1
   '@dnd-kit/sortable': ^7.0.2
   '@dnd-kit/utilities': ^3.2.1
-  '@dxsixpc/configs': ^0.4.16
-  '@dxsixpc/utils': ^0.1.2
+  '@dxsixpc/configs': ^0.4.18
+  '@dxsixpc/utils': ^0.1.3
   '@emotion/babel-plugin': ^11.10.6
   '@emotion/css': ^11.10.6
   '@emotion/react': ^11.10.6
@@ -25,7 +25,6 @@ specifiers:
   '@types/react-dom': ^18.0.11
   ahooks: ^3.7.5
   antd: ^5.3.0
-  classnames: ^2.3.2
   dumi: ^2.1.15
   eslint: '>=7.5.0 <8.0.0 || >=8.0.0-0 <8.0.0 || >=8.0.0 <9.0.0'
   father: ^4.1.6
@@ -72,8 +71,8 @@ dependencies:
 devDependencies:
   '@babel/core': 7.21.0
   '@babel/preset-react': 7.18.6_@babel+core@7.21.0
-  '@dxsixpc/configs': 0.4.16_typescript@4.9.5
-  '@dxsixpc/utils': 0.1.2_biqbaboplfbrettd7655fr4n2y
+  '@dxsixpc/configs': 0.4.18_typescript@4.9.5
+  '@dxsixpc/utils': 0.1.3_biqbaboplfbrettd7655fr4n2y
   '@emotion/babel-plugin': 11.10.6
   '@province-city-china/area': 8.5.6
   '@province-city-china/city': 8.5.6
@@ -81,7 +80,6 @@ devDependencies:
   '@types/lodash': 4.14.191
   '@types/react': 18.0.28
   '@types/react-dom': 18.0.11
-  classnames: 2.3.2
   dumi: 2.1.15_kykqehkbqammexu2sbawhfe5du
   eslint: 8.35.0
   father: 4.1.6_z5blcuw3t23sbuwlovwtrlaodi
@@ -1027,8 +1025,8 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@dxsixpc/configs/0.4.16_typescript@4.9.5:
-    resolution: {integrity: sha512-1QWN2QnWQu/w6v5r1olMakA8m0O74sc0KK+iT73UgcBu73xjncAgK9bUcm1wCRXMGJpz+z0RssWY/3fimTv9Zw==}
+  /@dxsixpc/configs/0.4.18_typescript@4.9.5:
+    resolution: {integrity: sha512-A20d8msO0du9UZImzWmi4qpBHIxu/xO6irO2K3KJQO2/vpasykHsItxxTo9rW5gLbgNAyRZQKONqsubWnPIejw==}
     dependencies:
       '@babel/core': 7.21.0
       '@babel/plugin-syntax-flow': 7.18.6_@babel+core@7.21.0
@@ -1055,7 +1053,7 @@ packages:
       eslint-plugin-react: 7.32.2_eslint@8.35.0
       eslint-plugin-react-hooks: 4.6.0_eslint@8.35.0
       eslint-plugin-sonarjs: 0.18.0_eslint@8.35.0
-      eslint-plugin-unicorn: 45.0.2_eslint@8.35.0
+      eslint-plugin-unicorn: 46.0.0_eslint@8.35.0
       inquirer: 8.2.5
       postcss: 8.4.21
       prettier: 2.8.4
@@ -1076,8 +1074,8 @@ packages:
       - typescript
     dev: true
 
-  /@dxsixpc/utils/0.1.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-Kr5pAdIp0aqxWFe1lY/WXfUp+xtclvg1Vz9lFPN/nmzOcI6ZEf/gZHIVIG4ZNCpdnNccZi/8Qnluj3+H75K2hA==}
+  /@dxsixpc/utils/0.1.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-0+aiF/GwGENuYJY63blxFcgXNJR2cfU5e35+geOcMY+4E2AWwryJWMMhuZI1N1F05XYC63eNmXJ6zkOfMHIQcg==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
@@ -2731,7 +2729,7 @@ packages:
   /@types/sax/1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 18.15.0
     dev: true
 
   /@types/scheduler/0.16.2:
@@ -6099,8 +6097,8 @@ packages:
       eslint: 8.35.0
     dev: true
 
-  /eslint-plugin-unicorn/45.0.2_eslint@8.35.0:
-    resolution: {integrity: sha512-Y0WUDXRyGDMcKLiwgL3zSMpHrXI00xmdyixEGIg90gHnj0PcHY4moNv3Ppje/kDivdAy5vUeUr7z211ImPv2gw==}
+  /eslint-plugin-unicorn/46.0.0_eslint@8.35.0:
+    resolution: {integrity: sha512-j07WkC+PFZwk8J33LYp6JMoHa1lXc1u6R45pbSAipjpfpb7KIGr17VE2D685zCxR5VL4cjrl65kTJflziQWMDA==}
     engines: {node: '>=14.18'}
     peerDependencies:
       eslint: '>=8.28.0'
