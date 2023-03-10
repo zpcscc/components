@@ -5,34 +5,30 @@
 
 通用组件库
 
-## Usage
+## 使用
 
-TODO
+https://dxsixpc.github.io/components
 
-## Options
+## 开发
 
-TODO
+```shell
+# 安装依赖
+pnpm install
 
-## Development
+# 本地开发
+pnpm start
 
-```bash
-# install dependencies
-$ npm install
+# 打包资源库代码
+pnpm run build
 
-# develop library by docs demo
-$ npm start
+# 预览打包后的代码
+pnpm run build:watch
 
-# build library source code
-$ npm run build
+# 打包文档
+pnpm run docs:build
 
-# build library source code in watch mode
-$ npm run build:watch
-
-# build docs
-$ npm run docs:build
-
-# check your project for potential problems
-$ npm run doctor
+# 检查项目是否有问题
+pnpm run doctor
 ```
 
 ## LICENSE
