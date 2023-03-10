@@ -1,4 +1,5 @@
 ---
+title: 首页
 hero:
   title: components
   description: 组件库
