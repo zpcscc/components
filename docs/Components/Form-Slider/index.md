@@ -14,12 +14,12 @@ group:
 
 ### Api：
 
-| 参数            | 说明               | 类型         | 默认值     |
-| --------------- | ------------------ | ------------ | ---------- | ------------ |
-| value           | 组件值             | number       | 0          |
-| onChange        | 用户选择后返回的值 | number       | -          |
-| showInputNumber | 是否显示数字输入框 | boolean      | false      |
-| layout          | 数字输入框的布局   | `horizontal` | `vertical` | `horizontal` |
+| 参数            | 说明               | 类型                      | 默认值     |
+| --------------- | ------------------ | ------------------------- | ---------- |
+| value           | 组件值             | number                    | 0          |
+| onChange        | 用户选择后返回的值 | number                    | -          |
+| showInputNumber | 是否显示数字输入框 | boolean                   | false      |
+| layout          | 数字输入框的布局   | `horizontal`｜ `vertical` | horizontal |
 
 Slider 的其他 api 参考<a href="https://ant-design.antgroup.com/components/slider-cn" target="_blank">Slider</a>
 

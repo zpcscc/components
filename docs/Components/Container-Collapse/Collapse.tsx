@@ -1,4 +1,4 @@
-import { Collapse, CollapsePanel, Space } from '@dxsixpc/generator';
+import { Collapse, CollapsePanel, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/Common';
 import { useState } from 'react';
 

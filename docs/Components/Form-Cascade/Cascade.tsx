@@ -1,4 +1,4 @@
-import { Cascade, Space } from '@dxsixpc/generator';
+import { Cascade, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/Common';
 import { useState } from 'react';
 import { provinceCityAreaCascadeData } from './province-city-china';

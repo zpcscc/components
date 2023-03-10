@@ -1,4 +1,4 @@
-import { Checkbox, Input, Space } from '@dxsixpc/generator';
+import { Checkbox, Input, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/Common';
 import { useState } from 'react';
 

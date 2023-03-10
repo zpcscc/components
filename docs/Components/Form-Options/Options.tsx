@@ -1,5 +1,5 @@
-import type { OptionsConfigType } from '@dxsixpc/generator';
-import { Options, SimpleCodeEditor, Space, Text } from '@dxsixpc/generator';
+import type { OptionsConfigType } from '@dxsixpc/components';
+import { Options, SimpleCodeEditor, Space, Text } from '@dxsixpc/components';
 import { dataToString } from '@dxsixpc/utils';
 import { useState } from 'react';
 

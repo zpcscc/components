@@ -10,17 +10,10 @@
       "docs/*": ["docs/*"],
       "src": ["src"],
       "src/*": ["src/*"],
-      "@dxsixpc/generator": ["src"],
-      "@dxsixpc/generator/*": ["src/*"]
+      "@dxsixpc/components": ["src"],
+      "@dxsixpc/components/*": ["src/*"]
     },
     "types": ["react", "@emotion/react"]
   },
-  "include": [
-    ".dumi/**/*",
-    ".dumirc.ts",
-    "src/**/*",
-    "docs/**/*",
-    ".eslintrc.js",
-    "babel.config.js"
-  ]
+  "include": [".dumi/**/*", ".dumirc.ts", "src/**/*", "docs/**/*", ".eslintrc.js"]
 }

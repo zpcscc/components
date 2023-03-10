@@ -1,4 +1,4 @@
-import { InputGroup, Space } from '@dxsixpc/generator';
+import { InputGroup, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/Common';
 import { useState } from 'react';
 

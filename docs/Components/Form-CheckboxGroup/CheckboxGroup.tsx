@@ -1,5 +1,5 @@
-import type { CheckboxGroupProps, OptionsConfigType } from '@dxsixpc/generator';
-import { CheckboxGroup, Space } from '@dxsixpc/generator';
+import type { CheckboxGroupProps, OptionsConfigType } from '@dxsixpc/components';
+import { CheckboxGroup, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/Common';
 import { useState } from 'react';
 

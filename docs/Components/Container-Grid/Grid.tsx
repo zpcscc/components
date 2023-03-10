@@ -1,4 +1,4 @@
-import { Col, Row } from '@dxsixpc/generator';
+import { Col, Row } from '@dxsixpc/components';
 
 const App: React.FC = () => {
   // css-in-js写法的自定义样式
@@ -10,10 +10,10 @@ const App: React.FC = () => {
       justify-content: center;
       align-items: center;
     }
-    .ant-col:nth-child(odd) {
+    .ant-col:nth-of-type(odd) {
       background-color: #66ccff;
     }
-    .ant-col:nth-child(even) {
+    .ant-col:nth-of-type(even) {
       background-color: #217bfb;
     }
   `;

@@ -1,4 +1,4 @@
-import { Space, Text, TextArea } from '@dxsixpc/generator';
+import { Space, Text, TextArea } from '@dxsixpc/components';
 import { dataToString } from '@dxsixpc/utils';
 
 export interface ResultTextareaProps {

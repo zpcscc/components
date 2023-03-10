@@ -1,5 +1,5 @@
-import type { OptionType } from '@dxsixpc/generator';
-import { Select, Space } from '@dxsixpc/generator';
+import type { OptionType } from '@dxsixpc/components';
+import { Select, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/Common';
 import { useState } from 'react';
 

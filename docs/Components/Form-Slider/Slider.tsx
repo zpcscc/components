@@ -1,5 +1,5 @@
-import type { SliderProps } from '@dxsixpc/generator';
-import { Slider, Space } from '@dxsixpc/generator';
+import type { SliderProps } from '@dxsixpc/components';
+import { Slider, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/Common';
 import { useState } from 'react';
 

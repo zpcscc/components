@@ -1,4 +1,4 @@
-import { Button } from '@dxsixpc/generator';
+import { Button } from '@dxsixpc/components';
 
 const App: React.FC = () => {
   // css-in-js写法的自定义样式

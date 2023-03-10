@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import { Alert as AntAlert } from 'antd';
 import type { AlertProps as AntAlertProps } from 'antd/lib/alert';
 import { Wrapper } from './Styled';
@@ -12,9 +13,16 @@ export interface AlertProps extends AntAlertProps {
  * @link 其他参数详见 https://ant.design/components/alert-cn/
  */
 const Alert: React.FC<AlertProps> = (props) => {
-  const { styled, ...rest } = props;
+  const { styled = '', ...rest } = props;
   return (
-    <Wrapper styled={styled}>
+    <Wrapper
+      css={
+        styled &&
+        css`
+          ${styled}
+        `
+      }
+    >
       <AntAlert {...rest} />
     </Wrapper>
   );

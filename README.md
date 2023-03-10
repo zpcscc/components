@@ -1,9 +1,9 @@
-# page-generator
+# components
 
-[![NPM version](https://img.shields.io/npm/v/@dxsixpc/page-generator.svg?style=flat)](https://npmjs.org/package/@dxsixpc/generator)
-[![NPM downloads](http://img.shields.io/npm/dm/@dxsixpc/page-generator.svg?style=flat)](https://npmjs.org/package/@dxsixpc/generator)
+[![NPM version](https://img.shields.io/npm/v/@dxsixpc/components.svg?style=flat)](https://npmjs.org/package/@dxsixpc/components)
+[![NPM downloads](http://img.shields.io/npm/dm/@dxsixpc/components.svg?style=flat)](https://npmjs.org/package/@dxsixpc/components)
 
-低代码页面(表单)生成器
+通用组件库
 
 ## Usage
 

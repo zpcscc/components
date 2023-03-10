@@ -1,5 +1,5 @@
-import type { OptionsConfigType, RadioGroupProps } from '@dxsixpc/generator';
-import { RadioGroup, Space } from '@dxsixpc/generator';
+import type { OptionsConfigType, RadioGroupProps } from '@dxsixpc/components';
+import { RadioGroup, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/Common';
 import { useState } from 'react';
 

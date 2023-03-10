@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 import { resolve } from 'path';
 
-const name = 'generator';
+const name = 'components';
 
 export default defineConfig({
   outputPath: 'docs-dist',
@@ -14,7 +14,7 @@ export default defineConfig({
   },
   alias: {
     src: resolve(__dirname, './src'),
-    '@dxsixpc/generator': resolve(__dirname, './src'),
+    '@dxsixpc/components': resolve(__dirname, './src'),
     docs: resolve(__dirname, './docs'),
   },
   base: `/${name}/`,

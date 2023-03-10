@@ -1,4 +1,4 @@
-import { Space, Switch } from '@dxsixpc/generator';
+import { Space, Switch } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/Common';
 import { useState } from 'react';
 
