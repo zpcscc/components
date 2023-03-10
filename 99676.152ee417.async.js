@@ -1,0 +1,1 @@
+(self.webpackChunk_dxsixpc_components=self.webpackChunk_dxsixpc_components||[]).push([[99676],{99676:function(){Prism.languages.brainfuck={pointer:{pattern:/<|>/,alias:"keyword"},increment:{pattern:/\+/,alias:"inserted"},decrement:{pattern:/-/,alias:"deleted"},branching:{pattern:/\[|\]/,alias:"important"},operator:/[.,]/,comment:/\S+/}}}]);

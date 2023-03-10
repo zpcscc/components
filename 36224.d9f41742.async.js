@@ -1,1 +1,0 @@
-(self.webpackChunk_dxsixpc_components=self.webpackChunk_dxsixpc_components||[]).push([[36224],{36224:function(){Prism.languages.arff={comment:/%.*/,string:{pattern:/(["'])(?:\\.|(?!\1)[^\\\r\n])*\1/,greedy:!0},keyword:/@(?:attribute|data|end|relation)\b/i,number:/\b\d+(?:\.\d+)?\b/,punctuation:/[{},]/}}}]);
