@@ -28,9 +28,8 @@ const App: React.FC = () => {
 
   const resultTextareaStyled = `
     width: 440px;
+    height: 400px;
     max-width: 100%;
-    max-height: 400px;
-    overflow: auto;
   `;
 
   return (

@@ -7,7 +7,6 @@ const App: React.FC = () => {
 
   // css-in-js写法的自定义样式
   const styled = `
-    width: 300px;
     color: #66ccff;
   `;
 

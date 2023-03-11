@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { ListProps } from 'antd';
 import { List, Radio } from 'antd';
 import type { RadioProps as AntRadioProps } from 'antd/lib/radio';
@@ -7,7 +10,7 @@ import { Wrapper } from './Styled';
 export interface RadioGroupProps extends Omit<AntRadioProps, 'onChange'> {
   optionsConfig: OptionsConfigType<'Radio'>;
   listOptions?: ListProps<string>;
-  styled?: string;
+  styled?: CSSInterpolation;
   onChange?: (value: string) => void;
 }
 
@@ -15,7 +18,7 @@ export interface RadioGroupProps extends Omit<AntRadioProps, 'onChange'> {
  * @name 单选
  * @param value 组件的值
  * @param onChange 组件值修改的回调
- * @param styled 自定义样式 示例：styled：`{width:'100%'}`
+ * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @param size 组件大小
  * @param optionsConfig 选项配置
  * @link 其他参数详见 https://ant.design/components/radio-cn/
@@ -31,7 +34,7 @@ const RadioGroup: React.FC<RadioGroupProps> = (props) => {
   } = props;
 
   return (
-    <Wrapper styled={styled}>
+    <Wrapper css={css(styled)}>
       <Radio.Group
         value={value || optionsConfig.defaultValue}
         onChange={(e) => onChange?.(e?.target?.value)}

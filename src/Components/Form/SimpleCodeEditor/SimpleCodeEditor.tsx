@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+import type { CSSInterpolation } from '@emotion/serialize/types';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import { useEffect, useState } from 'react';
@@ -9,7 +12,7 @@ export interface SimpleCodeEditorProps {
   // 代码语言：https://prismjs.com/#supported-languages
   language?: string | 'javascript' | 'typescript' | 'css' | 'json';
   onChange?: (value: string) => void;
-  styled?: string;
+  styled?: CSSInterpolation;
 }
 
 /**
@@ -17,7 +20,7 @@ export interface SimpleCodeEditorProps {
  * @param value 组件的值
  * @param onChange 组件值修改的回调
  * @param language 需要语法高亮的语言
- * @param styled 自定义样式 示例：styled：`width:'100%'`
+ * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @link 其他参数详见 https://www.npmjs.com/package/react-simple-code-editor
  */
 const SimpleCodeEditor: React.FC<SimpleCodeEditorProps> = (props) => {
@@ -40,7 +43,7 @@ const SimpleCodeEditor: React.FC<SimpleCodeEditorProps> = (props) => {
   }, [language]);
 
   return (
-    <Wrapper styled={styled}>
+    <Wrapper css={css(styled)}>
       {loadedLanguage && (
         <Editor
           value={value}

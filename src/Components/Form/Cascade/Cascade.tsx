@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+import type { CSSInterpolation } from '@emotion/serialize/types';
 import { useEffect, useState } from 'react';
 import type { SelectProps } from '../Select/Select';
 import Select from '../Select/Select';
@@ -7,10 +10,11 @@ import { arr2Tree, initValueArr, updateSelectList } from './helpers';
 import { Wrapper } from './Styled';
 import type { SelectListType } from './type';
 
-export interface CascadeProps extends Omit<SelectProps, 'onChange' | 'value' | 'optionsConfig'> {
+export interface CascadeProps
+  extends Omit<SelectProps, 'onChange' | 'value' | 'optionsConfig' | 'styled'> {
   value: string[];
   cascadeData: string[][];
-  styled?: string;
+  styled?: CSSInterpolation;
   level?: number;
   selectOptions?: Omit<SelectProps, 'onChange' | 'optionsConfig'>;
   textAreaOptions?: Omit<TextAreaProps, 'onChange'>;
@@ -23,7 +27,7 @@ export interface CascadeProps extends Omit<SelectProps, 'onChange' | 'value' | '
  * @name 级联组件
  * @param value 每个级联选中的值
  * @param onChange 组件值修改的回调
- * @param styled 自定义样式 示例：styled：`{width:'100%'}`
+ * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @param level 级联层级
  * @param placeholder 级联输入框占位符
  * @param showTextArea 显示自定义文本框
@@ -75,7 +79,7 @@ const Cascade: React.FC<CascadeProps> = (props) => {
   }, [level]);
 
   return (
-    <Wrapper styled={styled}>
+    <Wrapper css={css(styled)}>
       {selectList?.map(({ options }, index) => (
         <Select
           key={index}

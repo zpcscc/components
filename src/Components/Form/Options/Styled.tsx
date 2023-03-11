@@ -1,15 +1,6 @@
 import styled from '@emotion/styled';
 
-export interface WrapperProps {
-  styled?: string;
-}
-
-export const Wrapper = styled.div<WrapperProps>`
-  input {
-    max-width: 100% !important;
-  }
-  ${(props) => props.styled};
-`;
+export const Wrapper = styled.div``;
 
 export const OptionWrapper = styled.div`
   display: flex;

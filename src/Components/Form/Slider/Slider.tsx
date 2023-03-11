@@ -1,7 +1,11 @@
-import { InputNumber, Slider as AntSlider } from 'antd';
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+import type { CSSInterpolation } from '@emotion/serialize/types';
+import { Slider as AntSlider } from 'antd';
 import type { InputNumberProps } from 'antd/lib/input-number';
 import type { SliderBaseProps } from 'antd/lib/slider';
 import { useEffect, useState } from 'react';
+import { InputNumber } from '../InputNumber';
 import { Wrapper } from './Styled';
 
 export interface SliderProps extends Omit<SliderBaseProps, 'onChange'> {
@@ -9,7 +13,7 @@ export interface SliderProps extends Omit<SliderBaseProps, 'onChange'> {
   onChange?: (value: number) => void;
   showInputNumber?: boolean;
   inputNumberOptions?: InputNumberProps;
-  styled?: string;
+  styled?: CSSInterpolation;
   layout?: 'horizontal' | 'vertical';
 }
 
@@ -19,7 +23,7 @@ export interface SliderProps extends Omit<SliderBaseProps, 'onChange'> {
  * @param onChange 组件值修改的回调
  * @param showInputNumber 显示数字输入框
  * @param inputNumberOptions 数字显示框的参数
- * @param styled 自定义样式 示例：styled：`width:'100%'`
+ * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @link 其他参数详见 https://ant.design/components/slider-cn/
  */
 const Slider: React.FC<SliderProps> = (props) => {
@@ -33,6 +37,7 @@ const Slider: React.FC<SliderProps> = (props) => {
     ...rest
   } = props;
   const [inputValue, setInputValue] = useState<number>(value || 0);
+  const isVertical = showInputNumber && layout === 'vertical';
 
   const onSliderChange = (newValue: number) => {
     if (typeof newValue === 'number') setInputValue(newValue);
@@ -45,7 +50,16 @@ const Slider: React.FC<SliderProps> = (props) => {
   }, [value]);
 
   return (
-    <Wrapper styled={styled} showInputNumber={showInputNumber} layout={layout}>
+    <Wrapper
+      css={css(styled)}
+      style={
+        {
+          '--flex-direction': isVertical ? 'column' : 'row',
+          '--margin-right': isVertical ? '0px' : '16px',
+          '--input-number-width': isVertical ? '100%' : '110px',
+        } as React.CSSProperties
+      }
+    >
       <AntSlider value={inputValue} onChange={onSliderChange} {...rest} />
       {showInputNumber && (
         <InputNumber
@@ -53,6 +67,7 @@ const Slider: React.FC<SliderProps> = (props) => {
           onChange={(value) => {
             if (value !== null) onSliderChange(Number(value));
           }}
+          min={0}
           {...inputNumberOptions}
         />
       )}

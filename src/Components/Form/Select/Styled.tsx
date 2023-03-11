@@ -1,12 +1,8 @@
+import type { StyledComponent } from '@emotion/styled';
 import styled from '@emotion/styled';
+import { Select } from 'antd';
+import type { SelectProps } from './Select';
 
-export interface WrapperProps {
-  styled?: string;
-}
-
-export const Wrapper = styled.div<WrapperProps>`
-  .ant-select {
-    width: 100%;
-  }
-  ${(props) => props.styled};
-`;
+export const SelectWrapper = styled(Select)`
+  width: 100%;
+` as StyledComponent<SelectProps>;

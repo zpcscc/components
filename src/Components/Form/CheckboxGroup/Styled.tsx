@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
 
-export interface WrapperProps {
-  styled?: string;
-}
-
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled.div`
   background-color: #fff;
   & > div {
     width: 100%;
@@ -24,5 +20,4 @@ export const Wrapper = styled.div<WrapperProps>`
       }
     }
   }
-  ${(props) => props.styled};
 `;

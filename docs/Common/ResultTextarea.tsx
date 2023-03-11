@@ -1,9 +1,12 @@
+/** @jsxImportSource @emotion/react */
 import { Space, Text, TextArea } from '@dxsixpc/components';
 import { dataToString } from '@dxsixpc/utils';
+import { css } from '@emotion/react';
+import type { CSSInterpolation } from '@emotion/serialize/types';
 
 export interface ResultTextareaProps {
   value: any;
-  styled?: string;
+  styled?: CSSInterpolation;
 }
 
 /**
@@ -12,9 +15,9 @@ export interface ResultTextareaProps {
  * @returns
  */
 const ResultTextarea: React.FC<ResultTextareaProps> = (props) => {
-  const { value, ...rest } = props;
+  const { value, styled, ...rest } = props;
   return (
-    <Space direction='vertical' {...rest}>
+    <Space direction='vertical' css={css(styled)} {...rest}>
       <Text>onChange返回的结果</Text>
       <TextArea value={dataToString(value)} style={{ width: '300px' }} />
     </Space>

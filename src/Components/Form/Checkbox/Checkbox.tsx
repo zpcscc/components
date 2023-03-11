@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from '@emotion/react';
+import type { CSSInterpolation } from '@emotion/serialize/types';
 import { Checkbox as AntCheckbox } from 'antd';
 import type { CheckboxProps as AntCheckboxProps } from 'antd/es/checkbox';
 import type { SpaceProps } from 'src/Components';
@@ -8,8 +11,8 @@ export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
   prefix?: string | React.ReactNode;
   // 后缀内容
   suffix?: string | React.ReactNode;
-  // 自定义样式,使用css-in-js的语法
-  styled?: string;
+  // 自定义样式
+  styled?: CSSInterpolation;
   // Space组件配置
   spaceOptions?: SpaceProps;
   // 选项改变时
@@ -20,7 +23,7 @@ export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
  * @name 单个勾选框
  * @param value 组件的值
  * @param onChange 组件值修改的回调
- * @param styled 自定义样式 示例：styled：`width:'100%'`
+ * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @param prefix 前缀内容
  * @param suffix 后缀内容
  * @param spaceOptions Space组件配置
@@ -28,9 +31,8 @@ export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
  */
 const Checkbox: React.FC<CheckboxProps> = (props) => {
   const { value, prefix, suffix, spaceOptions, styled, onChange, ...rest } = props;
-
   return (
-    <SpaceWrapper styled={styled} {...spaceOptions}>
+    <SpaceWrapper css={css(styled)} {...spaceOptions}>
       {prefix}
       <AntCheckbox
         checked={Boolean(value)}

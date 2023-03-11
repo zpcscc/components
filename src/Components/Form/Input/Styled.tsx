@@ -1,10 +1,6 @@
 import styled from '@emotion/styled';
+import { Input } from 'antd';
 
-export interface WrapperProps {
-  styled?: string;
-}
-
-export const Wrapper = styled.div<WrapperProps>`
+export const InputWrapper = styled(Input)`
   width: 100%;
-  ${(props) => props.styled};
 `;
