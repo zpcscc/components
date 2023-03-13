@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { SelectProps as AntSelectProps } from 'antd/lib/select';
+import type { StyledType } from 'src/type';
 import { SelectWrapper } from './Styled';
 
 export interface SelectProps extends AntSelectProps<string> {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

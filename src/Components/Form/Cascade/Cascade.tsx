@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import { useEffect, useState } from 'react';
+import type { StyledType } from 'src/type';
 import type { SelectProps } from '../Select/Select';
 import Select from '../Select/Select';
 import type { TextAreaProps } from '../TextArea/TextArea';
@@ -14,7 +14,7 @@ export interface CascadeProps
   extends Omit<SelectProps, 'onChange' | 'value' | 'optionsConfig' | 'styled'> {
   value: string[];
   cascadeData: string[][];
-  styled?: CSSInterpolation;
+  styled?: StyledType;
   level?: number;
   selectOptions?: Omit<SelectProps, 'onChange' | 'optionsConfig'>;
   textAreaOptions?: Omit<TextAreaProps, 'onChange'>;

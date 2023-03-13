@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { TextAreaProps as AntTextAreaProps } from 'antd/lib/input';
+import type { StyledType } from 'src/type';
 import { TextAreaWrapper } from './Styled';
 
 export interface TextAreaProps extends Omit<AntTextAreaProps, 'onChange'> {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
   onChange?: (value: string, e: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 

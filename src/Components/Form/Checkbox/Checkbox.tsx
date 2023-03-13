@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import { Checkbox as AntCheckbox } from 'antd';
 import type { CheckboxProps as AntCheckboxProps } from 'antd/es/checkbox';
 import type { SpaceProps } from 'src/Components';
+import type { StyledType } from 'src/type';
 import { SpaceWrapper } from './Styled';
 
 export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
@@ -12,7 +12,7 @@ export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
   // 后缀内容
   suffix?: string | React.ReactNode;
   // 自定义样式
-  styled?: CSSInterpolation;
+  styled?: StyledType;
   // Space组件配置
   spaceOptions?: SpaceProps;
   // 选项改变时

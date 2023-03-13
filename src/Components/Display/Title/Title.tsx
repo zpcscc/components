@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { TitleProps as AntTitleProps } from 'antd/lib/typography/Title';
+import type { StyledType } from 'src/type';
 import { TitleWrapper } from './Styled';
 
 export interface TitleProps extends AntTitleProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

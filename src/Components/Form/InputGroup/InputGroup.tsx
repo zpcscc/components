@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { InputProps as AntInputProps } from 'antd/lib/input';
 import { useState } from 'react';
+import type { StyledType } from 'src/type';
 import { Input as AntInput } from '../Input';
 import { InputGroupWrapper } from './Styled';
 
@@ -10,7 +10,7 @@ export interface InputGroupProps extends Omit<AntInputProps, 'onChange' | 'place
   value: string[];
   placeholders?: string[];
   level?: number;
-  styled?: CSSInterpolation;
+  styled?: StyledType;
   onChange?: (value: string[]) => void;
 }
 

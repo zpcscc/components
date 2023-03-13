@@ -1,16 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { ListProps } from 'antd';
 import { List, Radio } from 'antd';
 import type { RadioProps as AntRadioProps } from 'antd/lib/radio';
-import type { OptionsConfigType, OptionType } from 'src/type';
+import type { OptionsConfigType, OptionType, StyledType } from 'src/type';
 import { Wrapper } from './Styled';
 
 export interface RadioGroupProps extends Omit<AntRadioProps, 'onChange'> {
   optionsConfig: OptionsConfigType<'Radio'>;
   listOptions?: ListProps<string>;
-  styled?: CSSInterpolation;
+  styled?: StyledType;
   onChange?: (value: string) => void;
 }
 

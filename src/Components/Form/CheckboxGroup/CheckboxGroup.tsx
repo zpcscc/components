@@ -1,16 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { ListProps } from 'antd';
 import { Checkbox, List } from 'antd';
 import type { CheckboxGroupProps as AntCheckboxGroupProps } from 'antd/lib/checkbox';
-import type { OptionsConfigType, OptionType } from 'src/type';
+import type { OptionsConfigType, OptionType, StyledType } from 'src/type';
 import { Wrapper } from './Styled';
 
 export interface CheckboxGroupProps extends AntCheckboxGroupProps {
   optionsConfig: OptionsConfigType<'Checkbox'>;
   listOptions?: ListProps<string>;
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

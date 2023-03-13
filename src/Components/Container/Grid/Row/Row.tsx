@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { RowProps as AntRowProps } from 'antd';
+import type { StyledType } from 'src/type';
 import { RowWrapper } from './Styled';
 
 export interface RowProps extends AntRowProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { InputNumberProps as AntInputNumberProps } from 'antd/lib/input-number';
+import type { StyledType } from 'src/type';
 import { InputNumberWrapper } from './Styled';
 
 export interface InputNumberProps extends AntInputNumberProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

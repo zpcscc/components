@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import { Slider as AntSlider } from 'antd';
 import type { InputNumberProps } from 'antd/lib/input-number';
 import type { SliderBaseProps } from 'antd/lib/slider';
 import { useEffect, useState } from 'react';
+import type { StyledType } from 'src/type';
 import { InputNumber } from '../InputNumber';
 import { Wrapper } from './Styled';
 
@@ -13,7 +13,7 @@ export interface SliderProps extends Omit<SliderBaseProps, 'onChange'> {
   onChange?: (value: number) => void;
   showInputNumber?: boolean;
   inputNumberOptions?: InputNumberProps;
-  styled?: CSSInterpolation;
+  styled?: StyledType;
   layout?: 'horizontal' | 'vertical';
 }
 

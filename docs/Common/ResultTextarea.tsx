@@ -2,11 +2,11 @@
 import { Space, Text, TextArea } from '@dxsixpc/components';
 import { dataToString } from '@dxsixpc/utils';
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
+import type { StyledType } from 'src/type';
 
 export interface ResultTextareaProps {
   value: any;
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

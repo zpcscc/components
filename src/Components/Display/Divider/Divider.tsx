@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { DividerProps as AntDividerProps } from 'antd/lib/Divider';
+import type { StyledType } from 'src/type';
 import { DividerWrapper } from './Styled';
 
 export interface DividerProps extends AntDividerProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

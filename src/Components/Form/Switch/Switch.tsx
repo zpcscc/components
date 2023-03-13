@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { SwitchProps as AntSwitchProps } from 'antd/lib/switch';
+import type { StyledType } from 'src/type';
 import { SwitchWrapper } from './Styled';
 
 export interface SwitchProps extends AntSwitchProps {
   value?: boolean;
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

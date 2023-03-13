@@ -1,12 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { PlusOutlined } from '@ant-design/icons';
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import { Button } from 'antd';
 import { uniqueId } from 'lodash';
 import { useState } from 'react';
 import type { InputProps } from 'src/Components';
-import type { OptionsConfigType } from 'src/type';
+import type { OptionsConfigType, StyledType } from 'src/type';
 import { formatOptionsConfig } from './helpers';
 import OptionsContainer from './OptionsContainer';
 import { Wrapper } from './Styled';
@@ -16,7 +15,7 @@ export interface OptionsProps {
   value?: OptionsConfigType;
   optionsConfig: OptionsConfigType;
   inputOptions?: InputProps;
-  styled?: CSSInterpolation;
+  styled?: StyledType;
   onChange?: (optionsConfig: OptionsConfigType) => void;
 }
 
