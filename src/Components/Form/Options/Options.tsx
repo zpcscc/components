@@ -1,4 +1,7 @@
+/** @jsxImportSource @emotion/react */
 import { PlusOutlined } from '@ant-design/icons';
+import { css } from '@emotion/react';
+import type { CSSInterpolation } from '@emotion/serialize/types';
 import { Button } from 'antd';
 import { uniqueId } from 'lodash';
 import { useState } from 'react';
@@ -13,7 +16,7 @@ export interface OptionsProps {
   value?: OptionsConfigType;
   optionsConfig: OptionsConfigType;
   inputOptions?: InputProps;
-  styled?: string;
+  styled?: CSSInterpolation;
   onChange?: (optionsConfig: OptionsConfigType) => void;
 }
 
@@ -21,7 +24,7 @@ export interface OptionsProps {
  * @name 选项配置
  * @param value 组件的值
  * @param onChange 组件值修改的回调
- * @param styled 自定义样式 示例：styled：`{width:'100%'}`
+ * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @param optionsConfig 选项配置
  */
 const Options: React.FC<OptionsProps> = (props) => {
@@ -63,7 +66,7 @@ const Options: React.FC<OptionsProps> = (props) => {
   };
 
   return (
-    <Wrapper styled={styled}>
+    <Wrapper css={css(styled)}>
       <OptionsContainer
         optionsConfig={optionsConfig}
         onOptionsConfigChange={onOptionsConfigChange}

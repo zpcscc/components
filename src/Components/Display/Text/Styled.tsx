@@ -1,9 +1,4 @@
 import styled from '@emotion/styled';
+import { Typography } from 'antd';
 
-export interface WrapperProps {
-  styled?: string;
-}
-
-export const Wrapper = styled.div<WrapperProps>`
-  ${(props) => props.styled};
-`;
+export const TextWrapper = styled(Typography.Text)``;

@@ -1,25 +1,16 @@
 import styled from '@emotion/styled';
 
-export interface WrapperProps {
-  styled?: string;
-  showInputNumber?: boolean;
-  layout?: 'horizontal' | 'vertical';
-}
-
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled.div`
   width: 100%;
   min-width: 100px;
   display: flex;
-  flex-direction: ${(props) =>
-    props.showInputNumber && props.layout === 'vertical' ? 'column' : 'row'};
+  flex-direction: var(--flex-direction, row);
   .ant-slider {
     width: 98%;
     margin: 10px 1%;
-    margin-right: ${(props) =>
-      props.showInputNumber && props.layout === 'vertical' ? '0px' : '16px'};
+    margin-right: var(--margin-right, 16px);
   }
-  .ant-input-number-group-wrapper {
-    min-width: 110px;
+  .ant-input-number {
+    width: var(--input-number-width, 110px);
   }
-  ${(props) => props.styled};
 `;

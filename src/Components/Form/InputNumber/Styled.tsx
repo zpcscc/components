@@ -1,12 +1,6 @@
 import styled from '@emotion/styled';
+import { InputNumber } from 'antd';
 
-export interface WrapperProps {
-  styled?: string;
-}
-
-export const Wrapper = styled.div<WrapperProps>`
-  .ant-input-number {
-    width: 100%;
-  }
-  ${(props) => props.styled};
+export const InputNumberWrapper = styled(InputNumber)`
+  width: 100%;
 `;

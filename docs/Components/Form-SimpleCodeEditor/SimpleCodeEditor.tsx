@@ -37,20 +37,13 @@ export default App;
     }
   `;
 
-  const simpleCodeEditorStyled = `
-    & > div {
-      width: 400px;
-      height: 300px;
-    }
-  `;
-
   return (
     <Space styled={spaceStyled} align='end'>
       <SimpleCodeEditor
         value={value}
         language='javascript'
         onChange={onChange}
-        styled={simpleCodeEditorStyled}
+        styled={{ width: '400px', height: '300px' }}
       />
       <ResultTextarea value={value} styled={resultTextareaStyled} />
     </Space>

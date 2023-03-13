@@ -13,7 +13,7 @@
       "@dxsixpc/components": ["src"],
       "@dxsixpc/components/*": ["src/*"]
     },
-    "types": ["react", "@emotion/react"]
+    "types": ["react", "@emotion/react", "@rc-component/mini-decimal/es"]
   },
   "include": [".dumi/**/*", ".dumirc.ts", "src/**/*", "docs/**/*", ".eslintrc.js"]
 }
