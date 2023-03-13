@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { CollapseProps as AntCollapseProps } from 'antd';
+import type { StyledType } from 'src/type';
 import { CollapseWrapper } from './Styled';
 
 export interface CollapseProps extends AntCollapseProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

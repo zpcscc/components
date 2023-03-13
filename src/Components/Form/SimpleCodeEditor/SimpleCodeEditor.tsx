@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import { useEffect, useState } from 'react';
 import Editor from 'react-simple-code-editor';
+import type { StyledType } from 'src/type';
 import { Wrapper } from './Styled';
 
 export interface SimpleCodeEditorProps {
@@ -12,7 +12,7 @@ export interface SimpleCodeEditorProps {
   // 代码语言：https://prismjs.com/#supported-languages
   language?: string | 'javascript' | 'typescript' | 'css' | 'json';
   onChange?: (value: string) => void;
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { ColProps as AntColProps } from 'antd';
+import type { StyledType } from 'src/type';
 import { ColWrapper } from './Styled';
 
 export interface ColProps extends AntColProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

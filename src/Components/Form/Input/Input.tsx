@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { InputProps as AntInputProps } from 'antd/lib/input';
+import type { StyledType } from 'src/type';
 import { InputWrapper } from './Styled';
 
 export interface InputProps extends Omit<AntInputProps, 'onChange'> {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
   onChange?: (value: string, e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 

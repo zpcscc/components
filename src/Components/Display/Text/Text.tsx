@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { TextProps as AntTextProps } from 'antd/lib/typography/Text';
+import type { StyledType } from 'src/type';
 import { TextWrapper } from './Styled';
 
 export interface TextProps extends AntTextProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

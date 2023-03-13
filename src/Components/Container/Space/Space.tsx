@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import { type SpaceProps as AntSpaceProps } from 'antd';
+import type { StyledType } from 'src/type';
 import { SpaceWrapper } from './Styled';
 
 export interface SpaceProps extends AntSpaceProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { ButtonProps as AntButtonProps } from 'antd/lib/button';
+import type { StyledType } from 'src/type';
 import { ButtonWrapper } from './Styled';
 
 export interface ButtonProps extends AntButtonProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**

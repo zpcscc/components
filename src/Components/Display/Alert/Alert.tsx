@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { CSSInterpolation } from '@emotion/serialize/types';
 import type { AlertProps as AntAlertProps } from 'antd/lib/alert';
+import type { StyledType } from 'src/type';
 import { AlertWrapper } from './Styled';
 
 export interface AlertProps extends AntAlertProps {
-  styled?: CSSInterpolation;
+  styled?: StyledType;
 }
 
 /**
