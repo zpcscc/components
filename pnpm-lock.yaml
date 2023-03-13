@@ -9,8 +9,8 @@ specifiers:
   '@dnd-kit/modifiers': ^6.0.1
   '@dnd-kit/sortable': ^7.0.2
   '@dnd-kit/utilities': ^3.2.1
-  '@dxsixpc/configs': ^0.4.18
-  '@dxsixpc/utils': ^0.1.3
+  '@dxsixpc/configs': ^0.4.19
+  '@dxsixpc/utils': ^0.2.0
   '@emotion/babel-plugin': ^11.10.6
   '@emotion/css': ^11.10.6
   '@emotion/react': ^11.10.6
@@ -75,8 +75,8 @@ dependencies:
 devDependencies:
   '@babel/core': 7.21.0
   '@babel/preset-react': 7.18.6_@babel+core@7.21.0
-  '@dxsixpc/configs': 0.4.18_typescript@4.9.5
-  '@dxsixpc/utils': 0.1.3_biqbaboplfbrettd7655fr4n2y
+  '@dxsixpc/configs': 0.4.19_typescript@4.9.5
+  '@dxsixpc/utils': 0.2.0_biqbaboplfbrettd7655fr4n2y
   '@emotion/babel-plugin': 11.10.6
   '@province-city-china/area': 8.5.6
   '@province-city-china/city': 8.5.6
@@ -1029,8 +1029,8 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@dxsixpc/configs/0.4.18_typescript@4.9.5:
-    resolution: {integrity: sha512-A20d8msO0du9UZImzWmi4qpBHIxu/xO6irO2K3KJQO2/vpasykHsItxxTo9rW5gLbgNAyRZQKONqsubWnPIejw==}
+  /@dxsixpc/configs/0.4.19_typescript@4.9.5:
+    resolution: {integrity: sha512-Y94YufTURimIh8wII0I/mUjqFu+KVTEaBwdrjzB8QSrAC3KpXJwwTOJfKrzqAmWJWKUkQU/5YnpEMuXKGcxklg==}
     dependencies:
       '@babel/core': 7.21.0
       '@babel/plugin-syntax-flow': 7.18.6_@babel+core@7.21.0
@@ -1078,14 +1078,15 @@ packages:
       - typescript
     dev: true
 
-  /@dxsixpc/utils/0.1.3_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-0+aiF/GwGENuYJY63blxFcgXNJR2cfU5e35+geOcMY+4E2AWwryJWMMhuZI1N1F05XYC63eNmXJ6zkOfMHIQcg==}
+  /@dxsixpc/utils/0.2.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-+pLUOQL4l7taIaMhgtcnemOIa5vcUMwRG7e7yeKNzXzqJDhSZhR270z6KyGiYAlFrFOotrlsVoNMcZX+ADwMzg==}
     peerDependencies:
       react: '>=16.9.0'
       react-dom: '>=16.9.0'
     dependencies:
       '@babel/runtime': 7.21.0
       axios: 1.3.4
+      crypto-js: 4.1.1
       lodash: 4.17.21
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -4950,6 +4951,10 @@ packages:
       public-encrypt: 4.0.3
       randombytes: 2.1.0
       randomfill: 1.0.4
+    dev: true
+
+  /crypto-js/4.1.1:
+    resolution: {integrity: sha512-o2JlM7ydqd3Qk9CA0L4NL6mTzU2sdx96a+oOfPu8Mkl/PK51vSyoi8/rQ8NknZtk44vq15lmhAj9CIAGwgeWKw==}
     dev: true
 
   /crypto-random-string/1.0.0:

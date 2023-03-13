@@ -14,7 +14,7 @@ export interface ButtonProps extends AntButtonProps {
  * @link 其他参数详见 https://ant.design/components/button-cn/
  */
 const Button: React.FC<ButtonProps> = (props) => {
-  const { children = '按钮', styled, ...rest } = props;
+  const { children, styled, ...rest } = props;
   return (
     <ButtonWrapper css={css(styled)} {...rest}>
       {children}
