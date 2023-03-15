@@ -12,8 +12,8 @@ import type { SelectListType } from './type';
 
 export interface CascadeProps
   extends Omit<SelectProps, 'onChange' | 'value' | 'optionsConfig' | 'styled'> {
-  value: string[];
-  cascadeData: string[][];
+  value?: string[];
+  cascadeData?: string[][];
   styled?: StyledType;
   level?: number;
   selectOptions?: Omit<SelectProps, 'onChange' | 'optionsConfig'>;

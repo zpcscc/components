@@ -7,7 +7,7 @@ import type { OptionsConfigType, OptionType, StyledType } from 'src/type';
 import { Wrapper } from './Styled';
 
 export interface CheckboxGroupProps extends AntCheckboxGroupProps {
-  optionsConfig: OptionsConfigType<'Checkbox'>;
+  optionsConfig?: OptionsConfigType<'Checkbox'>;
   listOptions?: ListProps<string>;
   styled?: StyledType;
 }
@@ -26,7 +26,7 @@ export const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
 
   return (
     <Wrapper css={css(styled)}>
-      <Checkbox.Group value={value || optionsConfig.defaultValue} {...rest}>
+      <Checkbox.Group value={value || optionsConfig?.defaultValue} {...rest}>
         <List bordered {...listOptions}>
           {optionsConfig?.options?.map((option: OptionType) => (
             <List.Item key={option.value}>

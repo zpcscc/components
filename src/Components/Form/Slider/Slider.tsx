@@ -9,7 +9,7 @@ import { InputNumber } from '../InputNumber';
 import { Wrapper } from './Styled';
 
 export interface SliderProps extends Omit<SliderBaseProps, 'onChange'> {
-  value: number;
+  value?: number;
   onChange?: (value: number) => void;
   showInputNumber?: boolean;
   inputNumberOptions?: InputNumberProps;
@@ -29,7 +29,7 @@ export interface SliderProps extends Omit<SliderBaseProps, 'onChange'> {
 const Slider: React.FC<SliderProps> = (props) => {
   const {
     styled,
-    value,
+    value = 0,
     onChange,
     showInputNumber = false,
     inputNumberOptions,

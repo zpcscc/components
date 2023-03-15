@@ -16,7 +16,7 @@ export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
   // Space组件配置
   spaceOptions?: SpaceProps;
   // 选项改变时
-  onChange: (value: boolean) => void;
+  onChange?: (value: boolean) => void;
 }
 
 /**

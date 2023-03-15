@@ -7,7 +7,7 @@ import { Input as AntInput } from '../Input';
 import { InputGroupWrapper } from './Styled';
 
 export interface InputGroupProps extends Omit<AntInputProps, 'onChange' | 'placeholder'> {
-  value: string[];
+  value?: string[];
   placeholders?: string[];
   level?: number;
   styled?: StyledType;

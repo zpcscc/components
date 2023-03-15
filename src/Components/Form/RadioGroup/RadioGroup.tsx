@@ -7,7 +7,7 @@ import type { OptionsConfigType, OptionType, StyledType } from 'src/type';
 import { Wrapper } from './Styled';
 
 export interface RadioGroupProps extends Omit<AntRadioProps, 'onChange'> {
-  optionsConfig: OptionsConfigType<'Radio'>;
+  optionsConfig?: OptionsConfigType<'Radio'>;
   listOptions?: ListProps<string>;
   styled?: StyledType;
   onChange?: (value: string) => void;
@@ -35,7 +35,7 @@ const RadioGroup: React.FC<RadioGroupProps> = (props) => {
   return (
     <Wrapper css={css(styled)}>
       <Radio.Group
-        value={value || optionsConfig.defaultValue}
+        value={value || optionsConfig?.defaultValue}
         onChange={(e) => onChange?.(e?.target?.value)}
         {...rest}
       >

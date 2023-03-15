@@ -7,8 +7,8 @@ import type { CurrOptionsConfigType } from '../type';
  * @params optionsConfig 需要格式化的值
  * @return optionsConfig 格式化完成后的值
  */
-const formatOptionsConfig = (optionsConfig: OptionsConfigType): CurrOptionsConfigType => {
-  const { type = 'Radio', defaultValue = '', options = [] } = optionsConfig;
+const formatOptionsConfig = (optionsConfig?: OptionsConfigType): CurrOptionsConfigType => {
+  const { type = 'Radio', defaultValue = '', options = [] } = optionsConfig || {};
   return {
     type,
     defaultValue,
