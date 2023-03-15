@@ -13,7 +13,7 @@ import type { CurrOptionsConfigType, CurrOptionType } from './type';
 
 export interface OptionsProps {
   value?: OptionsConfigType;
-  optionsConfig: OptionsConfigType;
+  optionsConfig?: OptionsConfigType;
   inputOptions?: InputProps;
   styled?: StyledType;
   onChange?: (optionsConfig: OptionsConfigType) => void;
