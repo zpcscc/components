@@ -1,1 +1,0 @@
-(self.webpackChunk_dxsixpc_components=self.webpackChunk_dxsixpc_components||[]).push([[64488],{64488:function(){Prism.languages.jsonp=Prism.languages.extend("json",{punctuation:/[{}[\]();,.]/}),Prism.languages.insertBefore("jsonp","punctuation",{function:/(?!\s)[_$a-zA-Z\xA0-\uFFFF](?:(?!\s)[$\w\xA0-\uFFFF])*(?=\s*\()/})}}]);

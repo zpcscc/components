@@ -1,3 +1,0 @@
-(self.webpackChunk_dxsixpc_components=self.webpackChunk_dxsixpc_components||[]).push([[40728],{40728:function(){(function(n){n.languages.diff={coord:[/^(?:\*{3}|-{3}|\+{3}).*$/m,/^@@.*@@$/m,/^\d.*$/m]};var i={"deleted-sign":"-","deleted-arrow":"<","inserted-sign":"+","inserted-arrow":">",unchanged:" ",diff:"!"};Object.keys(i).forEach(function(e){var f=i[e],s=[];/^\w+$/.test(e)||s.push(/\w+/.exec(e)[0]),e==="diff"&&s.push("bold"),n.languages.diff[e]={pattern:RegExp("^(?:["+f+`].*(?:\r
-?|
-|(?![\\s\\S])))+`,"m"),alias:s,inside:{line:{pattern:/(.)(?=[\s\S]).*(?:\r\n?|\n)?/,lookbehind:!0},prefix:{pattern:/[\s\S]/,alias:/\w+/.exec(e)[0]}}}}),Object.defineProperty(n.languages.diff,"PREFIXES",{value:i})})(Prism)}}]);

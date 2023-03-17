@@ -1,0 +1,1 @@
+(self.webpackChunk_dxsixpc_components=self.webpackChunk_dxsixpc_components||[]).push([[89890],{89890:function(){Prism.languages.t4=Prism.languages["t4-cs"]=Prism.languages["t4-templating"].createT4("csharp")}}]);
