@@ -35,7 +35,7 @@ const InputGroup: React.FC<InputGroupProps> = (props) => {
   };
 
   return (
-    <InputGroupWrapper css={css(styled)}>
+    <InputGroupWrapper direction='vertical' css={css(styled)}>
       {Array(level)
         .fill('')
         .map((_item, index) => (
