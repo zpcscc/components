@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
-import { Input } from 'antd';
+import { Space } from 'antd';
 
-export const InputGroupWrapper = styled(Input.Group)`
+export const InputGroupWrapper = styled(Space.Compact)`
   .ant-input:first-of-type {
     border-radius: 6px 6px 0 0;
   }
