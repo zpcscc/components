@@ -6,7 +6,7 @@ const name = 'components';
 export default defineConfig({
   outputPath: 'docs-dist',
   themeConfig: {
-    name,
+    name: '组件库',
     socialLinks: {
       github: `https://github.com/dxsixpc/${name}`,
     },

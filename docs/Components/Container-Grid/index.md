@@ -1,7 +1,7 @@
 ---
 title: Grid
 nav:
-  title: 组件
+  title: react
 group:
   title: 容器布局组件
 ---

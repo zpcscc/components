@@ -1,7 +1,7 @@
 ---
 title: TextArea
 nav:
-  title: 组件
+  title: react
 group:
   title: 表单组件
 ---

@@ -1,7 +1,7 @@
 ---
 title: Alert
 nav:
-  title: 组件
+  title: react
 group:
   title: 展示组件
 ---
