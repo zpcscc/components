@@ -4,8 +4,12 @@ hero:
   title: components
   description: 组件库
   actions:
-    - text: 组件
-      link: /components
+    - text: 指南
+      link: /guide
+    - text: react组件
+      link: /react-components/form--cascade
+    - text: vue组件
+      link: /vue-components
     - text: 博客
       link: https://dxsixpc.github.io/
 ---
