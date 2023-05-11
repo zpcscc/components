@@ -42,11 +42,7 @@ const App: React.FC = () => {
       />
       <Space direction='vertical'>
         <Text>onChange返回的结果</Text>
-        <SimpleCodeEditor
-          value={dataToString(value, null, 2)}
-          language={'json'}
-          styled={resultTextareaStyled}
-        />
+        <SimpleCodeEditor value={dataToString(value, null, 2)} language={'json'} styled={resultTextareaStyled} />
       </Space>
     </Space>
   );

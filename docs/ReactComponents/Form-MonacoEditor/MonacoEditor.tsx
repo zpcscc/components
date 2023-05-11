@@ -33,13 +33,7 @@ export default App;
 
   return (
     <Space styled={spaceStyled} align='end'>
-      <MonacoEditor
-        value={defaultValue}
-        height={400}
-        width={600}
-        language='javascript'
-        onChange={onChange}
-      />
+      <MonacoEditor value={defaultValue} height={400} width={600} language='javascript' onChange={onChange} />
       <ResultTextarea value={value} styled={resultTextareaStyled} />
     </Space>
   );
