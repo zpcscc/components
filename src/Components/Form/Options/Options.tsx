@@ -6,10 +6,10 @@ import { uniqueId } from 'lodash';
 import { useState } from 'react';
 import type { InputProps } from 'src/Components';
 import type { OptionsConfigType, StyledType } from 'src/type';
-import { formatOptionsConfig } from './helpers';
 import OptionsContainer from './OptionsContainer';
 import { Wrapper } from './Styled';
-import type { CurrOptionsConfigType, CurrOptionType } from './type';
+import { formatOptionsConfig } from './helpers';
+import type { CurrOptionType, CurrOptionsConfigType } from './type';
 
 export interface OptionsProps {
   value?: OptionsConfigType;
