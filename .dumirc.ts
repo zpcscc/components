@@ -15,8 +15,8 @@ export default defineConfig({
   favicons: ['https://zpcscc.top/img/favicon.ico'],
   alias: {
     src: resolve(__dirname, './src'),
-    '@dxsixpc/components': resolve(__dirname, './src'),
     docs: resolve(__dirname, './docs'),
+    [`@dxsixpc/${name}`]: resolve(__dirname, './src'),
   },
   base: `/${name}/`,
   publicPath: `/${name}/`,
