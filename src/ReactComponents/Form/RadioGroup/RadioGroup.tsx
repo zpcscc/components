@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import type { ListProps } from 'antd';
 import { List, Radio } from 'antd';
 import type { RadioProps as AntRadioProps } from 'antd/lib/radio';
-import type { OptionsConfigType, OptionType, StyledType } from 'src/type';
+import type { OptionType, OptionsConfigType, StyledType } from 'src/type';
 import { Wrapper } from './Styled';
 
 export interface RadioGroupProps extends Omit<AntRadioProps, 'onChange'> {

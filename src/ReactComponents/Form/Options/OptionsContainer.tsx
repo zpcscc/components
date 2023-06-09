@@ -9,7 +9,7 @@ import {
 } from '@dnd-kit/core';
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
-import type { InputProps } from 'src/Components';
+import type { InputProps } from 'src/ReactComponents';
 import { sortOptions } from './helpers';
 import Option from './Option';
 import type { CurrOptionsConfigType, CurrOptionType } from './type';

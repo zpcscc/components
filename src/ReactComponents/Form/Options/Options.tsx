@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import { Button } from 'antd';
 import { uniqueId } from 'lodash';
 import { useState } from 'react';
-import type { InputProps } from 'src/Components';
+import type { InputProps } from 'src/ReactComponents';
 import type { OptionsConfigType, StyledType } from 'src/type';
 import OptionsContainer from './OptionsContainer';
 import { Wrapper } from './Styled';

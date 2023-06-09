@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import type { ListProps } from 'antd';
 import { Checkbox, List } from 'antd';
 import type { CheckboxGroupProps as AntCheckboxGroupProps } from 'antd/lib/checkbox';
-import type { OptionsConfigType, OptionType, StyledType } from 'src/type';
+import type { OptionType, OptionsConfigType, StyledType } from 'src/type';
 import { Wrapper } from './Styled';
 
 export interface CheckboxGroupProps extends AntCheckboxGroupProps {
