@@ -7,9 +7,9 @@ hero:
     - text: 指南
       link: /guide
     - text: react组件
-      link: /react-components/form--cascade
+      link: /react/form-cascade
     - text: vue组件
-      link: /vue-components
+      link: /vue
     - text: 博客
       link: https://dxsixpc.github.io/
 ---
