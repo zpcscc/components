@@ -20,8 +20,11 @@
     ".dumi/**/*",
     ".dumirc.ts",
     "src/**/*",
-    "docs/**/*",
+    "docs/react/**/*",
+    "docs/vue/**/*",
     ".eslintrc.js",
-    "commitlint.config.js"
-  ]
+    "commitlint.config.js",
+    "dist/**/*"
+  ],
+  "exclude": ["node_modules"]
 }
