@@ -1,9 +1,13 @@
-import type { OptionsConfigType, RadioGroupProps } from '@dxsixpc/components';
-import { RadioGroup, Space } from '@dxsixpc/components';
+import {
+  RadioGroup,
+  Space,
+  type OptionsConfigType,
+  type RadioGroupProps,
+} from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/react/common';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 
-const App: React.FC = () => {
+const App: FC = () => {
   const [value, setValue] = useState<RadioGroupProps['value']>('');
 
   // css-in-js写法的自定义样式

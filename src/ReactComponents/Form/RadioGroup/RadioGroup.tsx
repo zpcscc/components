@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { ListProps } from 'antd';
-import { List, Radio } from 'antd';
+import { List, Radio, type ListProps } from 'antd';
 import type { RadioProps as AntRadioProps } from 'antd/lib/radio';
-import type { OptionType, OptionsConfigType, StyledType } from 'src/type';
+import type { FC } from 'react';
+import type { OptionsConfigType, OptionType, StyledType } from 'src/type';
 import { Wrapper } from './Styled';
 
 export interface RadioGroupProps extends Omit<AntRadioProps, 'onChange'> {
@@ -22,7 +22,7 @@ export interface RadioGroupProps extends Omit<AntRadioProps, 'onChange'> {
  * @param optionsConfig 选项配置
  * @link 其他参数详见 https://ant.design/components/radio-cn/
  */
-const RadioGroup: React.FC<RadioGroupProps> = (props) => {
+const RadioGroup: FC<RadioGroupProps> = (props) => {
   const {
     value,
     optionsConfig,

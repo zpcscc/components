@@ -1,14 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { EditorProps, OnChange } from '@monaco-editor/react';
-import Editor from '@monaco-editor/react';
-import { useDebounceFn } from 'ahooks';
-import type { DebounceOptions } from 'ahooks/lib/useDebounce/debounceOptions';
+import Editor, { type EditorProps, type OnChange } from '@monaco-editor/react';
+import { debounce } from 'lodash';
+import type { FC } from 'react';
 import type { StyledType } from 'src/type';
 
 export interface MonacoEditorProps extends EditorProps {
-  // 防抖配置
-  debounceOptions?: DebounceOptions;
   styled?: StyledType;
 }
 
@@ -17,15 +14,13 @@ export interface MonacoEditorProps extends EditorProps {
  * @param value 组件的值
  * @param onChange 组件值修改的回调
  * @param styled 自定义样式 https://emotion.sh/docs/introduction
- * @param debounceOptions 防抖配置 示例：{wait:100}
  * @param theme 主题样式
  * @param options 微软原版monaco-editor配置参数
  * @link rest参数详见 https://microsoft.github.io/monaco-editor/api/modules/monaco.editor.html
  * @link 其他参数详见 https://github.com/suren-atoyan/monaco-react
  */
-const MonacoEditor: React.FC<MonacoEditorProps> = (props) => {
+const MonacoEditor: FC<MonacoEditorProps> = (props) => {
   const {
-    debounceOptions = { wait: 100 },
     value = '',
     language = 'javascript',
     theme = 'vs-dark',
@@ -40,7 +35,7 @@ const MonacoEditor: React.FC<MonacoEditorProps> = (props) => {
   };
 
   // 防抖操作
-  const { run } = useDebounceFn(onEditorChange, debounceOptions);
+  const run = debounce(onEditorChange, 100);
 
   return (
     <Editor

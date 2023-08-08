@@ -1,13 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type FC } from 'react';
 import type { StyledType } from 'src/type';
-import type { SelectProps } from '../Select/Select';
-import Select from '../Select/Select';
-import type { TextAreaProps } from '../TextArea/TextArea';
-import TextArea from '../TextArea/TextArea';
-import { Wrapper } from './Styled';
+import Select, { type SelectProps } from '../Select/Select';
+import TextArea, { type TextAreaProps } from '../TextArea/TextArea';
 import { arr2Tree, initValueArr, updateSelectList } from './helpers';
+import { Wrapper } from './Styled';
 import type { SelectListType } from './type';
 
 export interface CascadeProps
@@ -36,7 +34,7 @@ export interface CascadeProps
  * @param cascadeData 外部输入的级联选项数据
  * @link 其他参数详见 https://ant.design/components/select-cn/
  */
-const Cascade: React.FC<CascadeProps> = (props) => {
+const Cascade: FC<CascadeProps> = (props) => {
   const {
     value = [],
     cascadeData = [],

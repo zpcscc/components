@@ -1,8 +1,8 @@
 import { Input, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/react/common';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 
-const App: React.FC = () => {
+const App: FC = () => {
   const [value, setValue] = useState<string>('这是输入框');
 
   // css-in-js写法的自定义样式

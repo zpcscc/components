@@ -3,7 +3,7 @@ import { css } from '@emotion/react';
 import { Slider as AntSlider } from 'antd';
 import type { InputNumberProps } from 'antd/lib/input-number';
 import type { SliderBaseProps } from 'antd/lib/slider';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type CSSProperties, type FC } from 'react';
 import type { StyledType } from 'src/type';
 import { InputNumber } from '../InputNumber';
 import { Wrapper } from './Styled';
@@ -26,7 +26,7 @@ export interface SliderProps extends Omit<SliderBaseProps, 'onChange'> {
  * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @link 其他参数详见 https://ant.design/components/slider-cn/
  */
-const Slider: React.FC<SliderProps> = (props) => {
+const Slider: FC<SliderProps> = (props) => {
   const {
     styled,
     value = 0,
@@ -57,7 +57,7 @@ const Slider: React.FC<SliderProps> = (props) => {
           '--flex-direction': isVertical ? 'column' : 'row',
           '--margin-right': isVertical ? '0px' : '16px',
           '--input-number-width': isVertical ? '100%' : '110px',
-        } as React.CSSProperties
+        } as CSSProperties
       }
     >
       <AntSlider value={inputValue} onChange={onSliderChange} {...rest} />

@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import type { SwitchProps as AntSwitchProps } from 'antd/lib/switch';
+import type { FC } from 'react';
 import type { StyledType } from 'src/type';
 import { SwitchWrapper } from './Styled';
 
@@ -17,7 +18,7 @@ export interface SwitchProps extends AntSwitchProps {
  * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @link 其他参数详见 https://ant.design/components/switch-cn/
  */
-const Switch: React.FC<SwitchProps> = (props) => {
+const Switch: FC<SwitchProps> = (props) => {
   const { value, checked, styled, ...rest } = props;
   return <SwitchWrapper css={css(styled)} checked={value || checked} {...rest} />;
 };

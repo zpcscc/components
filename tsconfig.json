@@ -20,8 +20,7 @@
     ".dumi/**/*",
     ".dumirc.ts",
     "src/**/*",
-    "docs/react/**/*",
-    "docs/vue/**/*",
+    "docs/**/*",
     ".eslintrc.js",
     "commitlint.config.js",
     "dist/**/*"

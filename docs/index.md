@@ -8,8 +8,8 @@ hero:
       link: /guide
     - text: react组件
       link: /react/form-cascade
-    - text: vue组件
-      link: /vue
+    - text: demo
+      link: /demo
     - text: 博客
       link: https://dxsixpc.github.io/
 ---

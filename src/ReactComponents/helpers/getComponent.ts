@@ -1,4 +1,4 @@
-import type { ComponentItemType, ComponentMapType } from 'src/type';
+import type { FC, ReactNode } from 'react';
 import * as Container from '../Container';
 import * as Display from '../Display';
 import * as Form from '../Form';
@@ -18,9 +18,9 @@ export const ComponentMap = {
  * @returns
  */
 export const getComponent = (
-  type?: ComponentItemType['type'],
-  otherComponentMap?: ComponentMapType,
-): React.FC<any> => {
+  type?: string,
+  otherComponentMap?: Record<string, ReactNode>,
+): FC<any> => {
   if (!type) return ErrorAlert;
   return Reflect.get({ ...ComponentMap, ...otherComponentMap }, type) || ErrorAlert;
 };

@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import type { CollapsePanelProps as AntCollapsePanelProps } from 'antd';
+import type { FC } from 'react';
 import type { StyledType } from 'src/type';
 import { CollapsePanelWrapper } from './Styled';
 
@@ -14,7 +15,7 @@ export interface CollapsePanelProps extends AntCollapsePanelProps {
  * @param children 子组件
  * @link 其他参数详见 https://ant-design.antgroup.com/components/collapse-cn/#Collapse.Panel
  */
-const CollapsePanel: React.FC<CollapsePanelProps> = (props) => {
+const CollapsePanel: FC<CollapsePanelProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
     <CollapsePanelWrapper css={css(styled)} {...rest}>

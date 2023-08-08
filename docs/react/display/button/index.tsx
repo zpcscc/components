@@ -1,6 +1,7 @@
 import { Button } from '@dxsixpc/components';
+import type { FC } from 'react';
 
-const App: React.FC = () => {
+const App: FC = () => {
   const onClick = () => {
     console.log('点击了按钮');
   };

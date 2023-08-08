@@ -24,5 +24,4 @@ export default defineConfig({
   extraBabelPresets: [
     ['@babel/preset-react', { runtime: 'automatic', importSource: '@emotion/react' }],
   ],
-  // plugins: ['@dxsixpc/dumi-plugin-vue'],
 });

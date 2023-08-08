@@ -1,9 +1,8 @@
-import type { MonacoEditorProps } from '@dxsixpc/components';
-import { MonacoEditor, Space } from '@dxsixpc/components';
+import { MonacoEditor, Space, type MonacoEditorProps } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/react/common';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 
-const App: React.FC<MonacoEditorProps> = () => {
+const App: FC<MonacoEditorProps> = () => {
   const defaultValue = `
 import { MonacoEditor } from '@dxsixpc/components';
 

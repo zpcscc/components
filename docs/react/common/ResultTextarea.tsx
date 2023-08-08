@@ -2,6 +2,7 @@
 import { Space, Text, TextArea } from '@dxsixpc/components';
 import { dataToString } from '@dxsixpc/utils';
 import { css } from '@emotion/react';
+import type { FC } from 'react';
 import type { StyledType } from 'src/type';
 
 export interface ResultTextareaProps {
@@ -14,7 +15,7 @@ export interface ResultTextareaProps {
  * @param props
  * @returns
  */
-const ResultTextarea: React.FC<ResultTextareaProps> = (props) => {
+const ResultTextarea: FC<ResultTextareaProps> = (props) => {
   const { value, styled, ...rest } = props;
   return (
     <Space direction='vertical' css={css(styled)} {...rest}>
