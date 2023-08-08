@@ -1,4 +1,3 @@
-import type { DragEndEvent } from '@dnd-kit/core';
 import {
   closestCenter,
   DndContext,
@@ -6,9 +5,11 @@ import {
   TouchSensor,
   useSensor,
   useSensors,
+  type DragEndEvent,
 } from '@dnd-kit/core';
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
+import type { FC } from 'react';
 import type { InputProps } from 'src/ReactComponents';
 import { sortOptions } from './helpers';
 import Option from './Option';
@@ -21,7 +22,7 @@ interface OptionsContainerProps {
 }
 
 // 选项容器
-const OptionsContainer: React.FC<OptionsContainerProps> = (props) => {
+const OptionsContainer: FC<OptionsContainerProps> = (props) => {
   const { optionsConfig, inputOptions, onOptionsConfigChange } = props;
   const sensors = useSensors(useSensor(PointerSensor), useSensor(TouchSensor));
   const { type, options } = optionsConfig || {};

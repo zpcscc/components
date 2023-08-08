@@ -1,9 +1,8 @@
-import type { SimpleCodeEditorProps } from '@dxsixpc/components';
-import { SimpleCodeEditor, Space } from '@dxsixpc/components';
+import { SimpleCodeEditor, Space, type SimpleCodeEditorProps } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/react/common';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 
-const App: React.FC<SimpleCodeEditorProps> = () => {
+const App: FC<SimpleCodeEditorProps> = () => {
   const defaultValue = `
 import { SimpleCodeEditor } from '@dxsixpc/components';
 

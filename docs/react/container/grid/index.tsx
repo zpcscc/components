@@ -1,6 +1,7 @@
 import { Col, Row } from '@dxsixpc/components';
+import type { FC } from 'react';
 
-const App: React.FC = () => {
+const App: FC = () => {
   // css-in-js写法的自定义样式
   const styled = `
     width: 100%;

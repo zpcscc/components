@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { ListProps } from 'antd';
-import { Checkbox, List } from 'antd';
+import { Checkbox, List, type ListProps } from 'antd';
 import type { CheckboxGroupProps as AntCheckboxGroupProps } from 'antd/lib/checkbox';
-import type { OptionType, OptionsConfigType, StyledType } from 'src/type';
+import type { FC } from 'react';
+import type { OptionsConfigType, OptionType, StyledType } from 'src/type';
 import { Wrapper } from './Styled';
 
 export interface CheckboxGroupProps extends AntCheckboxGroupProps {
@@ -21,7 +21,7 @@ export interface CheckboxGroupProps extends AntCheckboxGroupProps {
  * @param optionsConfig 组件选项配置
  * @link 其他参数详见 https://ant.design/components/checkbox-cn/
  */
-export const CheckboxGroup: React.FC<CheckboxGroupProps> = (props) => {
+export const CheckboxGroup: FC<CheckboxGroupProps> = (props) => {
   const { value, optionsConfig, listOptions = { size: 'default' }, styled, ...rest } = props;
 
   return (

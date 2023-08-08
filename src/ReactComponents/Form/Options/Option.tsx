@@ -1,10 +1,11 @@
-import { CloseCircleOutlined, MenuOutlined } from '@ant-design/icons';
+import CloseCircleOutlined from '@ant-design/icons/CloseCircleOutlined';
+import MenuOutlined from '@ant-design/icons/MenuOutlined';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { Checkbox, Radio, Space, Tooltip } from 'antd';
+import type { FC } from 'react';
 import type { OptionSelectType } from 'src/type';
-import type { InputProps } from '../Input';
-import { Input } from '../Input';
+import { Input, type InputProps } from '../Input';
 import { OptionWrapper } from './Styled';
 import type { CurrOptionType } from './type';
 
@@ -18,7 +19,7 @@ export interface OptionProps {
 }
 
 // 单个选项
-const Option: React.FC<OptionProps> = (props) => {
+const Option: FC<OptionProps> = (props) => {
   const {
     type = 'Radio',
     option,

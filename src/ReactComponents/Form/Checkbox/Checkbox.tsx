@@ -2,15 +2,16 @@
 import { css } from '@emotion/react';
 import { Checkbox as AntCheckbox } from 'antd';
 import type { CheckboxProps as AntCheckboxProps } from 'antd/es/checkbox';
+import type { FC, ReactNode } from 'react';
 import type { SpaceProps } from 'src/ReactComponents';
 import type { StyledType } from 'src/type';
 import { SpaceWrapper } from './Styled';
 
 export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
   // 前缀内容
-  prefix?: string | React.ReactNode;
+  prefix?: string | ReactNode;
   // 后缀内容
-  suffix?: string | React.ReactNode;
+  suffix?: string | ReactNode;
   // 自定义样式
   styled?: StyledType;
   // Space组件配置
@@ -29,7 +30,7 @@ export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
  * @param spaceOptions Space组件配置
  * @link https://ant.design/components/checkbox-cn/
  */
-const Checkbox: React.FC<CheckboxProps> = (props) => {
+const Checkbox: FC<CheckboxProps> = (props) => {
   const { value, prefix, suffix, spaceOptions, styled, onChange, ...rest } = props;
   return (
     <SpaceWrapper css={css(styled)} {...spaceOptions}>

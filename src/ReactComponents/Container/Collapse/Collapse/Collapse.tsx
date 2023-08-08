@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import type { CollapseProps as AntCollapseProps } from 'antd';
+import type { FC } from 'react';
 import type { StyledType } from 'src/type';
 import { CollapseWrapper } from './Styled';
 
@@ -14,7 +15,7 @@ export interface CollapseProps extends AntCollapseProps {
  * @param children 子组件
  * @link 其他参数详见 https://ant-design.antgroup.com/components/collapse-cn/
  */
-const Collapse: React.FC<CollapseProps> = (props) => {
+const Collapse: FC<CollapseProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
     <CollapseWrapper css={css(styled)} {...rest}>

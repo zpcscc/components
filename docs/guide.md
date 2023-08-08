@@ -11,7 +11,7 @@ nav:
 
 react: 大多基于 antd 的组件，进行封装。多数 api 可直接参考 <a href="https://ant.design/index-cn" target="_blank">antd 官方文档</a> 的 api
 
-vue: 大多基于 element-plus 的组件，进行封装。多数 api 可直接参考 <a href="https://element-plus.org/zh-CN/" target="_blank">element-plus 官方文档</a> 的 api
+demo: 学习或测试时写的一些demo，这里只做展示用。未打包进此组件库。
 
 所有封装后新增的 api，都会在组件文档的 demo 中展示并说明。
 

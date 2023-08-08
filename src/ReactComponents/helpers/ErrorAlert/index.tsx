@@ -1,5 +1,6 @@
 import { Alert } from 'antd';
 import type { AlertProps } from 'antd/lib/alert';
+import type { FC } from 'react';
 import { Wrapper } from './Styled';
 
 export interface ErrorAlertProps extends AlertProps {
@@ -10,7 +11,7 @@ export interface ErrorAlertProps extends AlertProps {
 }
 
 // 错误提示。当JsonPanel不能正确渲染组件时，用此组件替代，并提示组件渲染错误
-const ErrorAlert: React.FC<ErrorAlertProps> = (props) => {
+const ErrorAlert: FC<ErrorAlertProps> = (props) => {
   const { componentItem } = props;
   const label = componentItem?.label ? `“${componentItem?.label}”` : '';
   const type = componentItem?.type ? `(${componentItem?.type})` : '';

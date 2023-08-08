@@ -1,9 +1,14 @@
-import type { OptionsConfigType } from '@dxsixpc/components';
-import { Options, SimpleCodeEditor, Space, Text } from '@dxsixpc/components';
+import {
+  Options,
+  SimpleCodeEditor,
+  Space,
+  Text,
+  type OptionsConfigType,
+} from '@dxsixpc/components';
 import { dataToString } from '@dxsixpc/utils';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 
-const App: React.FC = () => {
+const App: FC = () => {
   const optionsConfig: OptionsConfigType = {
     type: 'Checkbox',
     defaultValue: ['选项1'],

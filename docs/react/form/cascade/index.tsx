@@ -1,9 +1,9 @@
 import { Cascade, Space } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/react/common';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 import { provinceCityAreaCascadeData } from './province-city-china';
 
-const App: React.FC = () => {
+const App: FC = () => {
   const [value, setValue] = useState<string[]>([]);
 
   // css-in-js写法的自定义样式

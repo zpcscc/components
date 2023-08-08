@@ -1,9 +1,8 @@
-import type { SliderProps } from '@dxsixpc/components';
-import { Slider, Space } from '@dxsixpc/components';
+import { Slider, Space, type SliderProps } from '@dxsixpc/components';
 import { ResultTextarea } from 'docs/react/common';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 
-const App: React.FC<SliderProps> = () => {
+const App: FC<SliderProps> = () => {
   const [value, setValue] = useState<number>(0);
 
   const onChange = (value: number) => {

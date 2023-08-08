@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import type { InputProps as AntInputProps } from 'antd/lib/input';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 import type { StyledType } from 'src/type';
 import { Input as AntInput } from '../Input';
 import { InputGroupWrapper } from './Styled';
@@ -23,7 +23,7 @@ export interface InputGroupProps extends Omit<AntInputProps, 'onChange' | 'place
  * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @link 其他参数详见 https://ant.design/components/input-cn/
  */
-const InputGroup: React.FC<InputGroupProps> = (props) => {
+const InputGroup: FC<InputGroupProps> = (props) => {
   const { value = [], placeholders = [], level = 2, styled, onChange, ...rest } = props;
   const [valueArr, setValueArr] = useState<string[]>(Array.isArray(value) ? value : []);
 

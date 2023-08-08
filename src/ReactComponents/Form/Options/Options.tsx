@@ -1,15 +1,15 @@
 /** @jsxImportSource @emotion/react */
-import { PlusOutlined } from '@ant-design/icons';
+import PlusOutlined from '@ant-design/icons/PlusOutlined';
 import { css } from '@emotion/react';
 import { Button } from 'antd';
 import { uniqueId } from 'lodash';
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 import type { InputProps } from 'src/ReactComponents';
 import type { OptionsConfigType, StyledType } from 'src/type';
+import { formatOptionsConfig } from './helpers';
 import OptionsContainer from './OptionsContainer';
 import { Wrapper } from './Styled';
-import { formatOptionsConfig } from './helpers';
-import type { CurrOptionType, CurrOptionsConfigType } from './type';
+import type { CurrOptionsConfigType, CurrOptionType } from './type';
 
 export interface OptionsProps {
   value?: OptionsConfigType;
@@ -26,7 +26,7 @@ export interface OptionsProps {
  * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @param optionsConfig 选项配置
  */
-const Options: React.FC<OptionsProps> = (props) => {
+const Options: FC<OptionsProps> = (props) => {
   const { value, styled, inputOptions, onChange } = props;
   const [optionsConfig, setOptionsConfig] = useState<CurrOptionsConfigType>(
     formatOptionsConfig(value || props.optionsConfig),

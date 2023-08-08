@@ -1,7 +1,9 @@
 ---
 title: 简介
 order: 0
-nav: react
+nav:
+  title: react
+  order: 0
 ---
 
 # 简介

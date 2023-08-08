@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type FC } from 'react';
 import Editor from 'react-simple-code-editor';
 import type { StyledType } from 'src/type';
 import { Wrapper } from './Styled';
@@ -23,7 +23,7 @@ export interface SimpleCodeEditorProps {
  * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @link 其他参数详见 https://www.npmjs.com/package/react-simple-code-editor
  */
-const SimpleCodeEditor: React.FC<SimpleCodeEditorProps> = (props) => {
+const SimpleCodeEditor: FC<SimpleCodeEditorProps> = (props) => {
   const {
     value = '',
     language = 'javascript',

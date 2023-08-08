@@ -1,12 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import type { TextAreaProps as AntTextAreaProps } from 'antd/lib/input';
+import type { ChangeEvent, FC } from 'react';
 import type { StyledType } from 'src/type';
 import { TextAreaWrapper } from './Styled';
 
 export interface TextAreaProps extends Omit<AntTextAreaProps, 'onChange'> {
   styled?: StyledType;
-  onChange?: (value: string, e: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  onChange?: (value: string, e: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 /**
@@ -16,7 +17,7 @@ export interface TextAreaProps extends Omit<AntTextAreaProps, 'onChange'> {
  * @param styled 自定义样式 https://emotion.sh/docs/introduction
  * @link 其他参数详见 https://ant.design/components/input-cn/#Input.TextArea
  */
-const TextArea: React.FC<TextAreaProps> = (props) => {
+const TextArea: FC<TextAreaProps> = (props) => {
   const { styled, onChange, ...rest } = props;
   return (
     <TextAreaWrapper
