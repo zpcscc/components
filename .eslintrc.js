@@ -29,5 +29,15 @@ module.exports = {
     'unicorn/consistent-function-scoping': 'off',
     // 不使用 null。这里关闭。实际上，与后台交互时，经常需要用到null。也更有语义化。
     'unicorn/no-null': 'off',
+    curly: ['error', 'multi-line'],
+    'arrow-body-style': 'off',
+    'space-before-function-paren': 'off',
+    'no-continue': 'off',
+    '@typescript-eslint/array-type': 'off',
+    'react-hooks/exhaustive-deps': 'off',
+    // 返回值必须被使用
+    'sonarjs/no-ignored-return': 'off',
+    // 限制 + 操作符，两边必须相同。这里关闭
+    '@typescript-eslint/restrict-plus-operands': 'off',
   },
 };
