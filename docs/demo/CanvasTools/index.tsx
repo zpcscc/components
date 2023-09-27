@@ -1,3 +1,4 @@
+import { useLatest } from 'ahooks';
 import { init, type EChartsType } from 'echarts';
 import { useEffect, useState, type FC } from 'react';
 import { chartOption } from './data';
@@ -8,18 +9,21 @@ import { drawArrow, getPos } from './utils';
 // 画布工具
 const CanvasTools: FC = () => {
   const defaultOpt = {
-    width: 5,
+    width: 3,
     color: '#66ccff',
-    showArrow: true,
+    backgroundColor: '#66ccff',
+    showArrow: false,
     showBackground: false,
   };
   const [opt, setOpt] = useState<PanelOptType>(defaultOpt);
+  const optRef = useLatest(opt);
   let isDrawing = false;
   let myChart: EChartsType;
   let points: PosType[] = [];
   let context: CanvasRenderingContext2D;
   let canvas: HTMLCanvasElement;
   let rect: RectType;
+  let path = new Path2D();
 
   // 初始化echarts图表
   const initEcharts = (chartDom: HTMLElement) => {
@@ -61,8 +65,8 @@ const CanvasTools: FC = () => {
    */
   const drawBrush = (context: CanvasRenderingContext2D, rect: RectType, event: MouseEvent) => {
     const pos = getPos(event, rect);
-    points.push({ x: pos.x, y: pos.y });
     context.beginPath();
+    points.push({ x: pos.x, y: pos.y });
     const points_last_1 = points.at(-1);
     const points_last_2 = points.at(-2);
     const points_last_3 = points.at(-3);
@@ -72,11 +76,14 @@ const CanvasTools: FC = () => {
       if (points.length === 2) {
         context.moveTo(points_last_2.x, points_last_2.y);
         context.lineTo(x, y);
+        path.moveTo(points_last_2.x, points_last_2.y);
+        path.lineTo(x, y);
       } else if (points_last_3) {
         const lastX = (points_last_3.x + points_last_2.x) / 2;
         const lastY = (points_last_3.y + points_last_2.y) / 2;
         context.moveTo(lastX, lastY);
         context.quadraticCurveTo(points_last_2.x, points_last_2.y, x, y);
+        path.quadraticCurveTo(points_last_2.x, points_last_2.y, x, y);
       }
     }
     context.stroke();
@@ -87,8 +94,9 @@ const CanvasTools: FC = () => {
   const onMouseDown = (mouseDownEvent: MouseEvent) => {
     const pos = getPos(mouseDownEvent, rect);
     points.push({ x: pos.x, y: pos.y });
-    context.strokeStyle = defaultOpt.color;
-    context.lineWidth = defaultOpt.width;
+    context.fillStyle = optRef.current.backgroundColor;
+    context.strokeStyle = optRef.current.color;
+    context.lineWidth = optRef.current.width;
     drawBrush(context, rect, mouseDownEvent);
     isDrawing = true;
   };
@@ -100,11 +108,22 @@ const CanvasTools: FC = () => {
   };
   // 监听鼠标抬起事件
   const onMouseUp = () => {
-    const startPos = points.at(-5);
+    const startPos = points.at(-10);
     const endPos = points.at(-1);
-    if (startPos && endPos && defaultOpt.showArrow && isDrawing) {
+    if (optRef.current.showBackground) {
+      context.fill(path, 'evenodd');
+      // 填充完成后，重置path
+      path = new Path2D();
+    }
+    if (startPos && endPos && optRef.current.showArrow && isDrawing) {
       // 画箭头
-      drawArrow({ ctx: context, startPos, endPos, color: defaultOpt.color });
+      drawArrow({
+        ctx: context,
+        startPos,
+        endPos,
+        color: optRef.current.color,
+        width: optRef.current.width,
+      });
     }
     points = [];
     isDrawing = false;

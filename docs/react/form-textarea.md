@@ -1,6 +1,5 @@
 ---
 title: TextArea
-nav: react
 group: 表单组件
 ---
 

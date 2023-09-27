@@ -1,8 +1,6 @@
 ---
-title: canvas-tools
-order: 1
-nav:
-  title: 画布笔刷工具
+title: 画布笔刷工具
+order: 0
 ---
 
 # 画布笔刷工具

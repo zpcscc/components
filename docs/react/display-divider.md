@@ -1,8 +1,6 @@
 ---
 title: Divider
-nav: react
-group:
-  title: 布局组件
+group: 布局组件
 ---
 
 # Divider 分割线

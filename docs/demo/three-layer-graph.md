@@ -1,8 +1,6 @@
 ---
-title: three-layer-graph
+title: 三层关系图谱
 order: 1
-nav:
-  title: 三层关系图谱
 ---
 
 # 三层关系图谱

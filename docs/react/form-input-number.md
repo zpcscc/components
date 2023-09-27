@@ -1,6 +1,5 @@
 ---
 title: InputNumber
-nav: react
 group: 表单组件
 ---
 

@@ -1,6 +1,5 @@
 ---
 title: Collapse
-nav: react
 group: 容器布局组件
 ---
 

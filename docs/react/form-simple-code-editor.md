@@ -1,6 +1,5 @@
 ---
 title: SimpleCodeEditor
-nav: react
 group: 表单组件
 ---
 
