@@ -1,6 +1,5 @@
 ---
 title: CheckboxGroup
-nav: react
 group: 表单组件
 ---
 

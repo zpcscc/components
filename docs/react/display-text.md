@@ -1,6 +1,5 @@
 ---
 title: Text
-nav: react
 group: 展示组件
 ---
 

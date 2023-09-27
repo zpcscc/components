@@ -1,6 +1,5 @@
 ---
 title: RadioGroup
-nav: react
 group: 表单组件
 ---
 

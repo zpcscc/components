@@ -2,7 +2,7 @@
 title: 简介
 order: 0
 nav:
-  title: react
+  title: 组件
   order: 0
 ---
 

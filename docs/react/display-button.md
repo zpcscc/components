@@ -1,6 +1,5 @@
 ---
 title: Button
-nav: react
 group: 展示组件
 ---
 

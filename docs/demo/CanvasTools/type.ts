@@ -29,6 +29,7 @@ export interface ArrowOptType {
 
 export interface PanelOptType {
   color: string;
+  backgroundColor: string;
   width: number;
   showArrow: boolean;
   showBackground: boolean;

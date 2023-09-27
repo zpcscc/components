@@ -29,7 +29,6 @@ export const getPos = (event: MouseEvent, rect: RectType) => {
  */
 export const drawArrow = (opts: ArrowOptType) => {
   const { ctx, startPos, endPos, theta = 30, headlen = 30, width = 5, color = '#66ccff' } = opts;
-
   const angle = (Math.atan2(startPos.y - endPos.y, startPos.x - endPos.x) * 180) / Math.PI;
   const angle1 = ((angle + theta) * Math.PI) / 180;
   const angle2 = ((angle - theta) * Math.PI) / 180;
