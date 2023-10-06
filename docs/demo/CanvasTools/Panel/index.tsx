@@ -142,7 +142,7 @@ const Panel: FC<PanelProps> = (props) => {
           />
         </Space>
       </Col>
-      {/* <Col span={8}>
+      <Col span={8}>
         <Space>
           <span>显示箭头: </span>
           <Switch
@@ -157,7 +157,7 @@ const Panel: FC<PanelProps> = (props) => {
             }}
           />
         </Space>
-      </Col> */}
+      </Col>
       <Col span={8}>
         <Space>
           <span>显示背景: </span>

@@ -1,7 +1,7 @@
 import { fabric } from 'fabric';
 
 /**
- * @name 画椭圆
+ * @name 画圆
  * @param canvas fabric的canvas对象
  * @param opt fabric的circle配置
  */
@@ -12,9 +12,9 @@ const drawCircle = (canvas: fabric.Canvas, opt?: fabric.ICircleOptions) => {
     radius: 40,
     fill: '#66ccff',
   };
-  // 构建椭圆
+  // 构建圆
   const circle = new fabric.Circle({ ...defaultCircleOpt, ...opt });
-  // 将矩形添加到画布中
+  // 将圆添加到画布中
   canvas.add(circle);
 };
 

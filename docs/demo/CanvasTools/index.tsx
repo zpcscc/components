@@ -4,6 +4,7 @@ import { fabric } from 'fabric';
 import { useEffect, useRef, useState, type FC } from 'react';
 import ContextMenu from './ContextMenu';
 import type { MenuDataType } from './ContextMenu/type';
+import { drawArrow } from './helpers';
 import Panel from './Panel';
 import { CanvasContainer } from './Styled';
 import type { AnyObject, PanelOptType } from './type';
@@ -94,10 +95,22 @@ const CanvasTools: FC = () => {
       onClick: () => {
         setOpen(false);
         setModalOpt({
-          color: target.current?.stroke,
-          width: target.current?.strokeWidth,
-          backgroundColor: target.current?.fill,
-          showBackground: Boolean(target.current?.fill),
+          color: target.current?.item?.(0).stroke || target.current?.stroke || optRef.current.color,
+          width:
+            target.current?.item?.(0).strokeWidth ||
+            target.current?.strokeWidth ||
+            optRef.current.width,
+          backgroundColor:
+            target.current?.item?.(0).fill ||
+            (target.current?.fill && target.current?.fill !== 'rgb(0,0,0)') ||
+            optRef.current.backgroundColor,
+          showBackground: Boolean(
+            target.current?.item?.(0).fill ||
+              (target.current?.fill && target.current?.fill !== 'rgb(0,0,0)'),
+          ),
+          showArrow: Boolean(
+            target.current?.item?.(1) && target.current?.item?.(1).get('opacity') === 1,
+          ),
         });
         setIsModalOpen(true);
       },
@@ -146,6 +159,12 @@ const CanvasTools: FC = () => {
       if (optRef.current.showBackground) {
         path.set('fill', optRef.current.backgroundColor);
       }
+      if (optRef.current.showArrow) {
+        drawArrow(canvas, path, {
+          stroke: optRef.current.color,
+          strokeWidth: optRef.current.width,
+        });
+      }
     });
   };
 
@@ -168,18 +187,44 @@ const CanvasTools: FC = () => {
   // 弹出框
   const setTargetOpt = () => {
     if (!target.current || !canvas.current) return;
-
     if (!modalOpt.showBackground) {
-      target.current.set('fill', null);
+      target.current?.item?.(0)?.set('fill', null);
+      target.current?.set('fill', null);
     }
     if (modalOpt.backgroundColor && modalOpt.showBackground) {
-      target.current.set('fill', modalOpt.backgroundColor);
+      target.current?.item?.(0)?.set('fill', modalOpt.backgroundColor);
+      target.current?.item?.(1)?.set('fill', modalOpt.backgroundColor);
+      target.current?.item?.(2)?.set('fill', modalOpt.backgroundColor);
+      target.current?.set?.('fill', modalOpt.backgroundColor);
     }
     if (modalOpt.color) {
-      target.current.set('stroke', modalOpt.color);
+      target.current?.item?.(0)?.set('stroke', modalOpt.color);
+      target.current?.item?.(1)?.set('stroke', modalOpt.color);
+      target.current?.item?.(2)?.set('stroke', modalOpt.color);
+      target.current?.set('stroke', modalOpt.color);
     }
     if (modalOpt.width) {
-      target.current.set('strokeWidth', modalOpt.width);
+      target.current?.item?.(0)?.set('strokeWidth', modalOpt.width);
+      target.current?.item?.(1)?.set('strokeWidth', modalOpt.width);
+      target.current?.item?.(2)?.set('strokeWidth', modalOpt.width);
+      target.current?.set('strokeWidth', modalOpt.width);
+    }
+    if (modalOpt.showArrow) {
+      if (target.current?.item?.(1)) {
+        // 若存在箭头，则设置透明度为1显示
+        target.current?.item?.(1).set('opacity', 1);
+        target.current?.item?.(2).set('opacity', 1);
+      } else {
+        // 若不存在箭头，则新建一个箭头
+        drawArrow(canvas.current, target.current, {
+          stroke: optRef.current.color,
+          strokeWidth: optRef.current.width,
+        });
+      }
+    } else if (target.current?.item?.(1)) {
+      // 若存在箭头，则设置透明度为0隐藏
+      target.current?.item?.(1).set('opacity', 0);
+      target.current?.item?.(2).set('opacity', 0);
     }
     setIsModalOpen(false);
     setModalOpt({});
