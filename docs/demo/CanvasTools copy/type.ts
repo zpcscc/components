@@ -28,12 +28,9 @@ export interface ArrowOptType {
 }
 
 export interface PanelOptType {
-  color?: string;
-  backgroundColor?: string;
-  width?: number;
-  showArrow?: boolean;
-  showBackground?: boolean;
-  isDrawingMode?: boolean;
+  color: string;
+  backgroundColor: string;
+  width: number;
+  showArrow: boolean;
+  showBackground: boolean;
 }
-
-export type AnyObject = Record<string, any>;

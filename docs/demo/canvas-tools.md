@@ -1,8 +1,8 @@
 ---
-title: 画布笔刷工具
+title: 画布工具
 order: 0
 ---
 
-# 画布笔刷工具
+# 画布工具
 
 <code src='./CanvasTools/index.tsx' inline></code>
