@@ -1,144 +1,227 @@
 import { useLatest } from 'ahooks';
-import { init, type EChartsType } from 'echarts';
-import { useEffect, useState, type FC } from 'react';
-import { chartOption } from './data';
+import { Modal } from 'antd';
+import { fabric } from 'fabric';
+import { useEffect, useRef, useState, type FC } from 'react';
+import ContextMenu from './ContextMenu';
+import type { MenuDataType } from './ContextMenu/type';
 import Panel from './Panel';
-import type { PanelOptType, PosType, RectType } from './type';
-import { drawArrow, getPos } from './utils';
+import { CanvasContainer } from './Styled';
+import type { AnyObject, PanelOptType } from './type';
 
 // 画布工具
 const CanvasTools: FC = () => {
+  const canvasEl = useRef<HTMLCanvasElement>(null);
+  const canvas = useRef<fabric.Canvas | null>(null);
+  const target = useRef<AnyObject | null>(null);
+  const clipboard = useRef<AnyObject | null>(null);
   const defaultOpt = {
     width: 3,
     color: '#66ccff',
     backgroundColor: '#66ccff',
     showArrow: false,
     showBackground: false,
+    isDrawingMode: true,
   };
   const [opt, setOpt] = useState<PanelOptType>(defaultOpt);
+  const [modalOpt, setModalOpt] = useState<PanelOptType>({});
+  const [open, setOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [position, setPosition] = useState({ left: 0, top: 0 });
+  const [menuData, setMenuData] = useState<MenuDataType[]>([]);
   const optRef = useLatest(opt);
-  let isDrawing = false;
-  let myChart: EChartsType;
-  let points: PosType[] = [];
-  let context: CanvasRenderingContext2D;
-  let canvas: HTMLCanvasElement;
-  let rect: RectType;
-  let path = new Path2D();
 
-  // 初始化echarts图表
-  const initEcharts = (chartDom: HTMLElement) => {
-    // 初始化echarts
-    myChart = init(chartDom);
-    // 配置echarts
-    myChart.setOption(chartOption);
-    // 获取echarts的canvas节点
-    canvas = myChart.getDom()?.childNodes?.[0]?.childNodes?.[0] as HTMLCanvasElement;
-    // 初始化画布工具
-    initTools();
+  const blankMenuData = [
+    {
+      label: '粘贴',
+      onClick: () => {
+        setOpen(false);
+        if (!clipboard.current) {
+          alert('还没复制过任何内容');
+          return;
+        }
+        clipboard.current.clone((clonedObj) => {
+          if (!clipboard.current) return;
+
+          // 设置新内容的坐标位置
+          clonedObj.set({
+            left: clonedObj.left + 10,
+            top: clonedObj.top + 10,
+            evented: true,
+          });
+          if (clonedObj.type === 'activeSelection') {
+            // 活动选择需要一个对画布的引用
+            clonedObj.canvas = canvas.current;
+            clonedObj.forEachObject((obj) => {
+              canvas.current?.add(obj);
+            });
+            clonedObj.setCoords();
+          } else {
+            canvas.current?.add(clonedObj);
+          }
+          clipboard.current.top += 10;
+          clipboard.current.left += 10;
+          canvas.current?.renderAll();
+        });
+      },
+    },
+  ];
+
+  const overlayMenuData: MenuDataType[] = [
+    {
+      label: '复制',
+      onClick: () => {
+        setOpen(false);
+        if (target.current) {
+          target.current.clone((cloned: any) => {
+            clipboard.current = cloned;
+          });
+        }
+      },
+    },
+    ...blankMenuData,
+    {
+      label: '删除',
+      onClick: () => {
+        setOpen(false);
+        if (target.current) {
+          canvas.current?.remove?.(target.current as any);
+        }
+        target.current = null;
+      },
+    },
+    {
+      label: '设置',
+      onClick: () => {
+        setOpen(false);
+        setModalOpt({
+          color: target.current?.stroke,
+          width: target.current?.strokeWidth,
+          backgroundColor: target.current?.fill,
+          showBackground: Boolean(target.current?.fill),
+        });
+        setIsModalOpen(true);
+      },
+    },
+  ];
+
+  // 初始化自由绘制笔刷工具
+  const initFreeDrawingBrush = (canvas: fabric.Canvas) => {
+    // 将画布的画笔设置成铅笔
+    canvas.freeDrawingBrush = new fabric.PencilBrush(canvas);
+    canvas.freeDrawingBrush.color = defaultOpt.color;
+    canvas.freeDrawingBrush.width = defaultOpt.width;
+    // 拐角平滑度
+    canvas.freeDrawingBrush.decimate = 5;
   };
 
-  // 初始化画布工具
-  const initTools = () => {
-    context = canvas.getContext('2d') as CanvasRenderingContext2D;
-    context.lineCap = 'round';
-    context.lineJoin = 'round';
-    context.shadowBlur = 0;
-    if (!canvas || !context) return;
-    const canvasRect = canvas.getBoundingClientRect();
-    rect = {
-      width: canvas.width,
-      height: canvas.height,
-      offsetWidth: canvas.offsetWidth,
-      offsetHeight: canvas.offsetHeight,
-      top: canvasRect.top,
-      left: canvasRect.left,
-    };
-    canvas.addEventListener('mousedown', onMouseDown);
-    canvas.addEventListener('mousemove', onMouseMove);
-    canvas.addEventListener('mouseup', onMouseUp);
+  const updateCanvasContext = (canvas: fabric.Canvas) => {
+    if (!canvas) return;
+    initFreeDrawingBrush(canvas);
   };
 
-  /**
-   * @name 画笔工具自由绘制
-   * @param event
-   * @param startPos
-   */
-  const drawBrush = (context: CanvasRenderingContext2D, rect: RectType, event: MouseEvent) => {
-    const pos = getPos(event, rect);
-    context.beginPath();
-    points.push({ x: pos.x, y: pos.y });
-    const points_last_1 = points.at(-1);
-    const points_last_2 = points.at(-2);
-    const points_last_3 = points.at(-3);
-    if (points_last_1 && points_last_2) {
-      const x = (points_last_2.x + points_last_1.x) / 2;
-      const y = (points_last_2.y + points_last_1.y) / 2;
-      if (points.length === 2) {
-        context.moveTo(points_last_2.x, points_last_2.y);
-        context.lineTo(x, y);
-        path.moveTo(points_last_2.x, points_last_2.y);
-        path.lineTo(x, y);
-      } else if (points_last_3) {
-        const lastX = (points_last_3.x + points_last_2.x) / 2;
-        const lastY = (points_last_3.y + points_last_2.y) / 2;
-        context.moveTo(lastX, lastY);
-        context.quadraticCurveTo(points_last_2.x, points_last_2.y, x, y);
-        path.quadraticCurveTo(points_last_2.x, points_last_2.y, x, y);
+  // 绑定相关事件
+  const bindEvent = (canvas: fabric.Canvas) => {
+    // 鼠标按下时
+    canvas.on('mouse:down', (opt) => {
+      const { button, e } = opt;
+      // 在元素上右键
+      if (button === 3) {
+        if (opt.target) {
+          target.current = opt.target;
+          setMenuData(overlayMenuData);
+        } else {
+          setMenuData(blankMenuData);
+        }
+        // 设置定位
+        setPosition({ left: e.pageX, top: e.pageY });
+        // 显示菜单
+        setOpen(true);
+      } else {
+        target.current = null;
+        setOpen(false);
+      }
+    });
+    // 路径生成完成时
+    canvas.on('path:created', ({ path }: any) => {
+      if (optRef.current.showBackground) {
+        path.set('fill', optRef.current.backgroundColor);
+      }
+    });
+  };
+
+  // 全局配置更新时
+  const onOptChange = (type: keyof PanelOptType, opt: PanelOptType) => {
+    setOpt(opt);
+    if (!canvas.current) return;
+    switch (type) {
+      case 'isDrawingMode': {
+        canvas.current.isDrawingMode = opt.isDrawingMode;
+        break;
+      }
+      case 'color':
+      case 'width': {
+        (canvas.current.freeDrawingBrush as any)[type] = opt[type];
+        break;
       }
     }
-    context.stroke();
-    points.slice(0, 1);
   };
+  // 弹出框
+  const setTargetOpt = () => {
+    if (!target.current || !canvas.current) return;
 
-  // 监听鼠标按下事件
-  const onMouseDown = (mouseDownEvent: MouseEvent) => {
-    const pos = getPos(mouseDownEvent, rect);
-    points.push({ x: pos.x, y: pos.y });
-    context.fillStyle = optRef.current.backgroundColor;
-    context.strokeStyle = optRef.current.color;
-    context.lineWidth = optRef.current.width;
-    drawBrush(context, rect, mouseDownEvent);
-    isDrawing = true;
-  };
-  // 监听鼠标移动事件
-  const onMouseMove = (mouseMoveEvent: MouseEvent) => {
-    if (isDrawing) {
-      drawBrush(context, rect, mouseMoveEvent);
+    if (!modalOpt.showBackground) {
+      target.current.set('fill', null);
     }
-  };
-  // 监听鼠标抬起事件
-  const onMouseUp = () => {
-    const startPos = points.at(-10);
-    const endPos = points.at(-1);
-    if (optRef.current.showBackground) {
-      context.fill(path, 'evenodd');
-      // 填充完成后，重置path
-      path = new Path2D();
+    if (modalOpt.backgroundColor && modalOpt.showBackground) {
+      target.current.set('fill', modalOpt.backgroundColor);
     }
-    if (startPos && endPos && optRef.current.showArrow && isDrawing) {
-      // 画箭头
-      drawArrow({
-        ctx: context,
-        startPos,
-        endPos,
-        color: optRef.current.color,
-        width: optRef.current.width,
-      });
+    if (modalOpt.color) {
+      target.current.set('stroke', modalOpt.color);
     }
-    points = [];
-    isDrawing = false;
+    if (modalOpt.width) {
+      target.current.set('strokeWidth', modalOpt.width);
+    }
+    setIsModalOpen(false);
+    setModalOpt({});
+    // 刷新画布
+    canvas.current.renderAll();
   };
 
   useEffect(() => {
-    const chartDom = document.querySelector('#container') as HTMLElement;
-    if (chartDom) initEcharts(chartDom);
-    return () => myChart?.dispose();
+    const { offsetWidth, offsetHeight } = document.querySelector('#container') as HTMLElement;
+    const options = {
+      width: offsetWidth,
+      height: offsetHeight,
+      isDrawingMode: defaultOpt.isDrawingMode, // 开启自由绘画模式
+      fireRightClick: true, // 启用右键，button的数字为3
+      stopContextMenu: true, // 禁止默认右键菜单
+    };
+    canvas.current = new fabric.Canvas(canvasEl.current, options);
+    updateCanvasContext(canvas.current);
+    bindEvent(canvas.current);
+    return () => {
+      canvas?.current?.dispose();
+    };
   }, []);
 
   return (
     <>
-      <Panel opt={opt} onOptChange={setOpt} />
-      <div id='container' style={{ height: '80vh' }} />
+      <Panel opt={opt} onOptChange={onOptChange} />
+      <CanvasContainer id='container'>
+        <canvas ref={canvasEl} />
+      </CanvasContainer>
+      <ContextMenu open={open} position={position} menuData={menuData} />
+      <Modal
+        title='配置当前对象'
+        open={isModalOpen}
+        width={600}
+        okText='确定'
+        cancelText='取消'
+        onOk={setTargetOpt}
+        onCancel={() => setIsModalOpen(false)}
+      >
+        <Panel type='local' opt={modalOpt} onOptChange={(_type, opt) => setModalOpt(opt)} />
+      </Modal>
     </>
   );
 };
