@@ -1,9 +1,11 @@
 import { useLatest } from 'ahooks';
 import { Modal } from 'antd';
+import { init } from 'echarts';
 import { fabric } from 'fabric';
 import { useEffect, useRef, useState, type FC } from 'react';
 import ContextMenu from './ContextMenu';
 import type { MenuDataType } from './ContextMenu/type';
+import { chartOption } from './data';
 import { drawArrow } from './helpers';
 import Panel from './Panel';
 import { CanvasContainer } from './Styled';
@@ -233,6 +235,14 @@ const CanvasTools: FC = () => {
   };
 
   useEffect(() => {
+    const chartDom = document.querySelector('#echarts-container') as HTMLElement;
+    // 初始化echarts
+    const myChart = init(chartDom);
+    // 配置echarts
+    myChart.setOption(chartOption);
+    // 获取echarts的canvas节点
+    // const echartsCanvas = myChart.getDom()?.childNodes?.[0]?.childNodes?.[0] as HTMLCanvasElement;
+
     const { offsetWidth, offsetHeight } = document.querySelector('#container') as HTMLElement;
     const options = {
       width: offsetWidth,
@@ -253,7 +263,8 @@ const CanvasTools: FC = () => {
     <>
       <Panel opt={opt} onOptChange={onOptChange} />
       <CanvasContainer id='container'>
-        <canvas ref={canvasEl} />
+        <div id='echarts-container' />
+        <canvas id='canvas-tools-container' ref={canvasEl} />
       </CanvasContainer>
       <ContextMenu open={open} position={position} menuData={menuData} />
       <Modal
