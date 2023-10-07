@@ -251,6 +251,7 @@ const CanvasTools: FC = () => {
       fireRightClick: true, // 启用右键，button的数字为3
       stopContextMenu: true, // 禁止默认右键菜单
     };
+    // canvas.current = new fabric.Canvas(echartsCanvas, options);
     canvas.current = new fabric.Canvas(canvasEl.current, options);
     updateCanvasContext(canvas.current);
     bindEvent(canvas.current);

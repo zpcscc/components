@@ -37,6 +37,8 @@ const drawArrow = (canvas: fabric.Canvas, path: any, opt?: OptType) => {
   // 将箭头添加到画布中
   const arrowLine = new fabric.Group([path, line1, line2]);
   canvas.add(arrowLine);
+  // 将已经添加到分组中的对象在画布上删除。避免和分组中的重复
+  canvas.remove(path);
 };
 
 export default drawArrow;
