@@ -1,1 +1,0 @@
-(self.webpackChunk_dxsixpc_components=self.webpackChunk_dxsixpc_components||[]).push([[50591],{50591:function(){Prism.languages.hpkp={directive:{pattern:/\b(?:includeSubDomains|max-age|pin-sha256|preload|report-to|report-uri|strict)(?=[\s;=]|$)/i,alias:"property"},operator:/=/,punctuation:/;/}}}]);

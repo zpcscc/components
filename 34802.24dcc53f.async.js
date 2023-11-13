@@ -1,0 +1,1 @@
+(self.webpackChunk_zpcscc_components=self.webpackChunk_zpcscc_components||[]).push([[34802],{34802:function(){Prism.languages.cilkc=Prism.languages.insertBefore("c","function",{"parallel-keyword":{pattern:/\bcilk_(?:for|reducer|s(?:cope|pawn|ync))\b/,alias:"keyword"}}),Prism.languages["cilk-c"]=Prism.languages.cilkc}}]);
