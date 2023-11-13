@@ -8,7 +8,7 @@ export default defineConfig({
   themeConfig: {
     name: '组件库',
     socialLinks: {
-      github: `https://github.com/dxsixpc/${name}`,
+      github: `https://github.com/zpcscc/${name}`,
     },
     logo: 'https://zpcscc.top/img/logo.png',
   },
@@ -16,7 +16,7 @@ export default defineConfig({
   alias: {
     src: resolve(__dirname, './src'),
     docs: resolve(__dirname, './docs'),
-    [`@dxsixpc/${name}`]: resolve(__dirname, './src'),
+    [`@zpcscc/${name}`]: resolve(__dirname, './src'),
   },
   base: `/${name}/`,
   publicPath: `/${name}/`,

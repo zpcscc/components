@@ -1,13 +1,13 @@
 # components
 
-[![NPM version](https://img.shields.io/npm/v/@dxsixpc/components.svg?style=flat)](https://npmjs.org/package/@dxsixpc/components)
-[![NPM downloads](http://img.shields.io/npm/dm/@dxsixpc/components.svg?style=flat)](https://npmjs.org/package/@dxsixpc/components)
+[![NPM version](https://img.shields.io/npm/v/@zpcscc/components.svg?style=flat)](https://npmjs.org/package/@zpcscc/components)
+[![NPM downloads](http://img.shields.io/npm/dm/@zpcscc/components.svg?style=flat)](https://npmjs.org/package/@zpcscc/components)
 
 通用组件库
 
 ## 使用
 
-https://dxsixpc.github.io/components
+https://zpcscc.github.io/components
 
 ## 开发
 

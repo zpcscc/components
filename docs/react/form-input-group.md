@@ -7,7 +7,7 @@ group: 表单组件
 
 基于 <a href="https://ant-design.antgroup.com/index-cn" target="_blank">antd</a> 的 <a href="https://ant-design.antgroup.com/components/input-cn#inputgroup" target="_blank">InputGroup</a> 组件封装
 
-<code src='./form/input-group'>InputGroup</code>
+<code src='./components/InputGroup.tsx'>InputGroup</code>
 
 ### Api：
 

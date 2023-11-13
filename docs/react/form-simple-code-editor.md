@@ -9,7 +9,7 @@ group: 表单组件
 
 只提供语法高亮的简易代码编辑器，轻量级，占用小，可以方便的嵌入表单等地。
 
-<code src='./form/simple-code-editor'>简易代码编辑器</code>
+<code src='./components/SimpleCodeEditor.tsx'>简易代码编辑器</code>
 
 ### Api：
 

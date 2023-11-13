@@ -7,7 +7,7 @@ group: 表单组件
 
 基于 <a href="https://ant-design.antgroup.com/index-cn" target="_blank">antd</a> 的 <a href="https://ant-design.antgroup.com/components/list-cn" target="_blank">List</a> 与<a href="https://ant-design.antgroup.com/components/checkbox-cn#checkbox-group" target="_blank">Checkbox Group</a> 组件封装
 
-<code src='./form/checkbox-group'>CheckboxGroup</code>
+<code src='./components/CheckboxGroup.tsx'>CheckboxGroup</code>
 
 ### Api：
 

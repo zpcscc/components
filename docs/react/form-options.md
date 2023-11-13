@@ -9,7 +9,7 @@ group: 表单组件
 
 基于 <a href="https://ant-design.antgroup.com/index-cn" target="_blank">antd</a> 的 <a href="https://ant-design.antgroup.com/components/input-cn" target="_blank">Input</a> 组件封装
 
-<code src='./form/options'>选项配置组件</code>
+<code src='./components/Options.tsx'>选项配置组件</code>
 
 ### Api：
 

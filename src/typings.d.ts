@@ -1,1 +1,1 @@
-/// <reference types="@dxsixpc/configs/types" />
+/// <reference types="@zpcscc/configs/types" />
