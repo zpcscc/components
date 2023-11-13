@@ -7,7 +7,7 @@ group: 表单组件
 
 基于 <a href="https://ant-design.antgroup.com/index-cn" target="_blank">antd</a> 的 <a href="https://ant-design.antgroup.com/components/slider-cn" target="_blank">Slider</a> 组件封装
 
-<code src='./form/slider'>滑动输入条</code>
+<code src='./components/Slider.tsx'>滑动输入条</code>
 
 ### Api：
 

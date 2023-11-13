@@ -7,7 +7,7 @@ group: 表单组件
 
 基于 <a href="https://ant-design.antgroup.com/index-cn" target="_blank">antd</a> 的 <a href="https://ant-design.antgroup.com/components/select-cn" target="_blank">Select</a> 与 <a href="https://ant-design.antgroup.com/components/input-cn#inputtextarea" target="_blank">Textarea</a> 组件封装的级联组件
 
-<code src='./form/cascade'>级联组件</code>
+<code src='./components/Cascade'>级联组件</code>
 
 ### Api：
 

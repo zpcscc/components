@@ -7,7 +7,7 @@ group: 表单组件
 
 基于 <a href="https://ant-design.antgroup.com/index-cn" target="_blank">antd</a> 的 <a href="https://ant-design.antgroup.com/components/list-cn" target="_blank">List</a> 与<a href="https://ant-design.antgroup.com/components/radio-cn#radiogroup" target="_blank">RadioGroup</a> 组件封装
 
-<code src='./form/radio-group'>RadioGroup</code>
+<code src='./components/RadioGroup.tsx'>RadioGroup</code>
 
 ### Api：
 

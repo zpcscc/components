@@ -1,5 +1,5 @@
 {
-  "extends": "@dxsixpc/configs/tsconfig/tsconfig.react.json",
+  "extends": "@zpcscc/configs/tsconfig/tsconfig.react.json",
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "dist",
@@ -10,8 +10,8 @@
       "docs/*": ["docs/*"],
       "src": ["src"],
       "src/*": ["src/*"],
-      "@dxsixpc/components": ["src"],
-      "@dxsixpc/components/*": ["src/*"]
+      "@zpcscc/components": ["src"],
+      "@zpcscc/components/*": ["src/*"]
     },
     "types": ["react", "@emotion/react"],
     "allowJs": true
