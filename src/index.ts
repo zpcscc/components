@@ -11,7 +11,11 @@ export { default as Divider, type DividerProps } from './components/Divider';
 export { default as Input, type InputProps } from './components/Input';
 export { default as InputGroup, type InputGroupProps } from './components/InputGroup';
 export { default as InputNumber, type InputNumberProps } from './components/InputNumber';
-export { default as MonacoEditor, type MonacoEditorProps } from './components/MonacoEditor';
+export {
+  default as MonacoEditor,
+  useMonaco,
+  type MonacoEditorProps
+} from './components/MonacoEditor';
 export { default as Options, type OptionsProps } from './components/Options';
 export { default as RadioGroup, type RadioGroupProps } from './components/RadioGroup';
 export { default as Row, type RowProps } from './components/Row';

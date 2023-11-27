@@ -3,8 +3,7 @@ import { useState, type FC } from 'react';
 import ResultTextarea from './ResultTextarea';
 
 const App: FC<MonacoEditorProps> = () => {
-  const defaultValue = `
-import { MonacoEditor } from '@zpcscc/components';
+  const defaultValue = `import { MonacoEditor } from '@zpcscc/components';
 
 const App = () => {
   return <MonacoEditor height={400} language='javascript'/>;
