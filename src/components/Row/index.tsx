@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { RowWrapper } from './Styled';
 
-export interface RowProps extends AntRowProps {
+export type RowProps = {
   styled?: StyledType;
-}
+} & AntRowProps;
 
 /**
  * @name 布局组件行（子组件只能为“布局组件列”）

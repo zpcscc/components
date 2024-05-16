@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { AlertWrapper } from './Styled';
 
-export interface AlertProps extends AntAlertProps {
+export type AlertProps = {
   styled?: StyledType;
-}
+} & AntAlertProps;
 
 /**
  * @name 警告提示

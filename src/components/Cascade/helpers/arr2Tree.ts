@@ -24,7 +24,7 @@ const arr2Tree = (arr: string[][]) => {
     } else {
       // 没有找到对应的数据，则新添加数据
       const childObj = {
-        children: other.length > 0 ? loopTree(other, []) : [],
+        children: other.length > 0 ? loopTree(other, []) : []
       };
       pre.push({ value: first, ...childObj });
     }

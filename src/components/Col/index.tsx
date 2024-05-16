@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { ColWrapper } from './Styled';
 
-export interface ColProps extends AntColProps {
+export type ColProps = {
   styled?: StyledType;
-}
+} & AntColProps;
 
 /**
  * @name 布局组件列（只能放在“布局组件行”中）

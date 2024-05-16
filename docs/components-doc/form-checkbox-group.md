@@ -20,4 +20,4 @@ group: 表单组件
 
 Checkbox Group 的其他 api 参考<a href="https://ant-design.antgroup.com/index-cn" target="_blank">antd</a> 的 <a href="https://ant-design.antgroup.com/components/checkbox-cn#checkbox-group" target="_blank">Checkbox Group</a>
 
-<embed src="./index.md#L16-L20"></embed>
+<embed src="./index.md#L16-L21"></embed>

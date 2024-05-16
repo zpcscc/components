@@ -1,12 +1,12 @@
-import type { OptionsConfigType, OptionType } from 'src/type';
+import type { OptionsConfigType, OptionType } from 'src/type/optionsConfigType';
 
 // 选项配置类型
-export interface CurrOptionType extends Omit<OptionType, 'id'> {
+export type CurrOptionType = {
   // 选项的id
   id: string;
-}
+} & Omit<OptionType, 'id'>;
 
 // 组件内的
-export interface CurrOptionsConfigType extends Omit<OptionsConfigType, 'options'> {
+export type CurrOptionsConfigType = {
   options: CurrOptionType[];
-}
+} & Omit<OptionsConfigType, 'options'>;

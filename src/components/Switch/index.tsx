@@ -5,10 +5,10 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { SwitchWrapper } from './Styled';
 
-export interface SwitchProps extends AntSwitchProps {
+export type SwitchProps = {
   value?: boolean;
   styled?: StyledType;
-}
+} & AntSwitchProps;
 
 /**
  * @name 开关

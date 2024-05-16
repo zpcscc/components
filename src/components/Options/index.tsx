@@ -12,13 +12,13 @@ import { Wrapper } from './Styled';
 import formatOptionsConfig from './helpers/formatOptionsConfig';
 import type { CurrOptionType, CurrOptionsConfigType } from './type';
 
-export interface OptionsProps {
+export type OptionsProps = {
   value?: OptionsConfigType;
   optionsConfig?: OptionsConfigType;
   inputOptions?: InputProps;
   styled?: StyledType;
   onChange?: (optionsConfig: OptionsConfigType) => void;
-}
+};
 
 /**
  * @name 选项配置
@@ -41,7 +41,7 @@ const Options: FC<OptionsProps> = (props) => {
     options?.forEach((option: CurrOptionType) => {
       if (option?.checked) {
         if (optionsConfig?.type === 'Checkbox') {
-          (defaultValue as string[]).push(option.value);
+          (defaultValue as string[]).push(option.value as string);
         } else {
           (defaultValue as string) = option.value;
         }

@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { TitleWrapper } from './Styled';
 
-export interface TitleProps extends AntTitleProps {
+export type TitleProps = {
   styled?: StyledType;
-}
+} & AntTitleProps;
 
 /**
  * @name 标题展示

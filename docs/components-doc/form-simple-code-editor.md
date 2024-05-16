@@ -21,4 +21,4 @@ group: 表单组件
 
 SimpleCodeEditor 的其他 api 参考<a href="https://www.npmjs.com/package/react-simple-code-editor" target="_blank">react-simple-code-editor</a>
 
-<embed src="./index.md#L16-L20"></embed>
+<embed src="./index.md#L16-L21"></embed>

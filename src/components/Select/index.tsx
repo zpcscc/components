@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { SelectWrapper } from './Styled';
 
-export interface SelectProps extends AntSelectProps<string> {
+export type SelectProps = {
   styled?: StyledType;
-}
+} & AntSelectProps<string>;
 
 /**
  * @name 下拉框

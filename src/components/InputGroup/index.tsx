@@ -6,13 +6,13 @@ import Input from 'src/components/Input';
 import type { StyledType } from 'src/type/customType';
 import { InputGroupWrapper } from './Styled';
 
-export interface InputGroupProps extends Omit<AntInputProps, 'onChange' | 'placeholder'> {
+export type InputGroupProps = {
   value?: string[];
   placeholders?: string[];
   level?: number;
   styled?: StyledType;
   onChange?: (value: string[]) => void;
-}
+} & Omit<AntInputProps, 'onChange' | 'placeholder'>;
 
 /**
  * @name 输入框组，用于输入多条数据，组成数组

@@ -7,11 +7,11 @@ import type { StyledType } from 'src/type/customType';
 import type { OptionType, OptionsConfigType } from 'src/type/optionsConfigType';
 import { Wrapper } from './Styled';
 
-export interface CheckboxGroupProps extends AntCheckboxGroupProps {
+export type CheckboxGroupProps = {
   optionsConfig?: OptionsConfigType<'Checkbox'>;
   listOptions?: ListProps<string>;
   styled?: StyledType;
-}
+} & AntCheckboxGroupProps;
 
 /**
  * @name 多选框

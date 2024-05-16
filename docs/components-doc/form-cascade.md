@@ -22,7 +22,7 @@ group: 表单组件
 | selectOptions   | 内置下拉框组件的配置项                           | <a href="https://ant-design.antgroup.com/components/select-cn" target="_blank">SelectProps</a>                | {}                                                |
 | textAreaOptions | 内置文本域组件的配置项                           | <a href="https://ant-design.antgroup.com/components/input-cn#inputtextarea" target="_blank">TextareaProps</a> | {}                                                |
 
-<embed src="./index.md#L16-L20"></embed>
+<embed src="./index.md#L16-L22"></embed>
 
 ​
 ​

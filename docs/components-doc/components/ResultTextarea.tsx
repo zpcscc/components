@@ -5,10 +5,10 @@ import { toString } from '@zpcscc/utils';
 import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 
-export interface ResultTextareaProps {
+export type ResultTextareaProps = {
   value: any;
   styled?: StyledType;
-}
+};
 
 /**
  * @name 结果文本域，用于展示组件返回的值

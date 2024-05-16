@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { CollapsePanelWrapper } from './Styled';
 
-export interface CollapsePanelProps extends AntCollapsePanelProps {
+export type CollapsePanelProps = {
   styled?: StyledType;
-}
+} & AntCollapsePanelProps;
 
 /**
  * @name 布局组件列（只能放在“布局组件行”中）
