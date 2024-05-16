@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { SpaceWrapper } from './Styled';
 
-export interface SpaceProps extends AntSpaceProps {
+export type SpaceProps = {
   styled?: StyledType;
-}
+} & AntSpaceProps;
 
 /**
  * @name Space 间距

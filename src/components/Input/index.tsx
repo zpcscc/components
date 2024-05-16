@@ -5,10 +5,10 @@ import type { ChangeEvent, FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { InputWrapper } from './Styled';
 
-export interface InputProps extends Omit<AntInputProps, 'onChange'> {
+export type InputProps = {
   styled?: StyledType;
   onChange?: (value: string, e: ChangeEvent<HTMLInputElement>) => void;
-}
+} & Omit<AntInputProps, 'onChange'>;
 
 /**
  * @name 输入框

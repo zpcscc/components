@@ -9,14 +9,14 @@ import Input, { type InputProps } from '../Input';
 import { OptionWrapper } from './Styled';
 import type { CurrOptionType } from './type';
 
-export interface OptionProps {
+export type OptionProps = {
   type?: OptionSelectType;
   option: Omit<CurrOptionType, 'id'> & { id: string };
   inputOptions?: InputProps;
   onOptionChange: (option: CurrOptionType) => void;
   onCheckedChange: (id: CurrOptionType['id']) => void;
   onRemoveOption: (id: CurrOptionType['id']) => void;
-}
+};
 
 // 单个选项
 const Option: FC<OptionProps> = (props) => {

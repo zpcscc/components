@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import type { AnyObject } from '@zpcscc/utils';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import { useEffect, useState, type FC } from 'react';
@@ -7,13 +8,13 @@ import Editor from 'react-simple-code-editor';
 import type { StyledType } from 'src/type/customType';
 import { Wrapper } from './Styled';
 
-export interface SimpleCodeEditorProps {
+export type SimpleCodeEditorProps = {
   value?: string;
   // 代码语言：https://prismjs.com/#supported-languages
   language?: string | 'javascript' | 'typescript' | 'css' | 'json';
   onChange?: (value: string) => void;
   styled?: StyledType;
-}
+};
 
 /**
  * @name 简易代码编辑器
@@ -35,7 +36,7 @@ const SimpleCodeEditor: FC<SimpleCodeEditorProps> = (props) => {
 
   // 加载语言
   useEffect(() => {
-    if (Object.keys(Prism.languages).includes(language)) {
+    if (Object.keys(Prism.languages as AnyObject).includes(language)) {
       setLoadedLanguage(true);
     } else {
       import(`prismjs/components/prism-${language}`).then(() => setLoadedLanguage(true));

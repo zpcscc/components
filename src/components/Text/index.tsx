@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { TextWrapper } from './Styled';
 
-export interface TextProps extends AntTextProps {
+export type TextProps = {
   styled?: StyledType;
-}
+} & AntTextProps;
 
 /**
  * @name 文本展示

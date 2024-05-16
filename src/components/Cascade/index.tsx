@@ -10,8 +10,7 @@ import initValueArr from './helpers/initValueArr';
 import updateSelectList from './helpers/updateSelectList';
 import type { SelectListType } from './type';
 
-export interface CascadeProps
-  extends Omit<SelectProps, 'onChange' | 'value' | 'optionsConfig' | 'styled'> {
+export type CascadeProps = {
   value?: string[];
   cascadeData?: string[][];
   styled?: StyledType;
@@ -21,7 +20,7 @@ export interface CascadeProps
   showTextArea?: boolean;
   placeholders?: string[];
   onChange?: (value: string[]) => void;
-}
+} & Omit<SelectProps, 'onChange' | 'value' | 'optionsConfig' | 'styled'>;
 
 /**
  * @name 级联组件

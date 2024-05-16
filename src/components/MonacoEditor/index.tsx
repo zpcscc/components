@@ -8,9 +8,9 @@ import defineTheme from './defineTheme';
 
 export { useMonaco } from '@monaco-editor/react';
 
-export interface MonacoEditorProps extends EditorProps {
+export type MonacoEditorProps = {
   styled?: StyledType;
-}
+} & EditorProps;
 
 /**
  * @name 摩纳哥代码编辑器

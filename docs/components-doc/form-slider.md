@@ -20,4 +20,4 @@ group: 表单组件
 
 Slider 的其他 api 参考<a href="https://ant-design.antgroup.com/components/slider-cn" target="_blank">Slider</a>
 
-<embed src="./index.md#L16-L20"></embed>
+<embed src="./index.md#L16-L21"></embed>

@@ -8,14 +8,14 @@ import InputNumber from 'src/components/InputNumber';
 import type { StyledType } from 'src/type/customType';
 import { Wrapper } from './Styled';
 
-export interface SliderProps extends Omit<SliderBaseProps, 'onChange'> {
+export type SliderProps = {
   value?: number;
   onChange?: (value: number) => void;
   showInputNumber?: boolean;
   inputNumberOptions?: InputNumberProps;
   styled?: StyledType;
   layout?: 'horizontal' | 'vertical';
-}
+} & Omit<SliderBaseProps, 'onChange'>;
 
 /**
  * @name 滑动输入条

@@ -10,16 +10,16 @@ import {
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import type { FC } from 'react';
-import type { InputProps } from 'src/components';
+import type { InputProps } from 'src/components/Input';
 import Option from './Option';
 import sortOptions from './helpers/sortOptions';
 import type { CurrOptionType, CurrOptionsConfigType } from './type';
 
-interface OptionsContainerProps {
+type OptionsContainerProps = {
   optionsConfig: CurrOptionsConfigType;
   inputOptions?: InputProps;
   onOptionsConfigChange: (value: CurrOptionsConfigType) => void;
-}
+};
 
 // 选项容器
 const OptionsContainer: FC<OptionsContainerProps> = (props) => {
@@ -66,8 +66,8 @@ const OptionsContainer: FC<OptionsContainerProps> = (props) => {
         option.id === id
           ? !option?.checked
           : optionsConfig?.type === 'Checkbox'
-          ? option?.checked
-          : false
+            ? option?.checked
+            : false
     }));
     onOptionsConfigChange({
       ...optionsConfig,

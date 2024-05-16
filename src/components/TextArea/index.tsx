@@ -5,10 +5,10 @@ import type { ChangeEvent, FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { TextAreaWrapper } from './Styled';
 
-export interface TextAreaProps extends Omit<AntTextAreaProps, 'onChange'> {
+export type TextAreaProps = {
   styled?: StyledType;
   onChange?: (value: string, e: ChangeEvent<HTMLTextAreaElement>) => void;
-}
+} & Omit<AntTextAreaProps, 'onChange'>;
 
 /**
  * @name 多行文本域

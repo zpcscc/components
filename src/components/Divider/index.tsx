@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { DividerWrapper } from './Styled';
 
-export interface DividerProps extends AntDividerProps {
+export type DividerProps = {
   styled?: StyledType;
-}
+} & AntDividerProps;
 
 /**
  * @name 分隔线

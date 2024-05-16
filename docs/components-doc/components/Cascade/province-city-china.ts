@@ -11,17 +11,17 @@ export const provinceCityChina: ProvinceCityChinaType = {
   Area: [...area, ...specialProvinceJson.Area]
 };
 
-interface ProvinceType {
+type ProvinceType = {
   c: string;
   n: string;
   p?: string;
-}
+};
 
-interface ProvinceJsonType {
+type ProvinceJsonType = {
   Province: ProvinceType[];
   City: ProvinceType[];
   Area: ProvinceType[];
-}
+};
 
 // 将省市区数据转为通用级联数据
 export const provinceCityAreaCascadeData = () => {

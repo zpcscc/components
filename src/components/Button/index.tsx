@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { ButtonWrapper } from './Styled';
 
-export interface ButtonProps extends AntButtonProps {
+export type ButtonProps = {
   styled?: StyledType;
-}
+} & AntButtonProps;
 
 /**
  * @name 按钮

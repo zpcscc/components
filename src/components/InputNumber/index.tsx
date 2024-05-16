@@ -5,9 +5,9 @@ import type { FC } from 'react';
 import type { StyledType } from 'src/type/customType';
 import { InputNumberWrapper } from './Styled';
 
-export interface InputNumberProps extends AntInputNumberProps {
+export type InputNumberProps = {
   styled?: StyledType;
-}
+} & AntInputNumberProps;
 
 /**
  * @name 数字输入框

@@ -37,4 +37,4 @@ group: 表单组件
 | checked | 当前选项是否被选中                       | boolean | false    |
 | id      | 当前选项 id                              | string  | 'op'     |
 
-<embed src="./index.md#L16-L20"></embed>
+<embed src="./index.md#L16-L21"></embed>

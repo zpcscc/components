@@ -7,7 +7,7 @@ import type { StyledType } from 'src/type/customType';
 import type { SpaceProps } from '../Space';
 import { SpaceWrapper } from './Styled';
 
-export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
+export type CheckboxProps = {
   // 前缀内容
   prefix?: string | ReactNode;
   // 后缀内容
@@ -18,7 +18,7 @@ export interface CheckboxProps extends Omit<AntCheckboxProps, 'onChange'> {
   spaceOptions?: SpaceProps;
   // 选项改变时
   onChange?: (value: boolean) => void;
-}
+} & Omit<AntCheckboxProps, 'onChange'>;
 
 /**
  * @name 单个勾选框

@@ -9,4 +9,4 @@ group: 展示组件
 
 <code src='./components/Alert.tsx'>警告提示</code>
 
-<embed src="./index.md#L16-L20"></embed>
+<embed src="./index.md#L16-L21"></embed>
