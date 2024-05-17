@@ -1,5 +1,5 @@
 import { isEmpty } from '@zpcscc/utils';
-import type { SelectListType, TreeDataType } from '../type';
+import { type SelectListType, type TreeDataType } from '../types';
 
 // 获取options选项
 const getOptions = (treeDataItem: TreeDataType[]) =>

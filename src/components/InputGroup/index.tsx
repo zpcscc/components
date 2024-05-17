@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { InputProps as AntInputProps } from 'antd/lib/input';
+import { type InputProps as AntInputProps } from 'antd/lib/input';
 import { useState, type FC } from 'react';
 import Input from 'src/components/Input';
-import type { StyledType } from 'src/types';
+import { type StyledType } from 'src/types';
 import { InputGroupWrapper } from './Styled';
 
 export type InputGroupProps = {

@@ -3,11 +3,11 @@ import MenuOutlined from '@ant-design/icons/MenuOutlined';
 import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { Checkbox, Radio, Space, Tooltip } from 'antd';
-import type { FC } from 'react';
-import type { OptionSelectType } from 'src/types';
+import { type FC } from 'react';
+import { type OptionSelectType } from 'src/types';
 import Input, { type InputProps } from '../Input';
 import { OptionWrapper } from './Styled';
-import type { CurrOptionType } from './type';
+import { type CurrOptionType } from './type';
 
 export type OptionProps = {
   type?: OptionSelectType;

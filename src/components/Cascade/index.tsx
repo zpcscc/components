@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useEffect, useState, type FC } from 'react';
-import type { StyledType } from 'src/types';
+import { type StyledType } from 'src/types';
 import Select, { type SelectProps } from '../Select';
 import TextArea, { type TextAreaProps } from '../TextArea';
 import { Wrapper } from './Styled';
 import arr2Tree from './helpers/arr2Tree';
 import initValueArr from './helpers/initValueArr';
 import updateSelectList from './helpers/updateSelectList';
-import type { SelectListType } from './type';
+import { type SelectListType } from './types';
 
 export type CascadeProps = {
   value?: string[];

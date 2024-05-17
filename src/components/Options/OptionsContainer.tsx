@@ -9,11 +9,11 @@ import {
 } from '@dnd-kit/core';
 import { restrictToVerticalAxis } from '@dnd-kit/modifiers';
 import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
-import type { FC } from 'react';
-import type { InputProps } from 'src/components/Input';
+import { type FC } from 'react';
+import { type InputProps } from 'src/components/Input';
 import Option from './Option';
 import sortOptions from './helpers/sortOptions';
-import type { CurrOptionType, CurrOptionsConfigType } from './type';
+import { type CurrOptionType, type CurrOptionsConfigType } from './type';
 
 type OptionsContainerProps = {
   optionsConfig: CurrOptionsConfigType;

@@ -1,5 +1,5 @@
 import { Button } from '@zpcscc/components';
-import type { FC } from 'react';
+import { type FC } from 'react';
 
 const App: FC = () => {
   const onClick = () => {

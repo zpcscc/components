@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { List, Radio, type ListProps } from 'antd';
-import type { RadioProps as AntRadioProps } from 'antd/lib/radio';
-import type { FC } from 'react';
-import type { OptionType, OptionsConfigType, StyledType } from 'src/types';
+import { type RadioProps as AntRadioProps } from 'antd/lib/radio';
+import { type FC } from 'react';
+import { type OptionType, type OptionsConfigType, type StyledType } from 'src/types';
 import { Wrapper } from './Styled';
 
 export type RadioGroupProps = {

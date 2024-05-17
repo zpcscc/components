@@ -4,12 +4,12 @@ import { css } from '@emotion/react';
 import { getUuid } from '@zpcscc/utils';
 import { Button } from 'antd';
 import { useState, type FC } from 'react';
-import type { InputProps } from 'src/components/Input';
-import type { OptionsConfigType, StyledType } from 'src/types';
+import { type InputProps } from 'src/components/Input';
+import { type OptionsConfigType, type StyledType } from 'src/types';
 import OptionsContainer from './OptionsContainer';
 import { Wrapper } from './Styled';
 import formatOptionsConfig from './helpers/formatOptionsConfig';
-import type { CurrOptionType, CurrOptionsConfigType } from './type';
+import { type CurrOptionType, type CurrOptionsConfigType } from './type';
 
 export type OptionsProps = {
   value?: OptionsConfigType;

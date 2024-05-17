@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { AnyObject } from '@zpcscc/utils';
+import { type AnyObject } from '@zpcscc/utils';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import { useEffect, useState, type FC } from 'react';
 import Editor from 'react-simple-code-editor';
-import type { StyledType } from 'src/types';
+import { type StyledType } from 'src/types';
 import { Wrapper } from './Styled';
 
 export type SimpleCodeEditorProps = {

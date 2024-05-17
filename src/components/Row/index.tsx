@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { RowProps as AntRowProps } from 'antd';
-import type { FC } from 'react';
-import type { StyledType } from 'src/types';
+import { type RowProps as AntRowProps } from 'antd';
+import { type FC } from 'react';
+import { type StyledType } from 'src/types';
 import { RowWrapper } from './Styled';
 
 export type RowProps = {

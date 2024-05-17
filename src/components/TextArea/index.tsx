@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { TextAreaProps as AntTextAreaProps } from 'antd/lib/input';
-import type { ChangeEvent, FC } from 'react';
-import type { StyledType } from 'src/types';
+import { type TextAreaProps as AntTextAreaProps } from 'antd/lib/input';
+import { type ChangeEvent, type FC } from 'react';
+import { type StyledType } from 'src/types';
 import { TextAreaWrapper } from './Styled';
 
 export type TextAreaProps = {

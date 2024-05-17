@@ -1,4 +1,4 @@
-import type { OptionsConfigType } from 'src/types';
+import { type OptionsConfigType } from 'src/types';
 
 // 级联数据类型；
 export type TreeDataType = {

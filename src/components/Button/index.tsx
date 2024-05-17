@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import type { ButtonProps as AntButtonProps } from 'antd/lib/button';
-import type { FC } from 'react';
-import type { StyledType } from 'src/types';
+import { type ButtonProps as AntButtonProps } from 'antd/lib/button';
+import { type FC } from 'react';
+import { type StyledType } from 'src/types';
 import { ButtonWrapper } from './Styled';
 
 export type ButtonProps = {

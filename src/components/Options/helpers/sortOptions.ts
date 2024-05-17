@@ -1,5 +1,5 @@
 import { arrayMove } from '@dnd-kit/sortable';
-import type { CurrOptionType } from '../type';
+import { type CurrOptionType } from '../type';
 
 /**
  * @name 选项排序
