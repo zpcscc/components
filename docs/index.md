@@ -6,10 +6,8 @@ hero:
   actions:
     - text: 指南
       link: /guide
-    - text: react组件
-      link: /react/form-cascade
-    - text: demo
-      link: /demo
+    - text: 组件
+      link: /components-doc/form-cascade
     - text: 博客
-      link: https://dxsixpc.github.io/
+      link: https://zpcscc.github.io/
 ---
