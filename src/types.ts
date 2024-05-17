@@ -1,5 +1,5 @@
-import type { CSSInterpolation } from '@emotion/serialize/types';
-import type { CheckboxValueType } from 'antd/lib/checkbox/Group';
+import { type CSSInterpolation } from '@emotion/serialize/types';
+import { type CheckboxValueType } from 'antd/lib/checkbox/Group';
 
 // 任意对象类型
 export type AnyObject = Record<string, any>;

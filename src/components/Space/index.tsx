@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { type SpaceProps as AntSpaceProps } from 'antd';
-import type { FC } from 'react';
-import type { StyledType } from 'src/types';
+import { type FC } from 'react';
+import { type StyledType } from 'src/types';
 import { SpaceWrapper } from './Styled';
 
 export type SpaceProps = {

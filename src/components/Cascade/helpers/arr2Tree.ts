@@ -1,4 +1,4 @@
-import type { TreeDataType } from '../type';
+import { type TreeDataType } from '../types';
 
 /**
  * @name  二维数组转为树形结构

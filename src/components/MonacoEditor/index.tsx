@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import Editor, { type EditorProps } from '@monaco-editor/react';
 import { type FC } from 'react';
-import type { StyledType } from 'src/types';
+import { type StyledType } from 'src/types';
 import defineTheme from './defineTheme';
 
 export { useMonaco } from '@monaco-editor/react';

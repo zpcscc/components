@@ -1,6 +1,6 @@
 {
   "name": "@zpcscc/components",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "组件库",
   "homepage": "https://zpcscc.github.io/components",
   "repository": "https://github.com/zpcscc/components",
@@ -22,10 +22,9 @@
     "dev": "dumi dev",
     "docs:build": "dumi build",
     "docs:deploy": "gh-pages -d docs-dist",
-    "doctor": "father doctor",
     "lint": "eslint --cache --ext .js,.jsx,.mjs,.ts,.tsx src",
     "prepare": "husky install && dumi setup",
-    "prepublishOnly": "father doctor && pnpm run build",
+    "prepublishOnly": "pnpm run build",
     "start": "pnpm run dev"
   },
   "dependencies": {

@@ -2,7 +2,7 @@ import area from '@province-city-china/area/area.min.json';
 import city from '@province-city-china/city/city.min.json';
 import province from '@province-city-china/province/province.min.json';
 import { specialProvinceJson } from './specialProvince';
-import type { ProvinceCityChinaType } from './type';
+import { type ProvinceCityChinaType } from './type';
 
 // 省市区数据
 export const provinceCityChina: ProvinceCityChinaType = {

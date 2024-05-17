@@ -1,6 +1,6 @@
 import { getUuid } from '@zpcscc/utils';
-import type { OptionsConfigType } from 'src/types';
-import type { CurrOptionsConfigType } from '../type';
+import { type OptionsConfigType } from 'src/types';
+import { type CurrOptionsConfigType } from '../type';
 
 /**
  * @name 格式化配置，补全缺漏的值
