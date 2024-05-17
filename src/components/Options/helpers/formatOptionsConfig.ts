@@ -1,5 +1,5 @@
-import { uniqueId } from 'lodash';
-import type { OptionsConfigType } from 'src/type';
+import { getUuid } from '@zpcscc/utils';
+import type { OptionsConfigType } from 'src/types';
 import type { CurrOptionsConfigType } from '../type';
 
 /**
@@ -14,7 +14,7 @@ const formatOptionsConfig = (optionsConfig?: OptionsConfigType): CurrOptionsConf
     defaultValue,
     options: options.map((option) => ({
       ...option,
-      id: option.id || uniqueId('op'),
+      id: option.id || getUuid(),
       checked: typeof option.checked === 'boolean' ? option.checked : false
     }))
   };

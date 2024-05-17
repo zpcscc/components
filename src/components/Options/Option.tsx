@@ -4,7 +4,7 @@ import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { Checkbox, Radio, Space, Tooltip } from 'antd';
 import type { FC } from 'react';
-import type { OptionSelectType } from 'src/type/optionsConfigType';
+import type { OptionSelectType } from 'src/types';
 import Input, { type InputProps } from '../Input';
 import { OptionWrapper } from './Styled';
 import type { CurrOptionType } from './type';

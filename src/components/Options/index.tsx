@@ -1,12 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import PlusOutlined from '@ant-design/icons/PlusOutlined';
 import { css } from '@emotion/react';
+import { getUuid } from '@zpcscc/utils';
 import { Button } from 'antd';
-import { uniqueId } from 'lodash';
 import { useState, type FC } from 'react';
 import type { InputProps } from 'src/components/Input';
-import type { StyledType } from 'src/type/customType';
-import type { OptionsConfigType } from 'src/type/optionsConfigType';
+import type { OptionsConfigType, StyledType } from 'src/types';
 import OptionsContainer from './OptionsContainer';
 import { Wrapper } from './Styled';
 import formatOptionsConfig from './helpers/formatOptionsConfig';
@@ -55,7 +54,7 @@ const Options: FC<OptionsProps> = (props) => {
   const addOption = () => {
     const optionsLength = optionsConfig?.options?.length;
     const newOptions = optionsConfig?.options?.concat({
-      id: uniqueId('op'),
+      id: getUuid(),
       label: `选项${optionsLength + 1}`,
       value: `选项${optionsLength + 1}`,
       checked: false

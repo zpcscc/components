@@ -42,7 +42,6 @@
     "@monaco-editor/react": "4.6.0",
     "@zpcscc/utils": "7.0.0",
     "antd": "5.17.2",
-    "lodash": "4.17.21",
     "prismjs": "1.29.0",
     "react-simple-code-editor": "0.13.1"
   },
@@ -54,7 +53,6 @@
     "@province-city-china/province": "8.5.7",
     "@types/fabric": "5.3.7",
     "@types/jquery": "3.5.30",
-    "@types/lodash": "4.17.1",
     "@types/react": "18.3.2",
     "@types/react-dom": "18.3.0",
     "@zpcscc/configs": "2.0.5",

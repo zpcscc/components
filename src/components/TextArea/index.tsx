@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import type { TextAreaProps as AntTextAreaProps } from 'antd/lib/input';
 import type { ChangeEvent, FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { TextAreaWrapper } from './Styled';
 
 export type TextAreaProps = {

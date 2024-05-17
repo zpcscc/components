@@ -1,4 +1,4 @@
-import type { OptionsConfigType, OptionType } from 'src/type/optionsConfigType';
+import type { OptionsConfigType, OptionType } from 'src/types';
 
 // 选项配置类型
 export type CurrOptionType = {

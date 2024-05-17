@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useEffect, useState, type FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import Select, { type SelectProps } from '../Select';
 import TextArea, { type TextAreaProps } from '../TextArea';
 import { Wrapper } from './Styled';

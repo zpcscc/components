@@ -5,7 +5,7 @@ import type { InputNumberProps } from 'antd/lib/input-number';
 import type { SliderBaseProps } from 'antd/lib/slider';
 import { useEffect, useState, type CSSProperties, type FC } from 'react';
 import InputNumber from 'src/components/InputNumber';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { Wrapper } from './Styled';
 
 export type SliderProps = {

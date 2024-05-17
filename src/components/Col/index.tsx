@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import type { ColProps as AntColProps } from 'antd';
 import type { FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { ColWrapper } from './Styled';
 
 export type ColProps = {

@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import type { TextProps as AntTextProps } from 'antd/lib/typography/Text';
 import type { FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { TextWrapper } from './Styled';
 
 export type TextProps = {

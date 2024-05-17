@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import type { AlertProps as AntAlertProps } from 'antd/lib/alert';
 import type { FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { AlertWrapper } from './Styled';
 
 export type AlertProps = {

@@ -1,5 +1,4 @@
-import type { StyledComponent } from '@emotion/styled';
-import styled from '@emotion/styled';
+import styled, { type StyledComponent } from '@emotion/styled';
 import { Select } from 'antd';
 import type { SelectProps } from '.';
 
