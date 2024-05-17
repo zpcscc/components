@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import type { SelectProps as AntSelectProps } from 'antd/lib/select';
 import type { FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { SelectWrapper } from './Styled';
 
 export type SelectProps = {

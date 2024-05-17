@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import Editor, { type EditorProps, type OnChange } from '@monaco-editor/react';
-import { debounce } from 'lodash';
+import Editor, { type EditorProps } from '@monaco-editor/react';
 import { type FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import defineTheme from './defineTheme';
 
 export { useMonaco } from '@monaco-editor/react';
@@ -32,20 +31,12 @@ const MonacoEditor: FC<MonacoEditorProps> = (props) => {
     ...rest
   } = props;
 
-  // onChange封装
-  const onEditorChange: OnChange = (editorValue = '', ev) => {
-    onChange?.(editorValue, ev);
-  };
-
-  // 防抖操作
-  const run = debounce(onEditorChange, 100);
-
   return (
     <Editor
       beforeMount={() => defineTheme(theme)}
       language={language}
       defaultValue={value || ''}
-      onChange={run}
+      onChange={onChange}
       theme={theme}
       css={css(styled)}
       {...rest}

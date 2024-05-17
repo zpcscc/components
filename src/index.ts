@@ -31,5 +31,4 @@ export { default as Text, type TextProps } from './components/Text';
 export { default as TextArea, type TextAreaProps } from './components/TextArea';
 export { default as Title, type TitleProps } from './components/Title';
 // 导出类型
-export * from './type/customType';
-export * from './type/optionsConfigType';
+export * from './types';

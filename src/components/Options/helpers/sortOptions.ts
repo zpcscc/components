@@ -11,7 +11,7 @@ import type { CurrOptionType } from '../type';
 const sortOptions = (
   options: CurrOptionType[],
   activeId: string | number,
-  overId: string | number,
+  overId: string | number
 ) => {
   const oldIndex = options.findIndex((item) => item.id === activeId);
   const newIndex = options.findIndex((item) => item.id === overId);

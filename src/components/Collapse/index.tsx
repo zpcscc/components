@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import type { CollapseProps as AntCollapseProps } from 'antd';
 import type { FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { CollapseWrapper } from './Styled';
 
 export type CollapseProps = {

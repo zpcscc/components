@@ -3,8 +3,7 @@ import { css } from '@emotion/react';
 import { List, Radio, type ListProps } from 'antd';
 import type { RadioProps as AntRadioProps } from 'antd/lib/radio';
 import type { FC } from 'react';
-import type { StyledType } from 'src/type/customType';
-import type { OptionType, OptionsConfigType } from 'src/type/optionsConfigType';
+import type { OptionType, OptionsConfigType, StyledType } from 'src/types';
 import { Wrapper } from './Styled';
 
 export type RadioGroupProps = {

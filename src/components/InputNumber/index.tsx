@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import type { InputNumberProps as AntInputNumberProps } from 'antd/lib/input-number';
 import type { FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { InputNumberWrapper } from './Styled';
 
 export type InputNumberProps = {

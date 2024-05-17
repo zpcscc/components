@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import type { DividerProps as AntDividerProps } from 'antd/lib/Divider';
 import type { FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { DividerWrapper } from './Styled';
 
 export type DividerProps = {

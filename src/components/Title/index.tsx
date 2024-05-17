@@ -2,7 +2,7 @@
 import { css } from '@emotion/react';
 import type { TitleProps as AntTitleProps } from 'antd/lib/typography/Title';
 import type { FC } from 'react';
-import type { StyledType } from 'src/type/customType';
+import type { StyledType } from 'src/types';
 import { TitleWrapper } from './Styled';
 
 export type TitleProps = {
