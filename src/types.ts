@@ -1,5 +1,5 @@
-import { type CSSInterpolation } from '@emotion/serialize/types';
-import { type CheckboxValueType } from 'antd/lib/checkbox/Group';
+import { type CSSInterpolation } from '@emotion/serialize';
+import { type CheckboxOptionType } from 'antd/lib/checkbox/Group';
 
 // 任意对象类型
 export type AnyObject = Record<string, any>;
@@ -24,9 +24,9 @@ export type OptionSelectType = 'Radio' | 'Checkbox' | 'allType';
 // 选项默认值的类型
 export type OptionDefaultValueType = {
   Radio: string;
-  Checkbox: CheckboxValueType[];
+  Checkbox: CheckboxOptionType[];
   trueFalse: boolean;
-  allType: string | CheckboxValueType[] | boolean;
+  allType: string | CheckboxOptionType[] | boolean;
 };
 
 // 选项组件配置项
