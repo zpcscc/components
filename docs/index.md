@@ -7,9 +7,11 @@ hero:
     - text: 指南
       link: /guide
     - text: antd组件
-      link: /antd-components-doc/index
+      link: /antd-components/index
     - text: 其他组件
-      link: /other-components-doc/index
+      link: /other-components/index
+    - text: 表单
+      link: /form-generator/editor-panel
     - text: 博客
       link: https://zpcscc.github.io/
 ---

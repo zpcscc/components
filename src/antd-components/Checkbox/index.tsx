@@ -3,8 +3,8 @@ import { css } from '@emotion/react';
 import { Checkbox as AntCheckbox } from 'antd';
 import { type CheckboxProps as AntCheckboxProps } from 'antd/es/checkbox';
 import { type FC, type ReactNode } from 'react';
+import { type SpaceProps } from 'src/antd-components/Space';
 import { type StyledType } from 'src/types';
-import { type SpaceProps } from '../Space';
 import { SpaceWrapper } from './Styled';
 
 export type CheckboxProps = {

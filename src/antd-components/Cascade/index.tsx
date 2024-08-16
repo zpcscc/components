@@ -1,14 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useEffect, useState, type FC } from 'react';
-import { type StyledType } from 'src/types';
 import Select, { type SelectProps } from 'src/antd-components/Select';
 import TextArea, { type TextAreaProps } from 'src/antd-components/TextArea';
+import { type StyledType } from 'src/types';
 import { Wrapper } from './Styled';
-import arr2Tree from './helpers/arr2Tree';
-import initValueArr from './helpers/initValueArr';
-import updateSelectList from './helpers/updateSelectList';
 import { type SelectListType } from './types';
+import { arr2Tree, initValueArr, updateSelectList } from './utils';
 
 export type CascadeProps = {
   value?: string[];

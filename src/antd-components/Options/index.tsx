@@ -9,8 +9,8 @@ import { type InputProps } from 'src/antd-components/Input';
 import { type OptionsConfigType, type StyledType } from 'src/types';
 import OptionsContainer from './OptionsContainer';
 import { Wrapper } from './Styled';
-import formatOptionsConfig from './helpers/formatOptionsConfig';
 import { type CurrOptionType, type CurrOptionsConfigType } from './type';
+import { formatOptionsConfig } from './utils';
 
 export type OptionsProps = {
   value?: OptionsConfigType;

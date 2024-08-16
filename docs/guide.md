@@ -2,7 +2,7 @@
 title: 简介
 order: 0
 nav:
-  title: 组件
+  title: 指南
   order: 0
 ---
 

@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import Quill, { type EmitterSource, type QuillOptions } from 'quill';
-import Delta from 'quill-delta';
+import type Delta from 'quill-delta';
 import 'quill/dist/quill.snow.css';
 import { useEffect, useLayoutEffect, useRef, type FC } from 'react';
 import { type StyledType } from 'src/types';

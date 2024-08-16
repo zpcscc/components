@@ -12,8 +12,8 @@ import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable'
 import { type FC } from 'react';
 import { type InputProps } from 'src/antd-components/Input';
 import Option from './Option';
-import sortOptions from './helpers/sortOptions';
 import { type CurrOptionType, type CurrOptionsConfigType } from './type';
+import { sortOptions } from './utils';
 
 type OptionsContainerProps = {
   optionsConfig: CurrOptionsConfigType;

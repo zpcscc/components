@@ -1,14 +1,10 @@
 import styled from '@emotion/styled';
 
-type Wrapper = {
-  toolbarHeight?: number;
-};
-
-export const Wrapper = styled.div<Wrapper>`
+export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  
+
   .ql-container {
     flex: 1;
   }

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState, type FC } from 'react';
 import { type StyledType } from 'src/types';
 import { CanvasWrapper, PdfContainer } from './Styled';
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = toAbsolutePath('/components//pdf.worker.min.mjs');
+pdfjsLib.GlobalWorkerOptions.workerSrc = toAbsolutePath('/components/pdf.worker.min.mjs');
 
 export type PdfViewerProps = {
   url: string;
@@ -87,6 +87,7 @@ const PdfViewer: FC<PdfViewerProps> = ({ url, scale = 1, styled }) => {
   };
 
   useEffect(() => {
+    console.log(url);
     if (validate(url, 'url') && url.endsWith('.pdf')) {
       initPdf(url);
     } else {
