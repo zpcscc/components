@@ -28,11 +28,11 @@ export const ModalContainer = styled.div<{ isVisible: boolean }>`
     props.isVisible
       ? `
         opacity: 1;
-        transform: translate(-50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
       `
       : `
         opacity: 0;
-        transform: translate(-50%) scale(0.8);
+        transform: translate(-50%, -50%) scale(0.8);
       `}
 `;
 
