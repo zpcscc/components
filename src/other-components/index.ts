@@ -1,3 +1,4 @@
+export { default as Modal, type ModalProps } from './Modal';
 export { default as MonacoEditor, useMonaco, type MonacoEditorProps } from './MonacoEditor';
 export { default as PdfViewer, type PdfViewerProps } from './PdfViewer';
 export { default as QuillEditor, type QuillEditorProps } from './QuillEditor';

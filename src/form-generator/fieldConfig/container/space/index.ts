@@ -9,7 +9,10 @@ const space: FieldConfigType<SpaceProps> = {
     type: 'Space',
     props: {
       direction: 'horizontal',
-      align: 'center'
+      align: 'start',
+      styled: {
+        justifyContent: 'space-between'
+      }
     }
   },
   configPanel: spaceConfig
