@@ -3,13 +3,11 @@ import {
   MeasuringStrategy,
   PointerSensor,
   closestCorners,
-  pointerWithin,
   useSensor,
-  useSensors,
-  type CollisionDetection
+  useSensors
 } from '@dnd-kit/core';
 import { getUuid } from '@zpcscc/utils';
-import { useCallback, useState, type FC } from 'react';
+import { useState, type FC } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import {
   componentStructureState,
@@ -43,19 +41,19 @@ const Layout: FC<EditorProps> = (props) => {
     })
   );
 
-  const collisionDetection: CollisionDetection = useCallback((args) => {
-    // 优先使用指针算法，为了精确识别容器
-    const pointerCollisions = pointerWithin(args);
-    if (pointerCollisions.length > 0) return pointerCollisions;
-    return closestCorners(args);
-  }, []);
+  // const collisionDetection: CollisionDetection = useCallback((args) => {
+  //   // 优先使用指针算法，为了精确识别容器
+  //   const pointerCollisions = pointerWithin(args);
+  //   if (pointerCollisions.length > 0) return pointerCollisions;
+  //   return closestCorners(args);
+  // }, []);
 
   return (
     <LayoutWrapper>
       <DndContext
         sensors={sensors}
         measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
-        collisionDetection={collisionDetection}
+        collisionDetection={closestCorners}
         onDragStart={({ active }) => {
           if (!active) return;
           const id = String(active.id);
