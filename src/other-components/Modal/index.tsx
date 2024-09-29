@@ -1,8 +1,9 @@
 import { css } from '@emotion/react';
 import { type FC, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
+import useDrag from 'src/hooks/useDrag';
 import { type StyledType } from 'src/types';
-import { ModalCloseBtn, ModalContainer, ModalMask, ModalWrapper } from './Styled';
+import { ModalCloseBtn, ModalContainer, ModalDragBtn, ModalMask, ModalWrapper } from './Styled';
 import { useAnimation, useShowModal } from './hooks';
 import { type ModalInstanceType } from './types';
 
@@ -14,6 +15,7 @@ export type ModalProps = {
   show?: boolean;
   mask?: boolean;
   closeable?: boolean;
+  draggable?: boolean;
   children: ReactNode;
   onClose?: () => void;
   styled?: StyledType;
@@ -29,17 +31,29 @@ export type ModalMethodType = {
  * @param show 是否显示弹框
  * @param mask 是否开启遮罩
  * @param closeable 是否显示关闭按钮
+ * @param draggable 是否可拖动
  * @param children 自定义的需要渲染的dom
  * @param onClose 关闭弹框的回调
  * @param styled 自定义样式 https://emotion.sh/docs/introduction
  */
 const Modal: FC<ModalProps> & ModalMethodType = (props) => {
-  const { id, mask = true, show = false, closeable = false, styled, children, onClose } = props;
+  const {
+    id,
+    mask = true,
+    show = false,
+    closeable = false,
+    draggable = false,
+    styled,
+    children,
+    onClose
+  } = props;
+  const { bindDragHandle, bindDragTarget, resetPosition } = useDrag(); // 拖拽功能
   const { isVisible, setIsVisible } = useAnimation({ id, modals, onClose }); // 控制显示与隐藏的动画
   const { showModal, handleClose } = useShowModal({
     id,
     show,
     hide: Modal.hide,
+    resetPosition,
     onClose,
     setIsVisible
   }); // 控制显示与隐藏
@@ -49,8 +63,11 @@ const Modal: FC<ModalProps> & ModalMethodType = (props) => {
       <ModalWrapper css={css(styled)}>
         {mask && <ModalMask isVisible={isVisible} onClick={handleClose} />}
         <ModalContainer isVisible={isVisible}>
-          {closeable && <ModalCloseBtn onClick={handleClose} />}
-          {children}
+          <div ref={draggable ? bindDragTarget : null}>
+            {closeable && <ModalCloseBtn onClick={handleClose} />}
+            {draggable && <ModalDragBtn ref={bindDragHandle} />}
+            {children}
+          </div>
         </ModalContainer>
       </ModalWrapper>
     )

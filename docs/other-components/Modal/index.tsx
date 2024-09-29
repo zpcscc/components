@@ -20,9 +20,9 @@ const App: FC = () => {
 
   return (
     <Space>
-      <Button onClick={handleShowModal}>通过命令式的方式打开弹框,3s后自动关闭</Button>
+      <Button onClick={handleShowModal}>通过命令式的方式打开弹框，3s后自动关闭</Button>
       <Button onClick={() => setShow(true)}>通过声明式的方式打开弹框</Button>
-      <Modal show={show} closeable onClose={() => setShow(false)}>
+      <Modal show={show} draggable closeable onClose={() => setShow(false)}>
         <ModalChildren />
       </Modal>
     </Space>

@@ -26,14 +26,23 @@ type UseShowModalProps = {
   id?: string;
   hide?: (id: string) => void;
   onClose?: () => void;
+  resetPosition?: () => void;
   setIsVisible: Dispatch<SetStateAction<boolean>>;
 };
 
 // 控制弹框显示隐藏的 hook
-export const useShowModal = ({ show, id, hide, setIsVisible, onClose }: UseShowModalProps) => {
+export const useShowModal = ({
+  show,
+  id,
+  hide,
+  setIsVisible,
+  onClose,
+  resetPosition
+}: UseShowModalProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => {
+    resetPosition?.();
     if (id) hide?.(id);
     setIsVisible(false);
     setTimeout(() => {
