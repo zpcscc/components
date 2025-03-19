@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { type CollapseProps as AntCollapseProps } from 'antd';
+import { type CollapseProps as AntCollapseProps, Collapse as AntdCollapse } from 'antd';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { CollapseWrapper } from './Styled';
 
 export type CollapseProps = {
   styled?: StyledType;
@@ -18,9 +17,9 @@ export type CollapseProps = {
 const Collapse: FC<CollapseProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
-    <CollapseWrapper css={css(styled)} {...rest}>
+    <AntdCollapse css={css(styled)} {...rest}>
       {children}
-    </CollapseWrapper>
+    </AntdCollapse>
   );
 };
 

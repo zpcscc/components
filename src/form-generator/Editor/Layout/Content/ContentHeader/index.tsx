@@ -1,9 +1,8 @@
-import { Modal } from 'antd';
+import { Modal, Space } from 'antd';
 import { useState, type FC } from 'react';
 import { useSetRecoilState } from 'recoil';
 import Button from 'src/antd-components/Button';
 import { componentStructureState } from 'src/form-generator/Editor/atoms';
-import { ContentHeaderWrapper } from './Styled';
 import useModelData from './modalData';
 import { type ModelType } from './type';
 
@@ -16,7 +15,7 @@ const ContentHeader: FC = () => {
   const modalData = modalType ? modalDataMap[modalType] : {};
 
   return (
-    <ContentHeaderWrapper size={[8, 16]} wrap>
+    <Space className='my-0.5rem mx-0.25rem' size={[8, 16]} wrap>
       <Button onClick={() => setModalType('previewModel')}>预览</Button>
       <Button
         danger
@@ -29,7 +28,7 @@ const ContentHeader: FC = () => {
         导出
       </Button>
       <Modal open={Boolean(modalType)} {...modalData} />
-    </ContentHeaderWrapper>
+    </Space>
   );
 };
 

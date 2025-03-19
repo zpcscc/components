@@ -3,7 +3,6 @@ import { useRecoilValue } from 'recoil';
 import { componentStructureState } from 'src/form-generator/Editor/atoms';
 import { Render } from 'src/form-generator/Render';
 import { type ModelType } from '../type';
-import { PreviewWrapper } from './Styled';
 
 // 预览弹出框
 const usePreviewModel = (setModalType: (modelType: ModelType | null) => void): ModalProps => {
@@ -16,10 +15,10 @@ const usePreviewModel = (setModalType: (modelType: ModelType | null) => void): M
     onCancel: () => setModalType(null),
     onOk: () => setModalType(null),
     children: (
-      <PreviewWrapper>
+      <div className='h-500px w-full overflow-y-scroll scrollbar-hide'>
         <Render componentItems={componentItems} structureItems={structureItems} />
-      </PreviewWrapper>
-    )
+      </div>
+    ),
   };
 };
 

@@ -3,7 +3,6 @@ import { useSortable } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { type FC, type ReactNode } from 'react';
 import { type EditorPropsType } from 'src/form-generator/types';
-import { PointerWrapper, SortableWrapper } from './Styled';
 
 export type SortableContainerProps = {
   children: ReactNode;
@@ -20,23 +19,23 @@ const SortableContainer: FC<SortableContainerProps> = (props) => {
   const { id = '', children, editorProps } = props;
   const { onSelect, onCopy, onDelete, currentId } = editorProps || {};
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
-    id
+    id,
   });
   const isFocus = currentId === id;
 
   return (
-    <SortableWrapper
+    <div
       key={id}
       id={id}
-      className='drag-container'
+      className='min-w-200px b-1px b-dashed pt-10px px-8px pb-0px mb-8px bg-white relative hover:border hover:b-solid hover:border-[#4096ff]'
       style={{
         transform: CSS.Translate.toString(transform),
         transition: transition ?? '',
         opacity: isDragging ? 0.5 : undefined,
         ...(isFocus && {
           outline: '2px solid rgb(64, 158, 255)',
-          borderColor: 'rgb(255, 255, 255)'
-        })
+          borderColor: 'rgb(255, 255, 255)',
+        }),
       }}
       onFocus={(e) => {
         const target = e.target as HTMLDivElement;
@@ -47,15 +46,26 @@ const SortableContainer: FC<SortableContainerProps> = (props) => {
       {...listeners}
     >
       {children}
-      <PointerWrapper style={{ display: isFocus ? 'flex' : 'none' }}>
-        <div className='pointer' role='button' onClick={() => onDelete?.(id)}>
+      <div
+        className='absolute z-20 bottom--2px right--2px h-24px b-rd-tl-8px bg-#409eff u-center py-0px px-4px'
+        style={{ display: isFocus ? 'flex' : 'none' }}
+      >
+        <div
+          className='color-white py-0px px-4px cursor-pointer'
+          role='button'
+          onClick={() => onDelete?.(id)}
+        >
           <DeleteOutlined />
         </div>
-        <div className='pointer' role='button' onClick={() => onCopy?.(id)}>
+        <div
+          className='color-white py-0px px-4px cursor-pointer'
+          role='button'
+          onClick={() => onCopy?.(id)}
+        >
           <CopyOutlined />
         </div>
-      </PointerWrapper>
-    </SortableWrapper>
+      </div>
+    </div>
   );
 };
 

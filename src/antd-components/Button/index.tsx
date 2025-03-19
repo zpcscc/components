@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Button as AntdButton } from 'antd';
 import { type ButtonProps as AntButtonProps } from 'antd/lib/button';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { ButtonWrapper } from './Styled';
 
 export type ButtonProps = {
   styled?: StyledType;
@@ -17,9 +17,9 @@ export type ButtonProps = {
 const Button: FC<ButtonProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
-    <ButtonWrapper css={css(styled)} {...rest}>
+    <AntdButton css={css(styled)} {...rest}>
       {children}
-    </ButtonWrapper>
+    </AntdButton>
   );
 };
 

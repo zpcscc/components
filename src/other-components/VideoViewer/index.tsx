@@ -4,7 +4,6 @@ import { useEffect, useRef, type FC } from 'react';
 import { type StyledType } from 'src/types';
 import VideoJs from 'video.js';
 import 'video.js/dist/video-js.css';
-import { VideoContainer } from './Styled';
 
 const disableContextMenu = (event: Event) => event.preventDefault();
 
@@ -45,7 +44,7 @@ const VideoViewer: FC<VideoViewerProps> = (props) => {
     fluid: true,
     preload: 'auto',
     aspectRatio: '16:9',
-    ...options
+    ...options,
   });
   const videoRef = useRef<any>(null);
   const playerRef = useRef<any>(null);
@@ -70,7 +69,7 @@ const VideoViewer: FC<VideoViewerProps> = (props) => {
         videoRef.current?.append(videoElement);
         videoRef.current?.addEventListener('contextmenu', disableContextMenu, false);
         playerRef.current = VideoJs(videoElement, optionsRef.current, () =>
-          onReady?.(playerRef.current)
+          onReady?.(playerRef.current),
         );
       }
     } catch (error) {
@@ -97,7 +96,7 @@ const VideoViewer: FC<VideoViewerProps> = (props) => {
     return () => disposeVideo();
   }, [url]);
 
-  return <VideoContainer css={css(styled)} ref={videoRef} />;
+  return <div className='w-full h-full' css={css(styled)} ref={videoRef} />;
 };
 
 export default VideoViewer;

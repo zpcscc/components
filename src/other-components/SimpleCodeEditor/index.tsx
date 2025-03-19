@@ -1,11 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import Prism from 'prismjs';
+import { highlight, languages } from 'prismjs';
 import 'prismjs/themes/prism.css';
 import { useEffect, useState, type FC } from 'react';
 import Editor from 'react-simple-code-editor';
 import { type StyledType } from 'src/types';
-import { Wrapper } from './Styled';
 
 export type SimpleCodeEditorProps = {
   value?: string;
@@ -35,7 +34,7 @@ const SimpleCodeEditor: FC<SimpleCodeEditorProps> = (props) => {
 
   // 加载语言
   useEffect(() => {
-    if (Object.keys(Prism.languages).includes(language)) {
+    if (Object.keys(languages).includes(language)) {
       setLoadedLanguage(true);
     } else {
       import(`prismjs/components/prism-${language}`).then(() => setLoadedLanguage(true));
@@ -43,17 +42,17 @@ const SimpleCodeEditor: FC<SimpleCodeEditorProps> = (props) => {
   }, [language]);
 
   return (
-    <Wrapper css={css(styled)}>
+    <div className='overflow-auto [&>div]:min-h-full' css={css(styled)}>
       {loadedLanguage && (
         <Editor
           value={value}
           onValueChange={onChange}
-          highlight={(value) => Prism.highlight(value, Prism.languages[language], language)}
+          highlight={(value) => highlight(value, languages[language], language)}
           padding={10}
           {...rest}
         />
       )}
-    </Wrapper>
+    </div>
   );
 };
 

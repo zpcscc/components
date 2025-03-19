@@ -25,7 +25,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = (props) => {
   const { value, optionsConfig, listOptions = { size: 'default' }, styled, ...rest } = props;
 
   return (
-    <Wrapper css={css(styled)}>
+    <Wrapper className='bg-white ' css={css(styled)}>
       <Checkbox.Group value={value || optionsConfig?.defaultValue} {...rest}>
         <List bordered {...listOptions}>
           {optionsConfig?.options?.map((option: OptionType) => (

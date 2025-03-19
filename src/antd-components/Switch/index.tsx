@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Switch as AntdSwitch } from 'antd';
 import { type SwitchProps as AntSwitchProps } from 'antd/lib/switch';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { SwitchWrapper } from './Styled';
 
 export type SwitchProps = {
   value?: boolean;
@@ -20,7 +20,7 @@ export type SwitchProps = {
  */
 const Switch: FC<SwitchProps> = (props) => {
   const { value, checked, styled, ...rest } = props;
-  return <SwitchWrapper css={css(styled)} checked={value || checked} {...rest} />;
+  return <AntdSwitch css={css(styled)} checked={value || checked} {...rest} />;
 };
 
 export default Switch;

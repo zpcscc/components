@@ -1,9 +1,9 @@
+import { CloseOutlined, MenuOutlined } from '@ant-design/icons';
 import { css } from '@emotion/react';
 import { type FC, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
 import useDrag from 'src/hooks/useDrag';
 import { type StyledType } from 'src/types';
-import { ModalCloseBtn, ModalContainer, ModalDragBtn, ModalMask, ModalWrapper } from './Styled';
 import { useAnimation, useShowModal } from './hooks';
 import { type ModalInstanceType } from './types';
 
@@ -45,7 +45,7 @@ const Modal: FC<ModalProps> & ModalMethodType = (props) => {
     draggable = false,
     styled,
     children,
-    onClose
+    onClose,
   } = props;
   const { bindDragHandle, bindDragTarget, resetPosition } = useDrag(); // 拖拽功能
   const { isVisible, setIsVisible } = useAnimation({ id, modals, onClose }); // 控制显示与隐藏的动画
@@ -55,21 +55,48 @@ const Modal: FC<ModalProps> & ModalMethodType = (props) => {
     hide: Modal.hide,
     resetPosition,
     onClose,
-    setIsVisible
+    setIsVisible,
   }); // 控制显示与隐藏
 
   return (
     showModal && (
-      <ModalWrapper css={css(styled)}>
-        {mask && <ModalMask isVisible={isVisible} onClick={handleClose} />}
-        <ModalContainer isVisible={isVisible}>
+      <div css={css(styled)}>
+        {mask && (
+          <div
+            className='fixed top-0 left-0 w-100vw h-100vh bg-#0000007f z-999'
+            style={{
+              transition: 'opacity 0.2s ease-in-out',
+              opacity: isVisible ? 1 : 0,
+            }}
+            role='button'
+            onClick={handleClose}
+          />
+        )}
+        <div
+          className='fixed top-50% left-50% z-1000'
+          style={{
+            transition: 'opacity 0.2s ease-in-out,transform 0.2s ease-in-out',
+            opacity: isVisible ? 1 : 0,
+            transform: `translate(-50%, -50%) scale(${isVisible ? 1 : 0.8})`,
+          }}
+        >
           <div ref={draggable ? bindDragTarget : null}>
-            {closeable && <ModalCloseBtn onClick={handleClose} />}
-            {draggable && <ModalDragBtn ref={bindDragHandle} />}
+            {closeable && (
+              <CloseOutlined
+                className='absolute top-6px right-6px bg-transparent b-none text-16px'
+                onClick={handleClose}
+              />
+            )}
+            {draggable && (
+              <MenuOutlined
+                className='absolute top-6px left-6px bg-transparent b-none text-16px'
+                ref={bindDragHandle}
+              />
+            )}
             {children}
           </div>
-        </ModalContainer>
-      </ModalWrapper>
+        </div>
+      </div>
     )
   );
 };
@@ -97,7 +124,7 @@ Modal.hide = (id: string) => {
     delete modals[id];
     const div = document.querySelector(`#${id}`);
     div?.remove();
-  }, 300); // 动画时间
+  }, 200); // 动画时间
 };
 
 export default Modal;

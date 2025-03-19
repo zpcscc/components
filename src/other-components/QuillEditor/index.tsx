@@ -4,7 +4,6 @@ import type Delta from 'quill-delta';
 import 'quill/dist/quill.snow.css';
 import { useEffect, useLayoutEffect, useRef, type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { Wrapper } from './Styled';
 
 export type QuillEditorProps = {
   value?: string;
@@ -23,7 +22,7 @@ export type QuillEditorProps = {
  */
 const QuillEditor: FC<QuillEditorProps> = (props) => {
   const { value, styled, options = {}, onChange, onReady } = props || {};
-  const quillRef = useRef<Quill>();
+  const quillRef = useRef<Quill>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const defaultValueRef = useRef<string>(value ?? '');
   const onTextChangeRef = useRef(onChange);
@@ -41,10 +40,10 @@ const QuillEditor: FC<QuillEditorProps> = (props) => {
         ['link', 'image', 'video'], // 超链接，图片，视频，
         ['formula', { script: 'sub' }, { script: 'super' }], // 数学公式，下标，上标
         ['blockquote', 'code-block', 'clean'], // 引用，代码块，删除选中文本的格式
-        [{ size: [] }, { font: [] }] // 文字大小，字体
-      ]
+        [{ size: [] }, { font: [] }], // 文字大小，字体
+      ],
     },
-    ...options
+    ...options,
   };
 
   useLayoutEffect(() => {
@@ -79,7 +78,7 @@ const QuillEditor: FC<QuillEditorProps> = (props) => {
 
     return () => {
       // 清空编辑器；
-      quillRef.current = undefined;
+      quillRef.current = null;
       if (containerRef.current) {
         containerRef.current.innerHTML = '';
       }
@@ -87,9 +86,9 @@ const QuillEditor: FC<QuillEditorProps> = (props) => {
   }, [quillRef]);
 
   return (
-    <Wrapper css={css(styled)}>
+    <div className='w-full flex flex-col [&_.ql-container]:flex-1' css={css(styled)}>
       <div ref={containerRef} />
-    </Wrapper>
+    </div>
   );
 };
 

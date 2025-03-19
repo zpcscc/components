@@ -6,7 +6,6 @@ import { Checkbox, Radio, Space, Tooltip } from 'antd';
 import { type FC } from 'react';
 import Input, { type InputProps } from 'src/antd-components/Input';
 import { type OptionSelectType } from 'src/types';
-import { OptionWrapper } from './Styled';
 import { type CurrOptionType } from './type';
 
 export type OptionProps = {
@@ -39,7 +38,12 @@ const Option: FC<OptionProps> = (props) => {
   };
 
   return (
-    <OptionWrapper ref={setNodeRef} style={style} {...attributes}>
+    <div
+      className='flex flex-col b-b-1 b-b-solid b-b-#0000007f'
+      ref={setNodeRef}
+      style={style}
+      {...attributes}
+    >
       <Input
         defaultValue={label}
         onChange={(value: string) => {
@@ -70,7 +74,7 @@ const Option: FC<OptionProps> = (props) => {
         bordered={false}
         {...inputOptions}
       />
-    </OptionWrapper>
+    </div>
   );
 };
 

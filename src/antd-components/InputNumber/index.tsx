@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { InputNumber as AntdInputNumber } from 'antd';
 import { type InputNumberProps as AntInputNumberProps } from 'antd/lib/input-number';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { InputNumberWrapper } from './Styled';
 
 export type InputNumberProps = {
   styled?: StyledType;
@@ -18,7 +18,7 @@ export type InputNumberProps = {
  */
 const InputNumber: FC<InputNumberProps> = (props) => {
   const { styled, ...rest } = props;
-  return <InputNumberWrapper css={css(styled)} {...rest} />;
+  return <AntdInputNumber className='w-full' css={css(styled)} {...rest} />;
 };
 
 export default InputNumber;

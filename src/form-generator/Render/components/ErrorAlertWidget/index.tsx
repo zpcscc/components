@@ -2,7 +2,6 @@ import { Alert } from 'antd';
 import type { AlertProps } from 'antd/lib/alert';
 import type React from 'react';
 import { type ComponentItemType } from 'src/form-generator/types';
-import { Wrapper } from './Styled';
 
 export type ErrorAlertWidgetProps = {
   componentProps: ComponentItemType;
@@ -14,13 +13,13 @@ const ErrorAlertWidget: React.FC<ErrorAlertWidgetProps> = (props) => {
   const label = componentProps?.label ? `“${componentProps.label}”` : '';
   const type = componentProps?.type ? `(${componentProps.type})` : '';
   return (
-    <Wrapper>
+    <div className='w-full'>
       <Alert
         type='error'
         showIcon
         message={`${label}组件渲染错误,请检查json里的组件type${type}是否正确`}
       />
-    </Wrapper>
+    </div>
   );
 };
 

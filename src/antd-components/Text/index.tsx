@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Typography } from 'antd';
 import { type TextProps as AntTextProps } from 'antd/lib/typography/Text';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { TextWrapper } from './Styled';
 
 export type TextProps = {
   styled?: StyledType;
@@ -17,9 +17,9 @@ export type TextProps = {
 const Text: FC<TextProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
-    <TextWrapper css={css(styled)} {...rest}>
+    <Typography.Text css={css(styled)} {...rest}>
       {children}
-    </TextWrapper>
+    </Typography.Text>
   );
 };
 

@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Input } from 'antd';
 import { type TextAreaProps as AntTextAreaProps } from 'antd/lib/input';
 import { type ChangeEvent, type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { TextAreaWrapper } from './Styled';
 
 export type TextAreaProps = {
   styled?: StyledType;
@@ -20,11 +20,7 @@ export type TextAreaProps = {
 const TextArea: FC<TextAreaProps> = (props) => {
   const { styled, onChange, ...rest } = props;
   return (
-    <TextAreaWrapper
-      css={css(styled)}
-      onChange={(e) => onChange?.(e?.target?.value, e)}
-      {...rest}
-    />
+    <Input.TextArea css={css(styled)} onChange={(e) => onChange?.(e?.target?.value, e)} {...rest} />
   );
 };
 

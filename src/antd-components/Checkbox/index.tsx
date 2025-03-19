@@ -1,11 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { Checkbox as AntCheckbox } from 'antd';
+import { Checkbox as AntCheckbox, Space } from 'antd';
 import { type CheckboxProps as AntCheckboxProps } from 'antd/es/checkbox';
 import { type FC, type ReactNode } from 'react';
 import { type SpaceProps } from 'src/antd-components/Space';
 import { type StyledType } from 'src/types';
-import { SpaceWrapper } from './Styled';
 
 export type CheckboxProps = {
   // 前缀内容
@@ -33,7 +32,7 @@ export type CheckboxProps = {
 const Checkbox: FC<CheckboxProps> = (props) => {
   const { value, prefix, suffix, spaceOptions, styled, onChange, ...rest } = props;
   return (
-    <SpaceWrapper css={css(styled)} {...spaceOptions}>
+    <Space className='w-full' css={css(styled)} {...spaceOptions}>
       {prefix}
       <AntCheckbox
         checked={Boolean(value)}
@@ -41,7 +40,7 @@ const Checkbox: FC<CheckboxProps> = (props) => {
         {...rest}
       />
       {suffix}
-    </SpaceWrapper>
+    </Space>
   );
 };
 
