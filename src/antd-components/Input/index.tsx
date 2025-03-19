@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Input as AntdInput } from 'antd';
 import { type InputProps as AntInputProps } from 'antd/lib/input';
 import { type ChangeEvent, type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { InputWrapper } from './Styled';
 
 export type InputProps = {
   styled?: StyledType;
@@ -20,7 +20,12 @@ export type InputProps = {
 const Input: FC<InputProps> = (props) => {
   const { onChange, styled, ...rest } = props;
   return (
-    <InputWrapper css={css(styled)} onChange={(e) => onChange?.(e?.target?.value, e)} {...rest} />
+    <AntdInput
+      className='w-full'
+      css={css(styled)}
+      onChange={(e) => onChange?.(e?.target?.value, e)}
+      {...rest}
+    />
   );
 };
 

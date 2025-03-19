@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Select as AntdSelect } from 'antd';
 import { type SelectProps as AntSelectProps } from 'antd/lib/select';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { SelectWrapper } from './Styled';
 
 export type SelectProps = {
   styled?: StyledType;
@@ -18,7 +18,7 @@ export type SelectProps = {
  */
 const Select: FC<SelectProps> = (props) => {
   const { value, styled, ...rest } = props;
-  return <SelectWrapper css={css(styled)} value={value} {...rest} />;
+  return <AntdSelect className='w-full' css={css(styled)} value={value} {...rest} />;
 };
 
 export default Select;

@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Alert as AntdAlert } from 'antd';
 import { type AlertProps as AntAlertProps } from 'antd/lib/alert';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { AlertWrapper } from './Styled';
 
 export type AlertProps = {
   styled?: StyledType;
@@ -16,7 +16,7 @@ export type AlertProps = {
  */
 const Alert: FC<AlertProps> = (props) => {
   const { styled, ...rest } = props;
-  return <AlertWrapper css={css(styled)} {...rest} />;
+  return <AntdAlert css={css(styled)} {...rest} />;
 };
 
 export default Alert;

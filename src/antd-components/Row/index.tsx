@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { type RowProps as AntRowProps } from 'antd';
+import { type RowProps as AntRowProps, Row as AntdRow } from 'antd';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { RowWrapper } from './Styled';
 
 export type RowProps = {
   styled?: StyledType;
@@ -17,9 +16,9 @@ export type RowProps = {
 const Row: FC<RowProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
-    <RowWrapper css={css(styled)} {...rest}>
+    <AntdRow css={css(styled)} {...rest}>
       {children}
-    </RowWrapper>
+    </AntdRow>
   );
 };
 

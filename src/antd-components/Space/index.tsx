@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { type SpaceProps as AntSpaceProps } from 'antd';
+import { type SpaceProps as AntSpaceProps, Space as AntdSpace } from 'antd';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { SpaceWrapper } from './Styled';
 
 export type SpaceProps = {
   styled?: StyledType;
@@ -17,9 +16,9 @@ export type SpaceProps = {
 const Space: FC<SpaceProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
-    <SpaceWrapper css={css(styled)} {...rest}>
+    <AntdSpace className='w-full' css={css(styled)} {...rest}>
       {children}
-    </SpaceWrapper>
+    </AntdSpace>
   );
 };
 

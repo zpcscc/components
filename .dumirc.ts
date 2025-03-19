@@ -24,4 +24,8 @@ export default defineConfig({
   extraBabelPresets: [
     ['@babel/preset-react', { runtime: 'automatic', importSource: '@emotion/react' }],
   ],
+  plugins: [require.resolve('@umijs/plugins/dist/unocss')],
+  unocss: {
+    watch: ['src/**/*.tsx'],
+  },
 });

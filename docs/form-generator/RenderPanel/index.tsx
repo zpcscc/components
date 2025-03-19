@@ -1,8 +1,9 @@
 import { MonacoEditor, Render, Title, type ComponentItemType } from '@zpcscc/components';
 import { toData, toString } from '@zpcscc/utils';
+import { Space } from 'antd';
 import { useState, type FC } from 'react';
-import { EditorSpace, RenderSpace, SpaceWrapper } from './Styled';
 import { pageData } from './mock';
+import { RenderSpace } from './Styled';
 
 // 渲染器
 const RenderPanel: FC = () => {
@@ -22,8 +23,8 @@ const RenderPanel: FC = () => {
   };
 
   return (
-    <SpaceWrapper align='start'>
-      <EditorSpace direction='vertical'>
+    <Space className='u-center-around' align='start'>
+      <Space direction='vertical'>
         <Title>代码编辑器</Title>
         <MonacoEditor
           defaultValue={toString(value, null, 2)}
@@ -32,12 +33,12 @@ const RenderPanel: FC = () => {
           language='json'
           onChange={onChange}
         />
-      </EditorSpace>
+      </Space>
       <RenderSpace direction='vertical'>
         <Title>实时预览渲染效果</Title>
         <Render componentItems={value} onChange={onValuesChange} />
       </RenderSpace>
-    </SpaceWrapper>
+    </Space>
   );
 };
 

@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Divider as AntdDivider } from 'antd';
 import { type DividerProps as AntDividerProps } from 'antd/lib/Divider';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { DividerWrapper } from './Styled';
 
 export type DividerProps = {
   styled?: StyledType;
@@ -17,9 +17,9 @@ export type DividerProps = {
 const Divider: FC<DividerProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
-    <DividerWrapper css={css(styled)} {...rest}>
+    <AntdDivider css={css(styled)} {...rest}>
       {children}
-    </DividerWrapper>
+    </AntdDivider>
   );
 };
 

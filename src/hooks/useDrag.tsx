@@ -8,8 +8,8 @@ type UseDragResult = {
 };
 
 const useDrag = (): UseDragResult => {
-  const dragHandleRef: RefObject<HTMLElement> = useRef(null); // 拖拽手柄区域
-  const dragTargetRef: RefObject<HTMLElement> = useRef(null); // 实际移动的元素
+  const dragHandleRef: RefObject<HTMLElement | null> = useRef(null); // 拖拽手柄区域
+  const dragTargetRef: RefObject<HTMLElement | null> = useRef(null); // 实际移动的元素
   const isDragging = useRef(false);
   const startPos = useRef({ x: 0, y: 0 });
   const currentPos = useRef({ x: 0, y: 0 });
@@ -23,7 +23,7 @@ const useDrag = (): UseDragResult => {
     isDragging.current = true;
     startPos.current = {
       x: event.clientX - currentPos.current.x,
-      y: event.clientY - currentPos.current.y
+      y: event.clientY - currentPos.current.y,
     };
   }, []);
 
@@ -51,7 +51,6 @@ const useDrag = (): UseDragResult => {
   const bindDragHandle = useCallback(
     (node: HTMLElement | null) => {
       if (node) {
-        // @ts-expect-error
         dragHandleRef.current = node;
 
         node.addEventListener('mousedown', handleMouseDown);
@@ -61,20 +60,19 @@ const useDrag = (): UseDragResult => {
         dragTargetRef.current.addEventListener('mousedown', handleMouseDown);
       }
     },
-    [handleMouseDown, handleMouseMove, handleMouseUp]
+    [handleMouseDown, handleMouseMove, handleMouseUp],
   );
 
   // 绑定实际移动的目标元素
   const bindDragTarget = useCallback(
     (node: HTMLElement | null) => {
-      // @ts-expect-error
       dragTargetRef.current = node;
       // 如果没有传入拖拽手柄，目标元素即为手柄
       if (!dragHandleRef.current) {
         node?.addEventListener('mousedown', handleMouseDown);
       }
     },
-    [handleMouseDown, handleMouseMove, handleMouseUp]
+    [handleMouseDown, handleMouseMove, handleMouseUp],
   );
 
   useEffect(() => {
@@ -90,7 +88,7 @@ const useDrag = (): UseDragResult => {
   return {
     bindDragHandle,
     bindDragTarget,
-    resetPosition
+    resetPosition,
   };
 };
 

@@ -22,6 +22,7 @@
     "docs/**/*",
     ".eslintrc.js",
     "commitlint.config.js",
+    "unocss.config.ts",
     "dist/**/*"
   ],
   "exclude": ["node_modules"]

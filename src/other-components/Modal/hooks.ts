@@ -37,14 +37,17 @@ export const useShowModal = ({
   hide,
   setIsVisible,
   onClose,
-  resetPosition
+  resetPosition,
 }: UseShowModalProps) => {
   const [showModal, setShowModal] = useState(false);
 
   const handleClose = () => {
     resetPosition?.();
-    if (id) hide?.(id);
-    setIsVisible(false);
+    if (id) {
+      hide?.(id);
+    } else {
+      setIsVisible(false);
+    }
     setTimeout(() => {
       setShowModal(false);
       onClose?.();
@@ -56,9 +59,7 @@ export const useShowModal = ({
       setShowModal(true);
       setTimeout(() => {
         setIsVisible(true);
-      }, 10);
-    } else {
-      handleClose();
+      }, 50);
     }
   }, [show]);
 

@@ -4,7 +4,7 @@ import {
   PointerSensor,
   closestCorners,
   useSensor,
-  useSensors
+  useSensors,
 } from '@dnd-kit/core';
 import { getUuid } from '@zpcscc/utils';
 import { useState, type FC } from 'react';
@@ -12,14 +12,13 @@ import { useRecoilState, useSetRecoilState } from 'recoil';
 import {
   componentStructureState,
   currentState,
-  leftSortableItemsState
+  leftSortableItemsState,
 } from 'src/form-generator/Editor/atoms';
 import { type EditorProps } from '../Editor';
 import Content from './Content';
 import DndDragOverlay from './DndDragOverlay';
 import LeftSider from './LeftSider';
 import RightSider from './RightSider';
-import { LayoutWrapper } from './Styled';
 import { findStructureItem, getFieldConfig, onDragEnd, onDragOver } from './utils';
 
 // 编辑器布局容器
@@ -36,9 +35,9 @@ const Layout: FC<EditorProps> = (props) => {
     useSensor(PointerSensor, {
       activationConstraint: {
         // 拖移偏移1px的距离后再触发拖拽排序事件。若不设置偏移距离，会使拖拽事件覆盖掉点击事件。导致无法点击聚焦。
-        distance: 1
-      }
-    })
+        distance: 1,
+      },
+    }),
   );
 
   // const collisionDetection: CollisionDetection = useCallback((args) => {
@@ -49,7 +48,7 @@ const Layout: FC<EditorProps> = (props) => {
   // }, []);
 
   return (
-    <LayoutWrapper>
+    <div className='flex overflow-hidden h-full min-h-30vh relative'>
       <DndContext
         sensors={sensors}
         measuring={{ droppable: { strategy: MeasuringStrategy.Always } }}
@@ -71,7 +70,7 @@ const Layout: FC<EditorProps> = (props) => {
               items.map((item) => {
                 if (item === event.active.id) return getUuid(4, `${item.split('-')[0]}-`);
                 return item;
-              })
+              }),
             );
           }
         }}
@@ -90,7 +89,7 @@ const Layout: FC<EditorProps> = (props) => {
           isNew={isNew}
         />
       </DndContext>
-    </LayoutWrapper>
+    </div>
   );
 };
 

@@ -1,15 +1,15 @@
 import { useSortable } from '@dnd-kit/sortable';
 import { getUuid } from '@zpcscc/utils';
+import { Button as AntdButton } from 'antd';
 import { useMemo, type FC } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import {
   componentStructureState,
   currentState,
-  leftSortableItemsState
+  leftSortableItemsState,
 } from 'src/form-generator/Editor/atoms';
 import { type FieldConfigType } from 'src/form-generator/types';
 import { getFieldConfig } from '../utils';
-import { ButtonWrapper } from './Styled';
 
 type ItemProps = {
   fieldConfig: FieldConfigType;
@@ -24,28 +24,29 @@ const Button: FC<ItemProps> = (props) => {
   const leftSortableItems = useRecoilValue(leftSortableItemsState);
   const id = leftSortableItems.find((item) => item.split('-')[0] === componentItem.id) || 'input';
   const { listeners, setNodeRef, attributes, isDragging } = useSortable({
-    id
+    id,
   });
   const isComponentItem = useMemo(
     () => (currentId ? Boolean(componentItems.some((item) => item.id === currentId)) : false),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [currentId, componentItems]
+    [currentId, componentItems],
   );
 
   const onClick = () => {
     const newId = getUuid(4, `${componentItem.id}-`);
     setCurrent({
       fieldConfig: getFieldConfig(id),
-      currentId: newId
+      currentId: newId,
     });
     setComponentStructure(({ componentItems, structureItems }) => ({
       componentItems: [...componentItems, { ...componentItem, id: newId }],
-      structureItems: [...structureItems, { id: newId }]
+      structureItems: [...structureItems, { id: newId }],
     }));
   };
 
   return (
-    <ButtonWrapper
+    <AntdButton
+      className='w-100px'
       style={{ opacity: isDragging ? 0.5 : undefined }}
       onClick={onClick}
       ref={isComponentItem ? undefined : setNodeRef}
@@ -53,7 +54,7 @@ const Button: FC<ItemProps> = (props) => {
       {...listeners}
     >
       {label}
-    </ButtonWrapper>
+    </AntdButton>
   );
 };
 

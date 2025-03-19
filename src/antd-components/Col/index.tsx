@@ -1,9 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
-import { type ColProps as AntColProps } from 'antd';
+import { Col as AntdCol, type ColProps as AntColProps } from 'antd';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { ColWrapper } from './Styled';
 
 export type ColProps = {
   styled?: StyledType;
@@ -17,9 +16,9 @@ export type ColProps = {
 const Col: FC<ColProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
-    <ColWrapper css={css(styled)} {...rest}>
+    <AntdCol css={css(styled)} {...rest}>
       {children}
-    </ColWrapper>
+    </AntdCol>
   );
 };
 

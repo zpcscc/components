@@ -8,7 +8,6 @@ import { useState, type FC } from 'react';
 import { type InputProps } from 'src/antd-components/Input';
 import { type OptionsConfigType, type StyledType } from 'src/types';
 import OptionsContainer from './OptionsContainer';
-import { Wrapper } from './Styled';
 import { type CurrOptionType, type CurrOptionsConfigType } from './type';
 import { formatOptionsConfig } from './utils';
 
@@ -69,7 +68,7 @@ const Options: FC<OptionsProps> = (props) => {
   };
 
   return (
-    <Wrapper css={css(styled)}>
+    <div css={css(styled)}>
       <OptionsContainer
         optionsConfig={optionsConfig}
         onOptionsConfigChange={onOptionsConfigChange}
@@ -78,7 +77,7 @@ const Options: FC<OptionsProps> = (props) => {
       <Button type='text' style={{ color: '#00bcd4' }} onClick={addOption}>
         <PlusOutlined /> 添加选项
       </Button>
-    </Wrapper>
+    </div>
   );
 };
 

@@ -3,7 +3,8 @@ import { css } from '@emotion/react';
 import { type TitleProps as AntTitleProps } from 'antd/lib/typography/Title';
 import { type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { TitleWrapper } from './Styled';
+
+import { Typography } from 'antd';
 
 export type TitleProps = {
   styled?: StyledType;
@@ -17,9 +18,9 @@ export type TitleProps = {
 const Title: FC<TitleProps> = (props) => {
   const { children, styled, ...rest } = props;
   return (
-    <TitleWrapper css={css(styled)} {...rest}>
+    <Typography.Title css={css(styled)} {...rest}>
       {children}
-    </TitleWrapper>
+    </Typography.Title>
   );
 };
 

@@ -3,7 +3,6 @@ import { toAbsolutePath, validate } from '@zpcscc/utils';
 import * as pdfjsLib from 'pdfjs-dist/build/pdf.min.mjs';
 import { useEffect, useRef, useState, type FC } from 'react';
 import { type StyledType } from 'src/types';
-import { CanvasWrapper, PdfContainer } from './Styled';
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = toAbsolutePath('/components/pdf.worker.min.mjs');
 
@@ -36,7 +35,7 @@ const PdfViewer: FC<PdfViewerProps> = ({ url, scale = 1, styled }) => {
       if (canvas) {
         const context = canvas.getContext('2d');
         const devicePixelRatio = window.devicePixelRatio || 2;
-        const outputScale = devicePixelRatio >= 2 ? devicePixelRatio : 2; // 输出缩放比例，设置为不低于2，低于2看起来会很糊；
+        const outputScale = Math.max(devicePixelRatio, 2); // 输出缩放比例，设置为不低于2，低于2看起来会很糊；
         // 设置canvas的宽高
         canvas.width = Math.floor(viewport.width * outputScale);
         canvas.height = Math.floor(viewport.height * outputScale);
@@ -47,7 +46,7 @@ const PdfViewer: FC<PdfViewerProps> = ({ url, scale = 1, styled }) => {
         const renderContext = {
           canvasContext: context,
           viewport,
-          transform
+          transform,
         };
         // eslint-disable-next-line promise/no-nesting
         page.render(renderContext).promise.then(async () => {
@@ -73,7 +72,7 @@ const PdfViewer: FC<PdfViewerProps> = ({ url, scale = 1, styled }) => {
       const pdfDoc = await pdfjsLib.getDocument({
         url,
         cMapUrl: toAbsolutePath('/components/cmaps/'),
-        cMapPacked: true
+        cMapPacked: true,
       }).promise;
       pdfDocRef.current = pdfDoc;
       for (let i = 1; i <= pdfDoc.numPages; i++) {
@@ -96,11 +95,11 @@ const PdfViewer: FC<PdfViewerProps> = ({ url, scale = 1, styled }) => {
   }, [url]);
 
   return (
-    <PdfContainer css={css(styled)}>
+    <div className='w-full h-full' css={css(styled)}>
       {pdfPages.map((pageItem) => (
-        <CanvasWrapper key={pageItem.id} id={pageItem.id} />
+        <canvas className='border-1 border-solid border-black' key={pageItem.id} id={pageItem.id} />
       ))}
-    </PdfContainer>
+    </div>
   );
 };
 

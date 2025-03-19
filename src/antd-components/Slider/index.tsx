@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import { Slider as AntSlider } from 'antd';
 import { type InputNumberProps } from 'antd/lib/input-number';
 import { type SliderBaseProps } from 'antd/lib/slider';
+import classNames from 'classnames';
 import { useEffect, useState, type CSSProperties, type FC } from 'react';
 import InputNumber from 'src/antd-components/InputNumber';
 import { type StyledType } from 'src/types';
@@ -51,12 +52,15 @@ const Slider: FC<SliderProps> = (props) => {
 
   return (
     <Wrapper
+      className={classNames('w-full min-w-100px flex', {
+        'flex-col': isVertical,
+        'flex-row': !isVertical,
+      })}
       css={css(styled)}
       style={
         {
-          '--flex-direction': isVertical ? 'column' : 'row',
           '--margin-right': isVertical ? '0px' : '16px',
-          '--input-number-width': isVertical ? '100%' : '110px'
+          '--input-number-width': isVertical ? '100%' : '110px',
         } as CSSProperties
       }
     >

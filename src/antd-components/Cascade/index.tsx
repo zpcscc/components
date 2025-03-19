@@ -4,7 +4,6 @@ import { useEffect, useState, type FC } from 'react';
 import Select, { type SelectProps } from 'src/antd-components/Select';
 import TextArea, { type TextAreaProps } from 'src/antd-components/TextArea';
 import { type StyledType } from 'src/types';
-import { Wrapper } from './Styled';
 import { type SelectListType } from './types';
 import { arr2Tree, initValueArr, updateSelectList } from './utils';
 
@@ -76,7 +75,7 @@ const Cascade: FC<CascadeProps> = (props) => {
   }, [level]);
 
   return (
-    <Wrapper css={css(styled)}>
+    <div css={css(styled)}>
       {selectList?.map(({ options }, index) => (
         <Select
           key={index}
@@ -99,7 +98,7 @@ const Cascade: FC<CascadeProps> = (props) => {
           {...textAreaOptions}
         />
       )}
-    </Wrapper>
+    </div>
   );
 };
 

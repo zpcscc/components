@@ -6,7 +6,6 @@ import { componentStructureState, currentState } from 'src/form-generator/Editor
 import { Render } from 'src/form-generator/Render';
 import { type ComponentItemType } from 'src/form-generator/types';
 import { updateItem } from '../utils';
-import { LeftSiderWrapper } from './Styled';
 
 export type LeftSiderProps = {
   // 值改变时
@@ -22,14 +21,14 @@ const RightSider: FC<LeftSiderProps> = () => {
   const { configPanel } = fieldConfig || {};
   const defaultValue = {
     ...omit(componentItem ?? {}, ['id', 'type', 'props', 'children']),
-    ...componentItem?.props
+    ...componentItem?.props,
   };
   const [form] = Form.useForm();
 
   const onValuesChange = (changeValue?: AnyObject) => {
     if (currentId && changeValue) {
       setComponentStructure((componentStructure) =>
-        updateItem(componentStructure, currentId, changeValue)
+        updateItem(componentStructure, currentId, changeValue),
       );
     }
   };
@@ -41,14 +40,14 @@ const RightSider: FC<LeftSiderProps> = () => {
   }, [currentId, structureItems]);
 
   return (
-    <LeftSiderWrapper>
+    <div className='flex-shrink w-16rem pt-24px flex flex-col h-full mx-auto [&_.ant-form]:w-14rem [&_.ant-form]:mx-auto'>
       <Render
         defaultValue={defaultValue}
         componentItems={configPanel?.()}
         onChange={onValuesChange}
         formOptions={{ form }}
       />
-    </LeftSiderWrapper>
+    </div>
   );
 };
 
